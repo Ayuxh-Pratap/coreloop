@@ -1,0 +1,552 @@
+[
+  {
+    "id": "scroll-bit",
+    "note": "The 34 cases of the browser prototype (jev-voice-browser test/integration/jev-decisions.test.js), on its page snapshots (eval/browser/pages.json).",
+    "surface": "browser",
+    "page": "wiki-article",
+    "turns": [
+      {
+        "said": "scroll down a bit",
+        "expect": {
+          "operation": "page.scroll",
+          "direction": "down",
+          "amount": "little"
+        }
+      }
+    ]
+  },
+  {
+    "id": "scroll-bottom",
+    "surface": "browser",
+    "page": "wiki-article",
+    "turns": [
+      {
+        "said": "scroll all the way to the bottom",
+        "expect": {
+          "operation": "page.scroll",
+          "direction": "down",
+          "amount": "end"
+        }
+      }
+    ]
+  },
+  {
+    "id": "scroll-up",
+    "surface": "browser",
+    "page": "news",
+    "turns": [
+      {
+        "said": "scroll up",
+        "expect": {
+          "operation": "page.scroll",
+          "direction": "up"
+        }
+      }
+    ]
+  },
+  {
+    "id": "goto-wikipedia",
+    "surface": "browser",
+    "page": "example",
+    "turns": [
+      {
+        "said": "go to wikipedia",
+        "expect": {
+          "operation": "open_url",
+          "url": "~wikipedia.org"
+        }
+      }
+    ]
+  },
+  {
+    "id": "open-youtube",
+    "surface": "browser",
+    "page": "news",
+    "turns": [
+      {
+        "said": "open youtube",
+        "expect": {
+          "operation": "open_url",
+          "url": "~youtube.com"
+        }
+      }
+    ]
+  },
+  {
+    "id": "spoken-domain",
+    "surface": "browser",
+    "page": "news",
+    "turns": [
+      {
+        "said": "go to example dot com",
+        "expect": {
+          "operation": "open_url",
+          "url": "~example.com"
+        }
+      }
+    ]
+  },
+  {
+    "id": "search-web",
+    "surface": "browser",
+    "page": "example",
+    "turns": [
+      {
+        "said": "search for jev typesafe",
+        "expect": {
+          "operation": "search_web",
+          "span": "jev typesafe",
+          "plan": "duckduckgo.com"
+        }
+      }
+    ]
+  },
+  {
+    "id": "search-site-box",
+    "surface": "browser",
+    "page": "wiki-main",
+    "turns": [
+      {
+        "said": "search for mira castell",
+        "expect": {
+          "operation": "search_web",
+          "span": "mira castell",
+          "plan": "into e02"
+        }
+      }
+    ]
+  },
+  {
+    "id": "search-named-site",
+    "surface": "browser",
+    "page": "news",
+    "turns": [
+      {
+        "said": "search youtube for lofi beats",
+        "expect": {
+          "operation": "page.search_site",
+          "query": "lofi beats",
+          "plan": "youtube.com/results"
+        }
+      }
+    ]
+  },
+  {
+    "id": "look-up",
+    "surface": "browser",
+    "page": "example",
+    "turns": [
+      {
+        "said": "look up the weather in berlin",
+        "expect": {
+          "operation": "search_web",
+          "span": "~weather in berlin"
+        }
+      }
+    ]
+  },
+  {
+    "id": "click-first-result",
+    "surface": "browser",
+    "page": "search-results",
+    "turns": [
+      {
+        "said": "click the first result",
+        "expect": {
+          "operation": "page.click",
+          "item": "e20"
+        }
+      }
+    ]
+  },
+  {
+    "id": "click-github",
+    "surface": "browser",
+    "page": "search-results",
+    "turns": [
+      {
+        "said": "click the github link",
+        "expect": {
+          "operation": "page.click",
+          "item": "e24"
+        }
+      }
+    ]
+  },
+  {
+    "id": "click-by-text",
+    "surface": "browser",
+    "page": "example",
+    "turns": [
+      {
+        "said": "click the more information link",
+        "expect": {
+          "operation": "page.click",
+          "item": "e01"
+        }
+      }
+    ]
+  },
+  {
+    "id": "click-hn-new",
+    "surface": "browser",
+    "page": "news",
+    "turns": [
+      {
+        "said": "click new",
+        "expect": {
+          "operation": "page.click",
+          "item": "e03"
+        }
+      }
+    ]
+  },
+  {
+    "id": "click-hn-comments",
+    "surface": "browser",
+    "page": "news",
+    "turns": [
+      {
+        "said": "open the comments tab",
+        "expect": {
+          "operation": "page.click",
+          "item": "e05"
+        }
+      }
+    ]
+  },
+  {
+    "id": "go-back",
+    "surface": "browser",
+    "page": "wiki-article",
+    "turns": [
+      {
+        "said": "go back",
+        "expect": {
+          "operation": "page.back"
+        }
+      }
+    ]
+  },
+  {
+    "id": "type-into-box",
+    "surface": "browser",
+    "page": "wiki-main",
+    "turns": [
+      {
+        "said": "type hello world into the search box",
+        "expect": {
+          "operation": "page.type_into",
+          "item": "e02",
+          "span": "hello world"
+        }
+      }
+    ]
+  },
+  {
+    "id": "reload",
+    "surface": "browser",
+    "page": "news",
+    "turns": [
+      {
+        "said": "refresh the page",
+        "expect": {
+          "operation": "page.reload"
+        }
+      }
+    ]
+  },
+  {
+    "id": "new-tab",
+    "surface": "browser",
+    "page": "news",
+    "turns": [
+      {
+        "said": "open a new tab",
+        "expect": {
+          "operation": "page.tab_new"
+        }
+      }
+    ]
+  },
+  {
+    "id": "chit-chat",
+    "surface": "browser",
+    "page": "news",
+    "turns": [
+      {
+        "said": "so anyway I think we should get lunch",
+        "expect": {
+          "decision": "ignore"
+        }
+      }
+    ]
+  },
+  {
+    "id": "filler",
+    "surface": "browser",
+    "page": "news",
+    "turns": [
+      {
+        "said": "um okay so",
+        "expect": {
+          "decision": "ignore|wait"
+        }
+      }
+    ]
+  },
+  {
+    "id": "partial-go-to",
+    "surface": "browser",
+    "page": "news",
+    "turns": [
+      {
+        "said": "go to",
+        "expect": {
+          "decision": "wait"
+        }
+      }
+    ]
+  },
+  {
+    "id": "partial-search",
+    "surface": "browser",
+    "page": "news",
+    "turns": [
+      {
+        "said": "search for",
+        "expect": {
+          "decision": "wait"
+        }
+      }
+    ]
+  },
+  {
+    "id": "destructive-order",
+    "surface": "browser",
+    "page": "checkout",
+    "turns": [
+      {
+        "said": "click place order",
+        "expect": {
+          "decision": "confirm",
+          "operation": "page.click",
+          "item": "e05"
+        }
+      }
+    ]
+  },
+  {
+    "id": "destructive-delete",
+    "surface": "browser",
+    "page": "checkout",
+    "turns": [
+      {
+        "said": "press delete account",
+        "expect": {
+          "decision": "confirm",
+          "operation": "page.click",
+          "item": "e07"
+        }
+      }
+    ]
+  },
+  {
+    "id": "type-email",
+    "surface": "browser",
+    "page": "checkout",
+    "turns": [
+      {
+        "said": "type bob at example dot com in the email field",
+        "expect": {
+          "operation": "page.type_into",
+          "item": "e02"
+        }
+      }
+    ]
+  },
+  {
+    "id": "missing-element",
+    "surface": "browser",
+    "page": "example",
+    "note": "nothing on the page is called sign in: ask, never click Learn more",
+    "turns": [
+      {
+        "said": "click sign in",
+        "expect": {
+          "decision": "ask|wait"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctx-documentation",
+    "surface": "browser",
+    "page": "search-results",
+    "turns": [
+      {
+        "said": "click the first result",
+        "setup": true,
+        "expect": {
+          "operation": "page.click",
+          "item": "e20"
+        }
+      },
+      {
+        "said": "open the documentation",
+        "expect": {
+          "operation": "page.click",
+          "item": "e03|e07"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctx-back-to-results",
+    "surface": "browser",
+    "page": "search-results",
+    "turns": [
+      {
+        "said": "click the first result",
+        "setup": true,
+        "expect": {
+          "operation": "page.click",
+          "item": "e20"
+        }
+      },
+      {
+        "said": "go back to the search results",
+        "expect": {
+          "operation": "page.back"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctx-not-that-one",
+    "surface": "browser",
+    "page": "search-results",
+    "turns": [
+      {
+        "said": "click the first result",
+        "setup": true,
+        "expect": {
+          "operation": "page.click",
+          "item": "e20"
+        }
+      },
+      {
+        "said": "no not that one",
+        "expect": {
+          "operation": "undo",
+          "plan": "back"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctx-wrong-link",
+    "surface": "browser",
+    "page": "search-results",
+    "turns": [
+      {
+        "said": "click the first result",
+        "setup": true,
+        "expect": {
+          "operation": "page.click",
+          "item": "e20"
+        }
+      },
+      {
+        "said": "wrong link, undo that",
+        "expect": {
+          "operation": "undo",
+          "plan": "back"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctx-the-other-one",
+    "surface": "browser",
+    "page": "search-results",
+    "turns": [
+      {
+        "said": "click the first result",
+        "setup": true,
+        "expect": {
+          "operation": "page.click",
+          "item": "e20"
+        }
+      },
+      {
+        "said": "go back",
+        "setup": true,
+        "expect": {
+          "operation": "page.back"
+        }
+      },
+      {
+        "said": "no, the other one",
+        "expect": {
+          "decision": "act|ask",
+          "operation": "page.click",
+          "item": "!e20"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctx-follow-up",
+    "surface": "browser",
+    "page": "search-results",
+    "note": "a follow-up, not a correction",
+    "turns": [
+      {
+        "said": "click the first result",
+        "setup": true,
+        "expect": {
+          "operation": "page.click",
+          "item": "e20"
+        }
+      },
+      {
+        "said": "scroll down a bit",
+        "expect": {
+          "operation": "page.scroll",
+          "amount": "little"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctx-second-result",
+    "surface": "browser",
+    "page": "search-results",
+    "note": "each result's URL line is its own link (e20 title, e21 URL, e22 second title), so both count",
+    "turns": [
+      {
+        "said": "click the first result",
+        "setup": true,
+        "expect": {
+          "operation": "page.click",
+          "item": "e20"
+        }
+      },
+      {
+        "said": "go back",
+        "setup": true,
+        "expect": {
+          "operation": "page.back"
+        }
+      },
+      {
+        "said": "click the second result",
+        "expect": {
+          "operation": "page.click",
+          "item": "e21|e22"
+        }
+      }
+    ]
+  }
+]

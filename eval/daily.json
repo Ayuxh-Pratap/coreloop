@@ -1,0 +1,479 @@
+[
+  {
+    "id": "day1",
+    "note": "Day 1 of real use (2026-10-03), as heard, in order. Labels = what was meant, applied to the words speech-to-text actually produced (so 'printer' is judged as a search for 'printer').",
+    "desktop": {
+      "open": [
+        "Claude",
+        "Terminal",
+        "Google Chrome",
+        "File Explorer",
+        "Cursor"
+      ],
+      "foreground": "Terminal"
+    },
+    "turns": [
+      {
+        "said": "Open Spotify.",
+        "expect": {
+          "operation": "open_app",
+          "app": "Spotify"
+        }
+      },
+      {
+        "said": "Search for Panther on Spotify",
+        "expect": {
+          "operation": "spotify.search",
+          "query": "panther"
+        }
+      },
+      {
+        "said": "On the Spotify app, search for Panther.",
+        "expect": {
+          "operation": "spotify.search",
+          "query": "panther"
+        }
+      },
+      {
+        "said": "Bring Spotify to the front.",
+        "expect": {
+          "operation": "focus_app",
+          "app": "Spotify"
+        }
+      },
+      {
+        "said": "Play some music on Spotify.",
+        "expect": {
+          "operation": "media",
+          "media": "play_pause"
+        }
+      },
+      {
+        "said": "Pause the music.",
+        "expect": {
+          "operation": "media",
+          "media": "play_pause"
+        }
+      },
+      {
+        "said": "Uh we change the song from this uh current song to any song of Panther.",
+        "expect": {
+          "operation": "spotify.play",
+          "query": "panther"
+        }
+      },
+      {
+        "said": "I mean change the song.",
+        "expect": {
+          "operation": "media",
+          "media": "next"
+        }
+      },
+      {
+        "said": "Yes.",
+        "expect": {
+          "decision": "ignore"
+        },
+        "note": "nothing is waiting for a yes"
+      },
+      {
+        "said": "Go to the next term.",
+        "expect": {
+          "operation": "media",
+          "media": "next"
+        },
+        "note": "meant: next song"
+      },
+      {
+        "said": "Nose Spotify.",
+        "expect": {
+          "operation": "close_app",
+          "app": "Spotify",
+          "decision": "confirm"
+        },
+        "note": "meant: close Spotify (misheard)"
+      },
+      {
+        "said": "Close Spotify.",
+        "expect": {
+          "operation": "close_app",
+          "app": "Spotify",
+          "decision": "confirm"
+        }
+      },
+      {
+        "said": "Confirm.",
+        "expect": {
+          "operation": "close_app",
+          "app": "Spotify"
+        }
+      },
+      {
+        "said": "Open terminal.",
+        "expect": {
+          "operation": "open_app",
+          "app": "Terminal"
+        }
+      },
+      {
+        "said": "Open a new tab on terminals.",
+        "expect": {
+          "operation": "terminal.tab_new"
+        }
+      },
+      {
+        "said": "Bring clawed code on top.",
+        "expect": {
+          "operation": "focus_app",
+          "app": "Claude"
+        }
+      },
+      {
+        "said": "Put the plot code on top.",
+        "expect": {
+          "operation": "focus_app",
+          "app": "Claude"
+        }
+      },
+      {
+        "said": "Open Brave Browser.",
+        "expect": {
+          "operation": "open_app",
+          "app": "Brave"
+        }
+      },
+      {
+        "said": "Search for printer.",
+        "expect": {
+          "operation": "browser.search",
+          "query": "printer",
+          "app": "Brave"
+        },
+        "note": "meant 'panther' (misheard); Brave was just opened, so search there"
+      },
+      {
+        "said": "Search for Panther.",
+        "expect": {
+          "operation": "browser.search",
+          "query": "panther",
+          "app": "Brave"
+        }
+      },
+      {
+        "said": "Uh I mean search for uh Penther, who is a music artist.",
+        "expect": {
+          "operation": "browser.search",
+          "query": "penther",
+          "app": "Brave"
+        }
+      },
+      {
+        "said": "Search for Panther on the Brave browser.",
+        "expect": {
+          "operation": "browser.search",
+          "query": "panther",
+          "app": "Brave"
+        }
+      },
+      {
+        "said": "Open cloud.",
+        "expect": {
+          "operation": "open_app",
+          "app": "Claude"
+        },
+        "note": "meant: Claude (misheard)"
+      },
+      {
+        "said": "Open cloud.",
+        "expect": {
+          "operation": "open_app",
+          "app": "Claude"
+        }
+      },
+      {
+        "said": "Open clawed code.",
+        "expect": {
+          "operation": "open_app",
+          "app": "Claude"
+        }
+      }
+    ]
+  },
+  {
+    "id": "day2",
+    "note": "Day 2 of real use (2026-10-03 night), as heard, in order; mishearings and side remarks left out. coreloop ran in Cursor's terminal, so Cursor takes the focus back after every turn (host).",
+    "desktop": {
+      "open": [
+        "Cursor",
+        "Claude",
+        "Telegram",
+        "Terminal"
+      ],
+      "foreground": "Cursor",
+      "host": "Cursor"
+    },
+    "turns": [
+      {
+        "said": "Uh open Spotify.",
+        "expect": {
+          "operation": "open_app",
+          "app": "Spotify"
+        }
+      },
+      {
+        "said": "Uh make Spotify full screen.",
+        "expect": {
+          "operation": "window.maximize",
+          "app": "Spotify"
+        }
+      },
+      {
+        "said": "Expand Spotify.",
+        "expect": {
+          "operation": "window.maximize",
+          "app": "Spotify"
+        }
+      },
+      {
+        "said": "Play music.",
+        "expect": {
+          "operation": "media",
+          "media": "play_pause"
+        }
+      },
+      {
+        "said": "Pause the music.",
+        "expect": {
+          "operation": "media",
+          "media": "play_pause"
+        }
+      },
+      {
+        "said": "Minimize the Spotify.",
+        "expect": {
+          "operation": "window.minimize",
+          "app": "Spotify"
+        },
+        "note": "day 2 proposed closing it"
+      },
+      {
+        "said": "Open Spotify again.",
+        "expect": {
+          "operation": "open_app",
+          "app": "Spotify"
+        }
+      },
+      {
+        "said": "Maximize it.",
+        "expect": {
+          "operation": "window.maximize"
+        }
+      },
+      {
+        "said": "search for pencil.",
+        "expect": {
+          "operation": "spotify.search",
+          "query": "pencil"
+        }
+      },
+      {
+        "said": "Search for panther.",
+        "expect": {
+          "operation": "spotify.search",
+          "query": "panther"
+        }
+      },
+      {
+        "said": "Open the artist profile.",
+        "expect": {
+          "operation": "spotify.open_artist",
+          "query": "panther"
+        },
+        "note": "the artist just searched for"
+      },
+      {
+        "said": "Now click on the artist profile of Panther.",
+        "expect": {
+          "operation": "spotify.open_artist",
+          "query": "panther"
+        }
+      },
+      {
+        "said": "Play any panther song.",
+        "expect": {
+          "operation": "spotify.play",
+          "query": "panther"
+        },
+        "note": "day 2 pressed play/pause"
+      },
+      {
+        "said": "Stop the music.",
+        "expect": {
+          "operation": "media",
+          "media": "play_pause"
+        }
+      },
+      {
+        "said": "Close of Spotify.",
+        "expect": {
+          "operation": "close_app",
+          "app": "Spotify",
+          "decision": "confirm"
+        }
+      },
+      {
+        "said": "Confirm.",
+        "expect": {
+          "operation": "close_app",
+          "app": "Spotify"
+        }
+      },
+      {
+        "said": "Open Spotify and search for Penthouse.",
+        "expect": {
+          "operation": "spotify.search",
+          "query": "penthouse"
+        }
+      },
+      {
+        "said": "Start playing its music.",
+        "expect": {
+          "operation": "spotify.play",
+          "query": "penthouse"
+        },
+        "note": "its = the artist just searched for; day 2 played 'its music'"
+      },
+      {
+        "said": "Stop this one.",
+        "expect": {
+          "operation": "media",
+          "media": "play_pause"
+        }
+      },
+      {
+        "said": "Search for Benther.",
+        "expect": {
+          "operation": "spotify.search",
+          "query": "benther"
+        },
+        "note": "day 2 searched the web: Cursor was taken as the app in front"
+      },
+      {
+        "said": "Search for Tanfer on Spotify.",
+        "expect": {
+          "operation": "spotify.search",
+          "query": "tanfer"
+        }
+      },
+      {
+        "said": "Uh no, I meant center.",
+        "expect": {
+          "operation": "spotify.search",
+          "query": "center"
+        },
+        "note": "replaces the search, not an app called '…Center'"
+      },
+      {
+        "said": "Search P A N T H E R on Spotify.",
+        "expect": {
+          "operation": "spotify.search",
+          "query": "panther"
+        }
+      },
+      {
+        "said": "play the first song on the screen.",
+        "expect": {
+          "operation": "spotify.play_result",
+          "query": "panther"
+        }
+      },
+      {
+        "said": "play the Panther song which appeared on the screen.",
+        "expect": {
+          "operation": "spotify.play",
+          "query": "panther"
+        }
+      },
+      {
+        "said": "Open cloud code.",
+        "expect": {
+          "operation": "open_app",
+          "app": "Claude"
+        }
+      },
+      {
+        "said": "Type How Are You in plot code.",
+        "expect": {
+          "operation": "claude.prompt",
+          "span": "how are you"
+        },
+        "note": "the words go into Claude Code (not sent)"
+      },
+      {
+        "said": "Type I would like to commit it.",
+        "expect": {
+          "operation": "type_text",
+          "span": "i would like to commit it"
+        }
+      },
+      {
+        "said": "Start a new chat.",
+        "expect": {
+          "operation": "claude.new_chat"
+        }
+      },
+      {
+        "said": "Send the prompt.",
+        "expect": {
+          "decision": "ask"
+        },
+        "note": "no send action yet: must not guess"
+      },
+      {
+        "said": "Open terminal.",
+        "expect": {
+          "operation": "open_app",
+          "app": "Terminal"
+        }
+      },
+      {
+        "said": "Make a new tab.",
+        "expect": {
+          "operation": "terminal.tab_new"
+        }
+      },
+      {
+        "said": "Type command to list",
+        "expect": {
+          "decision": "ask"
+        },
+        "note": "unclear; day 2 offered a new tab and then opened one"
+      },
+      {
+        "said": "Type hello and send.",
+        "expect": {
+          "operation": "type_text",
+          "span": "hello",
+          "decision": "confirm"
+        },
+        "note": "sending waits for confirm"
+      },
+      {
+        "said": "Open a new tab.",
+        "expect": {
+          "operation": "terminal.tab_new"
+        },
+        "note": "Terminal was the app in use, under Cursor"
+      },
+      {
+        "said": "Can you write npm run dev command and send that in the terminal?",
+        "expect": {
+          "operation": "type_text",
+          "span": "npm run dev",
+          "app": "Terminal",
+          "decision": "confirm"
+        }
+      }
+    ]
+  }
+]

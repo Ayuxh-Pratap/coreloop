@@ -1,0 +1,744 @@
+[
+  {
+    "id": "github-morning",
+    "note": "Everyday developer flows on the simulated desktop with the simulated browser inside Brave. Generic, written before the first run. Checking a repo's issues first thing, then back to the editor.",
+    "desktop": {
+      "open": [
+        "Brave",
+        "Visual Studio Code",
+        "Terminal",
+        "Spotify"
+      ],
+      "foreground": "Brave"
+    },
+    "browser": {
+      "page": "github-repo",
+      "app": "Brave"
+    },
+    "turns": [
+      {
+        "said": "open the issues tab",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "Issues 1.1k",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "scroll down a bit",
+        "expect": {
+          "operation": "page.scroll",
+          "amount": "little",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "click the bolt dev server issue",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "~Bolt dev server causes first navigation",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "go back",
+        "expect": {
+          "operation": "page.back",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "show me the closed issues",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "~Closed 24,436",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "open pull requests",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "Pull requests",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "switch to vs code",
+        "expect": {
+          "operation": "focus_app",
+          "app": "Visual Studio Code",
+          "surface": "desktop"
+        }
+      },
+      {
+        "said": "go back to brave",
+        "expect": {
+          "operation": "focus_app",
+          "app": "Brave",
+          "surface": "desktop"
+        }
+      }
+    ]
+  },
+  {
+    "id": "search-and-read",
+    "note": "Searching the web for a tutorial and opening results.",
+    "desktop": {
+      "open": [
+        "Brave",
+        "Visual Studio Code",
+        "Terminal",
+        "Spotify"
+      ],
+      "foreground": "Brave"
+    },
+    "browser": {
+      "page": "example",
+      "app": "Brave"
+    },
+    "turns": [
+      {
+        "said": "search for lumen app router tutorial",
+        "expect": {
+          "operation": "search_web",
+          "span": "lumen app router tutorial",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "click the first result",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "~Routing: Getting Started",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "go back",
+        "expect": {
+          "operation": "page.back",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "open the devs for devs one",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "~DevsForDevs",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "go back",
+        "expect": {
+          "operation": "page.back",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "click the second result",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "The Router - Lumen",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "open a new tab",
+        "expect": {
+          "operation": "page.tab_new",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "go to github dot com",
+        "expect": {
+          "operation": "open_url",
+          "url": "~github.com",
+          "surface": "browser"
+        }
+      }
+    ]
+  },
+  {
+    "id": "docs-lookup",
+    "note": "Reading the docs while coding.",
+    "desktop": {
+      "open": [
+        "Brave",
+        "Visual Studio Code",
+        "Terminal",
+        "Spotify"
+      ],
+      "foreground": "Brave"
+    },
+    "browser": {
+      "page": "docs-array-map",
+      "app": "Brave"
+    },
+    "turns": [
+      {
+        "said": "scroll down",
+        "expect": {
+          "operation": "page.scroll",
+          "direction": "down",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "jump to the examples",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "Examples",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "open filter",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "filter()",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "go back",
+        "expect": {
+          "operation": "page.back",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "open the reduce page",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "reduce()",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "scroll to the top",
+        "expect": {
+          "operation": "page.scroll",
+          "direction": "up",
+          "amount": "end",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "switch to vs code",
+        "expect": {
+          "operation": "focus_app",
+          "app": "Visual Studio Code",
+          "surface": "desktop"
+        }
+      }
+    ]
+  },
+  {
+    "id": "npm-package",
+    "note": "Looking at a package on npm.",
+    "desktop": {
+      "open": [
+        "Brave",
+        "Visual Studio Code",
+        "Terminal",
+        "Spotify"
+      ],
+      "foreground": "Brave"
+    },
+    "browser": {
+      "page": "npm-lumen",
+      "app": "Brave"
+    },
+    "turns": [
+      {
+        "said": "open the versions tab",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "412 Versions",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "open the readme",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "Readme",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "search for react dom",
+        "expect": {
+          "operation": "search_web",
+          "span": "react dom",
+          "plan": "into e12",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "go back",
+        "expect": {
+          "operation": "page.back",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "copy the install command",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "Copy install command line",
+          "surface": "browser"
+        }
+      }
+    ]
+  },
+  {
+    "id": "music-while-browsing",
+    "note": "YouTube in the browser, Spotify on the desktop.",
+    "desktop": {
+      "open": [
+        "Brave",
+        "Visual Studio Code",
+        "Terminal",
+        "Spotify"
+      ],
+      "foreground": "Brave"
+    },
+    "browser": {
+      "page": "youtube-lofi",
+      "app": "Brave"
+    },
+    "turns": [
+      {
+        "said": "play the first video",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "~2 A.M Coding Session",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "pause",
+        "expect": {
+          "operation": "media",
+          "media": "play_pause",
+          "surface": "desktop"
+        }
+      },
+      {
+        "said": "turn it up",
+        "expect": {
+          "operation": "media",
+          "media": "volume_up",
+          "surface": "desktop"
+        }
+      },
+      {
+        "said": "open spotify",
+        "expect": {
+          "operation": "open_app|focus_app",
+          "app": "Spotify",
+          "surface": "desktop"
+        }
+      },
+      {
+        "said": "search for lofi beats",
+        "expect": {
+          "operation": "spotify.search",
+          "query": "lofi beats",
+          "surface": "desktop"
+        }
+      },
+      {
+        "said": "next song",
+        "expect": {
+          "operation": "media",
+          "media": "next",
+          "surface": "desktop"
+        }
+      },
+      {
+        "said": "switch back to the browser",
+        "expect": {
+          "operation": "focus_app|open_app",
+          "app": "Brave",
+          "surface": "desktop"
+        }
+      },
+      {
+        "said": "go back",
+        "expect": {
+          "operation": "page.back",
+          "surface": "browser"
+        }
+      }
+    ]
+  },
+  {
+    "id": "localhost-dev",
+    "note": "Working on my own app on localhost, with the terminal.",
+    "desktop": {
+      "open": [
+        "Brave",
+        "Visual Studio Code",
+        "Terminal",
+        "Spotify"
+      ],
+      "foreground": "Brave"
+    },
+    "browser": {
+      "page": "localhost-dashboard",
+      "app": "Brave"
+    },
+    "turns": [
+      {
+        "said": "open settings",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "Settings",
+          "surface": "browser"
+        },
+        "note": "the page's Settings link, not the Windows Settings app"
+      },
+      {
+        "said": "go to projects",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "Projects",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "click mobile app",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "Mobile app",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "type new onboarding flow into the description",
+        "expect": {
+          "operation": "page.type_into",
+          "item_label": "Description",
+          "span": "new onboarding flow",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "save changes",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "Save changes",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "delete project",
+        "expect": {
+          "decision": "confirm",
+          "operation": "page.click",
+          "item_label": "Delete project",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "cancel",
+        "expect": {
+          "decision": "ignore"
+        }
+      },
+      {
+        "said": "switch to the terminal",
+        "expect": {
+          "operation": "focus_app",
+          "app": "Terminal",
+          "surface": "desktop"
+        }
+      },
+      {
+        "said": "type npm run dev",
+        "expect": {
+          "operation": "type_text",
+          "span": "npm run dev",
+          "surface": "desktop"
+        }
+      },
+      {
+        "said": "press enter",
+        "expect": {
+          "operation": "press_key",
+          "key": "enter",
+          "surface": "desktop"
+        }
+      },
+      {
+        "said": "go back to brave",
+        "expect": {
+          "operation": "focus_app",
+          "app": "Brave",
+          "surface": "desktop"
+        }
+      },
+      {
+        "said": "refresh the page",
+        "expect": {
+          "operation": "page.reload",
+          "surface": "browser"
+        }
+      }
+    ]
+  },
+  {
+    "id": "tabs-and-windows",
+    "note": "Tabs inside the browser, windows on the desktop.",
+    "desktop": {
+      "open": [
+        "Brave",
+        "Visual Studio Code",
+        "Terminal",
+        "Spotify"
+      ],
+      "foreground": "Brave"
+    },
+    "browser": {
+      "page": "news",
+      "app": "Brave"
+    },
+    "turns": [
+      {
+        "said": "open a new tab",
+        "expect": {
+          "operation": "page.tab_new",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "go to youtube",
+        "expect": {
+          "operation": "open_url",
+          "url": "~youtube.com",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "close this tab",
+        "expect": {
+          "decision": "confirm",
+          "operation": "page.tab_close",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "confirm",
+        "expect": {
+          "operation": "page.tab_close",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "next tab",
+        "expect": {
+          "operation": "page.tab_next",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "minimize this window",
+        "expect": {
+          "operation": "window.minimize",
+          "surface": "desktop"
+        }
+      },
+      {
+        "said": "open brave",
+        "expect": {
+          "operation": "open_app|focus_app",
+          "app": "Brave",
+          "surface": "desktop"
+        }
+      },
+      {
+        "said": "maximize it",
+        "expect": {
+          "operation": "window.maximize",
+          "surface": "desktop"
+        }
+      }
+    ]
+  },
+  {
+    "id": "chatter-and-safety",
+    "note": "Thinking out loud, buttons named by their label, and closing things.",
+    "desktop": {
+      "open": [
+        "Brave",
+        "Visual Studio Code",
+        "Terminal",
+        "Spotify"
+      ],
+      "foreground": "Brave"
+    },
+    "browser": {
+      "page": "github-issues",
+      "app": "Brave"
+    },
+    "turns": [
+      {
+        "said": "hmm let me think",
+        "expect": {
+          "decision": "ignore|wait"
+        }
+      },
+      {
+        "said": "what was i doing",
+        "expect": {
+          "decision": "ignore|ask"
+        }
+      },
+      {
+        "said": "new issue",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "New issue",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "go back",
+        "expect": {
+          "operation": "page.back",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "close brave",
+        "expect": {
+          "decision": "confirm",
+          "operation": "close_app",
+          "app": "Brave",
+          "surface": "desktop"
+        }
+      },
+      {
+        "said": "cancel",
+        "expect": {
+          "decision": "ignore"
+        }
+      },
+      {
+        "said": "sign in",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "Sign in",
+          "surface": "browser"
+        }
+      }
+    ]
+  },
+  {
+    "id": "youtube-from-editor",
+    "note": "In the editor, asking for something on YouTube.",
+    "desktop": {
+      "open": [
+        "Brave",
+        "Visual Studio Code",
+        "Terminal",
+        "Spotify"
+      ],
+      "foreground": "Visual Studio Code"
+    },
+    "browser": {
+      "page": "example",
+      "app": "Brave"
+    },
+    "turns": [
+      {
+        "said": "search youtube for lofi beats",
+        "expect": {
+          "operation": "page.search_site",
+          "query": "lofi beats",
+          "plan": "youtube.com/results",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "click the first video",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "~2 A.M Coding Session",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "pause the video",
+        "expect": {
+          "operation": "media",
+          "media": "play_pause",
+          "surface": "desktop"
+        }
+      },
+      {
+        "said": "back to vs code",
+        "expect": {
+          "operation": "focus_app",
+          "app": "Visual Studio Code",
+          "surface": "desktop"
+        }
+      }
+    ]
+  },
+  {
+    "id": "browser-by-name",
+    "note": "Spotify in front; naming the browser to act in it.",
+    "desktop": {
+      "open": [
+        "Brave",
+        "Visual Studio Code",
+        "Terminal",
+        "Spotify"
+      ],
+      "foreground": "Spotify"
+    },
+    "browser": {
+      "page": "ddg-lumen",
+      "app": "Brave"
+    },
+    "turns": [
+      {
+        "said": "click the first result in the browser",
+        "expect": {
+          "operation": "page.click",
+          "item_label": "~Routing: Getting Started",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "skip this song",
+        "expect": {
+          "operation": "media",
+          "media": "next",
+          "surface": "desktop"
+        }
+      },
+      {
+        "said": "go back in the browser",
+        "expect": {
+          "operation": "page.back",
+          "surface": "browser"
+        }
+      },
+      {
+        "said": "search for lumen caching on brave",
+        "expect": {
+          "operation": "search_web",
+          "span": "lumen caching",
+          "surface": "browser"
+        }
+      }
+    ]
+  }
+]

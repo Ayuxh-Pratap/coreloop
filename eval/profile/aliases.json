@@ -1,0 +1,15 @@
+{
+  "note": "The profile the evals and tests run with: a fixture, so results are the same on every machine. These are mishearings of product names that the eval sets contain (from real speech-to-text runs).",
+  "phrases": {
+    "claude code": ["clawed code", "claw code", "cloud code", "claud code", "clod code", "clawd code", "cloth code", "crawled code", "plot code"],
+    "vs code": ["v s code", "vscode", "visual studio code"],
+    "github": ["get hub", "git hub", "gethub"],
+    "next track": ["next term"],
+    "claude app": ["clawed app", "claud app", "clawd app"],
+    "claude terminal": ["clawed terminal", "claud terminal", "clawd terminal"],
+    "claude to": ["clawed to", "claud to", "clawd to"]
+  },
+  "starts": {
+    "close": ["nose"]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "coreloop-engine",
+  "version": "0.1.0",
+  "description": "A local, surface-neutral voice engine: what someone says, code first, a small local model only picks, code checks the pick, and one safe action is planned and run by a surface.",
+  "license": "Apache-2.0",
+  "author": "Ayush Pratap Singh",
+  "repository": { "type": "git", "url": "git+https://github.com/Ayuxh-Pratap/coreloop.git", "directory": "packages/engine" },
+  "homepage": "https://github.com/Ayuxh-Pratap/coreloop#readme",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md", "LICENSE", "NOTICE"],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": ["voice", "voice-control", "local-first", "speech", "agent", "intent", "small-model"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  }
+}

@@ -1,0 +1,61 @@
+[
+  {
+    "id": "review-a-project",
+    "note": "Held out, written after the fixes to nested.json and before its first run. A project review in my app, with the desktop around it.",
+    "desktop": { "open": ["Brave", "Visual Studio Code", "Terminal", "Spotify"], "foreground": "Brave" },
+    "browser": { "page": "localhost-projects", "app": "Brave" },
+    "webapp": true,
+    "turns": [
+      { "said": "open api migration", "expect": { "decision": "act", "plan": "projects/3" } },
+      { "said": "change the project name to api v2 migration", "expect": { "operation": "acme.rename_project", "name": "api v2 migration", "surface": "web app" } },
+      { "said": "go back to the project list", "expect": { "decision": "act", "plan": "projects" } },
+      { "said": "open website redesign", "expect": { "decision": "act", "plan": "projects/1" } },
+      { "said": "turn on light mode", "expect": { "operation": "acme.theme", "theme": "light" } },
+      { "said": "switch to the terminal", "expect": { "operation": "focus_app|open_app", "app": "Terminal", "surface": "desktop" } }
+    ]
+  },
+  {
+    "id": "team-and-settings",
+    "note": "People on my team page, my settings, and a secret field.",
+    "desktop": { "open": ["Brave", "Visual Studio Code", "Spotify"], "foreground": "Brave" },
+    "browser": { "page": "localhost-dashboard", "app": "Brave" },
+    "webapp": true,
+    "turns": [
+      { "said": "go to team", "expect": { "decision": "act", "plan": "team" } },
+      { "said": "open rahul", "expect": { "item_label": "Rahul" } },
+      { "said": "take me to preferences", "expect": { "decision": "act", "plan": "settings" } },
+      { "said": "put my pin in the password box", "expect": { "decision": "ask|ignore|wait" } },
+      { "said": "type rahul@example.com into the email", "expect": { "operation": "acme.type_into", "item_label": "Email" } },
+      { "said": "pause the music", "expect": { "operation": "media", "surface": "desktop" } }
+    ]
+  },
+  {
+    "id": "web-and-app",
+    "note": "The browser's tabs and history around my app; a site search from my app.",
+    "desktop": { "open": ["Brave", "Visual Studio Code"], "foreground": "Brave" },
+    "browser": { "page": "localhost-dashboard", "app": "Brave" },
+    "webapp": true,
+    "turns": [
+      { "said": "previous tab", "expect": { "operation": "page.tab_previous", "surface": "browser" } },
+      { "said": "refresh", "expect": { "operation": "page.reload", "surface": "browser" } },
+      { "said": "search youtube for react server components", "expect": { "operation": "page.search_site", "surface": "browser" } },
+      { "said": "go back", "expect": { "operation": "page.back", "surface": "browser" } },
+      { "said": "create a new project", "expect": { "operation": "acme.new_project", "surface": "web app" } },
+      { "said": "close brave", "expect": { "decision": "confirm", "operation": "close_app", "app": "Brave" } },
+      { "said": "cancel", "expect": { "decision": "ignore" } }
+    ]
+  },
+  {
+    "id": "elsewhere-then-back",
+    "note": "My app's pages don't count while Spotify is in front.",
+    "desktop": { "open": ["Brave", "Visual Studio Code", "Spotify"], "foreground": "Spotify" },
+    "browser": { "page": "localhost-dashboard", "app": "Brave" },
+    "webapp": true,
+    "turns": [
+      { "said": "search for lofi beats", "expect": { "operation": "spotify.search" } },
+      { "said": "open brave", "expect": { "operation": "focus_app|open_app", "app": "Brave", "surface": "desktop" } },
+      { "said": "open the docs", "expect": { "decision": "act", "plan": "docs" } },
+      { "said": "open api reference", "expect": { "item_label": "API reference" } }
+    ]
+  }
+]

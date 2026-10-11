@@ -1,0 +1,26 @@
+{"id":"ho-open-01","said":"launch discord please","expect":{"operation":"open_app","app":"Discord"}}
+{"id":"ho-open-02","said":"pull up chrome","expect":{"operation":"open_app","app":"Google Chrome"}}
+{"id":"ho-open-03","said":"open up notepad","expect":{"operation":"open_app","app":"Notepad"}}
+{"id":"ho-open-04","said":"get vs code open","expect":{"operation":"open_app","app":"Visual Studio Code"}}
+{"id":"ho-focus-01","said":"switch over to spotify","expect":{"operation":"focus_app","app":"Spotify"}}
+{"id":"ho-close-01","said":"close discord","expect":{"operation":"close_app","app":"Discord"},"tags":["destructive"]}
+{"id":"ho-close-02","said":"shut spotify","expect":{"operation":"close_app","app":"Spotify"},"tags":["destructive"]}
+{"id":"ho-close-03","said":"can you close notepad","expect":{"operation":"close_app","app":"Notepad"},"tags":["destructive"]}
+{"id":"ho-paste-01","said":"paste see you at six","expect":{"operation":"paste_text","span":"see you at six"}}
+{"id":"ho-type-01","said":"type my name is ayush","expect":{"operation":"type_text","span":"my name is ayush"}}
+{"id":"ho-claude-01","said":"send write tests for the parser to claude code","expect":{"operation":"claude.prompt","span":"write tests for the parser","claude_target":"app"}}
+{"id":"ho-claude-02","said":"ask claude to summarize this file","expect":{"operation":"claude.prompt","span":"summarize this file","claude_target":"app"}}
+{"id":"ho-claude-03","said":"tell claude code in the terminal to run the build","expect":{"operation":"claude.prompt","span":"run the build","claude_target":"terminal"}}
+{"id":"ho-media-01","said":"skip this song","expect":{"operation":"media","media":"next"}}
+{"id":"ho-media-02","said":"turn it down","expect":{"operation":"media","media":"volume_down"}}
+{"id":"ho-media-03","said":"pause","expect":{"operation":"media","media":"play_pause"}}
+{"id":"ho-url-01","said":"go to stack overflow","expect":{"operation":"open_url","url":"stackoverflow.com"}}
+{"id":"ho-url-02","said":"open example dot org","expect":{"operation":"open_url","url":"example.org"}}
+{"id":"ho-search-01","said":"search for flights to goa","expect":{"operation":"search_web","span":"flights to goa"}}
+{"id":"ho-search-02","said":"look up typescript enums","expect":{"operation":"search_web","span":"typescript enums"}}
+{"id":"ho-key-01","said":"hit enter","expect":{"operation":"press_key","key":"enter"}}
+{"id":"ho-confirm-01","said":"ok go ahead","expect":{"operation":"confirm"}}
+{"id":"ho-cancel-01","said":"nah forget it","expect":{"operation":"cancel"}}
+{"id":"ho-chat-01","said":"I'm so tired today","expect":{"operation":"none"},"tags":["ignore"]}
+{"id":"ho-chat-02","said":"did you see the game last night","expect":{"operation":"none"},"tags":["ignore"]}
+{"id":"ho-frag-01","said":"switch over to the","expect":{},"tags":["fragment"]}

@@ -1,0 +1,13 @@
+{
+  "note": "Fixture desktop for the eval: which windows are open and which one is in front. Apps come from eval/apps.json.",
+  "windows": [
+    { "hwnd": 1001, "pid": 101, "process": "chrome", "title": "Inbox - Google Chrome" },
+    { "hwnd": 1002, "pid": 102, "process": "Spotify", "title": "Spotify Premium" },
+    { "hwnd": 1003, "pid": 103, "process": "Discord", "title": "#general - Discord" },
+    { "hwnd": 1004, "pid": 104, "process": "Notepad", "title": "notes.txt - Notepad" },
+    { "hwnd": 1005, "pid": 105, "process": "WindowsTerminal", "title": "Windows PowerShell" },
+    { "hwnd": 1006, "pid": 106, "process": "Code", "title": "coreloop - Visual Studio Code" },
+    { "hwnd": 1007, "pid": 107, "process": "claude", "title": "Claude" }
+  ],
+  "foreground": { "hwnd": 1006, "pid": 106, "process": "Code", "title": "coreloop - Visual Studio Code" }
+}

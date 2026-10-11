@@ -1,0 +1,30 @@
+# The engine on every push and pull request: types (and the engine's no-Node boundary), the tests, the package, and
+# every eval set without the model (the model needs a GPU, so its runs stay local). Windows, like the machine the
+# native modules for voice are built for.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  engine:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run typecheck:engine
+      - run: npm test
+      - run: npm run check:package
+      - name: Every eval set, without the model
+        shell: bash
+        run: |
+          for set in demo daily daily-holdout workflow workflow-holdout browser nested nested-holdout desktop desktop-holdout; do
+            npm run eval -- "$set" --no-model
+          done

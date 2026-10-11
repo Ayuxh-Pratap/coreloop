@@ -1,0 +1,70 @@
+{"id":"open-01","said":"open spotify","expect":{"operation":"open_app","is_command":"command","complete":"finished","app":"Spotify"}}
+{"id":"open-02","said":"launch chrome","expect":{"operation":"open_app","is_command":"command","complete":"finished","app":"Google Chrome"}}
+{"id":"open-03","said":"start vs code","expect":{"operation":"open_app","is_command":"command","complete":"finished","app":"Visual Studio Code"}}
+{"id":"open-04","said":"open the calculator","expect":{"operation":"open_app","is_command":"command","complete":"finished","app":"Calculator"}}
+{"id":"open-05","said":"can you open discord","expect":{"operation":"open_app","is_command":"command","complete":"finished","app":"Discord"}}
+{"id":"open-06","said":"open notepad please","expect":{"operation":"open_app","is_command":"command","complete":"finished","app":"Notepad"}}
+{"id":"open-07","said":"fire up obs","expect":{"operation":"open_app","is_command":"command","complete":"finished","app":"OBS Studio"}}
+{"id":"focus-01","said":"switch to chrome","expect":{"operation":"focus_app","is_command":"command","complete":"finished","app":"Google Chrome"}}
+{"id":"focus-02","said":"go back to vs code","expect":{"operation":"focus_app","is_command":"command","complete":"finished","app":"Visual Studio Code"}}
+{"id":"focus-03","said":"bring up spotify","expect":{"operation":"focus_app","is_command":"command","complete":"finished","app":"Spotify"}}
+{"id":"focus-04","said":"show me the terminal","expect":{"operation":"focus_app","is_command":"command","complete":"finished","app":"Terminal"}}
+{"id":"focus-05","said":"switch to discord","expect":{"operation":"focus_app","is_command":"command","complete":"finished","app":"Discord"}}
+{"id":"close-01","said":"close chrome","expect":{"operation":"close_app","is_command":"command","complete":"finished","app":"Google Chrome"},"tags":["destructive"]}
+{"id":"close-02","said":"quit spotify","expect":{"operation":"close_app","is_command":"command","complete":"finished","app":"Spotify"},"tags":["destructive"]}
+{"id":"close-03","said":"close this window","expect":{"operation":"close_app","is_command":"command","complete":"finished"},"tags":["destructive"]}
+{"id":"close-04","said":"kill discord","expect":{"operation":"close_app","is_command":"command","complete":"finished","app":"Discord"},"tags":["destructive"]}
+{"id":"close-05","said":"exit notepad","expect":{"operation":"close_app","is_command":"command","complete":"finished","app":"Notepad"},"tags":["destructive"]}
+{"id":"claude-01","said":"paste refactor the auth module into claude code","expect":{"operation":"claude.prompt","is_command":"command","complete":"finished","span":"refactor the auth module","claude_target":"app"}}
+{"id":"claude-02","said":"ask claude code to fix the failing tests","expect":{"operation":"claude.prompt","is_command":"command","complete":"finished","span":"fix the failing tests","claude_target":"app"}}
+{"id":"claude-03","said":"tell claude to write a readme for this project","expect":{"operation":"claude.prompt","is_command":"command","complete":"finished","span":"write a readme for this project","claude_target":"app"}}
+{"id":"claude-04","said":"send add dark mode to claude code in the terminal","expect":{"operation":"claude.prompt","is_command":"command","complete":"finished","span":"add dark mode","claude_target":"terminal"}}
+{"id":"claude-05","said":"paste run the linter into claude code terminal","expect":{"operation":"claude.prompt","is_command":"command","complete":"finished","span":"run the linter","claude_target":"terminal"}}
+{"id":"claude-06","said":"put explain this error into clawed code","expect":{"operation":"claude.prompt","is_command":"command","complete":"finished","span":"explain this error","claude_target":"app"},"tags":["stt-slip"]}
+{"id":"paste-01","said":"paste hello world","expect":{"operation":"paste_text","is_command":"command","complete":"finished","span":"hello world"}}
+{"id":"paste-02","said":"paste see you tomorrow","expect":{"operation":"paste_text","is_command":"command","complete":"finished","span":"see you tomorrow"}}
+{"id":"paste-03","said":"paste thanks for the update","expect":{"operation":"paste_text","is_command":"command","complete":"finished","span":"thanks for the update"}}
+{"id":"paste-04","said":"paste in the meeting is at five","expect":{"operation":"paste_text","is_command":"command","complete":"finished","span":"the meeting is at five"}}
+{"id":"type-01","said":"type hello world","expect":{"operation":"type_text","is_command":"command","complete":"finished","span":"hello world"}}
+{"id":"type-02","said":"type meeting moved to friday","expect":{"operation":"type_text","is_command":"command","complete":"finished","span":"meeting moved to friday"}}
+{"id":"type-03","said":"write thanks a lot","expect":{"operation":"type_text","is_command":"command","complete":"finished","span":"thanks a lot"}}
+{"id":"type-04","said":"type npm run dev","expect":{"operation":"type_text","is_command":"command","complete":"finished","span":"npm run dev"}}
+{"id":"key-01","said":"press enter","expect":{"operation":"press_key","is_command":"command","complete":"finished","key":"enter"}}
+{"id":"key-02","said":"hit escape","expect":{"operation":"press_key","is_command":"command","complete":"finished","key":"escape"}}
+{"id":"key-03","said":"press tab","expect":{"operation":"press_key","is_command":"command","complete":"finished","key":"tab"}}
+{"id":"key-04","said":"hit backspace","expect":{"operation":"press_key","is_command":"command","complete":"finished","key":"backspace"}}
+{"id":"media-01","said":"pause the music","expect":{"operation":"media","is_command":"command","complete":"finished","media":"play_pause"}}
+{"id":"media-02","said":"next song","expect":{"operation":"media","is_command":"command","complete":"finished","media":"next"}}
+{"id":"media-03","said":"turn the volume up","expect":{"operation":"media","is_command":"command","complete":"finished","media":"volume_up"}}
+{"id":"media-04","said":"mute","expect":{"operation":"media","is_command":"command","complete":"finished","media":"mute"}}
+{"id":"media-05","said":"play","expect":{"operation":"media","is_command":"command","complete":"finished","media":"play_pause"}}
+{"id":"url-01","said":"go to youtube","expect":{"operation":"open_url","is_command":"command","complete":"finished","url":"youtube.com"}}
+{"id":"url-02","said":"open github dot com","expect":{"operation":"open_url","is_command":"command","complete":"finished","url":"github.com"}}
+{"id":"url-03","said":"open gmail","expect":{"operation":"open_url","is_command":"command","complete":"finished","url":"mail.google.com"}}
+{"id":"url-04","said":"take me to reddit","expect":{"operation":"open_url","is_command":"command","complete":"finished","url":"reddit.com"}}
+{"id":"url-05","said":"open localhost 3000","expect":{"operation":"open_url","is_command":"command","complete":"finished","url":"localhost:3000"}}
+{"id":"search-01","said":"search for best pizza near me","expect":{"operation":"search_web","is_command":"command","complete":"finished","span":"best pizza near me"}}
+{"id":"search-02","said":"google how to center a div","expect":{"operation":"search_web","is_command":"command","complete":"finished","span":"how to center a div"}}
+{"id":"search-03","said":"look up the weather in delhi","expect":{"operation":"search_web","is_command":"command","complete":"finished","span":"the weather in delhi"}}
+{"id":"search-04","said":"search the web for typescript generics","expect":{"operation":"search_web","is_command":"command","complete":"finished","span":"typescript generics"}}
+{"id":"confirm-01","said":"yes do it","expect":{"operation":"confirm","is_command":"command","complete":"finished"}}
+{"id":"confirm-02","said":"confirm","expect":{"operation":"confirm","is_command":"command","complete":"finished"}}
+{"id":"confirm-03","said":"go ahead","expect":{"operation":"confirm","is_command":"command","complete":"finished"}}
+{"id":"cancel-01","said":"cancel","expect":{"operation":"cancel","is_command":"command","complete":"finished"}}
+{"id":"cancel-02","said":"never mind","expect":{"operation":"cancel","is_command":"command","complete":"finished"}}
+{"id":"cancel-03","said":"no don't do that","expect":{"operation":"cancel","is_command":"command","complete":"finished"}}
+{"id":"chat-01","said":"so anyway I think we should get lunch","expect":{"operation":"none","is_command":"not_command"},"tags":["ignore"]}
+{"id":"chat-02","said":"hmm let me think","expect":{"operation":"none","is_command":"not_command"},"tags":["ignore"]}
+{"id":"chat-03","said":"um okay so","expect":{"operation":"none","is_command":"not_command"},"tags":["ignore"]}
+{"id":"chat-04","said":"that movie was really good","expect":{"operation":"none","is_command":"not_command"},"tags":["ignore"]}
+{"id":"chat-05","said":"he said he'll call me later","expect":{"operation":"none","is_command":"not_command"},"tags":["ignore"]}
+{"id":"chat-06","said":"wait what was I saying","expect":{"operation":"none","is_command":"not_command"},"tags":["ignore"]}
+{"id":"frag-01","said":"open the","expect":{"complete":"unfinished"},"tags":["fragment"]}
+{"id":"frag-02","said":"paste into","expect":{"complete":"unfinished"},"tags":["fragment"]}
+{"id":"frag-03","said":"go to","expect":{"complete":"unfinished"},"tags":["fragment"]}
+{"id":"frag-04","said":"switch to the","expect":{"complete":"unfinished"},"tags":["fragment"]}
+{"id":"and-01","said":"type salt and pepper","expect":{"operation":"type_text","span":"salt and pepper"}}
+{"id":"and-02","said":"search for rock and roll","expect":{"operation":"search_web","span":"rock and roll"}}
+{"id":"and-03","said":"tell claude to open the file and run the tests","expect":{"operation":"claude.prompt","span":"open the file and run the tests","claude_target":"app"}}
+{"id":"and-04","said":"go to youtube and search for lofi beats","expect":{"decision":"ask"},"tags":["compound"]}
+{"id":"filler-01","said":"paste thanks uh for the update","expect":{"operation":"paste_text","span":"thanks for the update"}}

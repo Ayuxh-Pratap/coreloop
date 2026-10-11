@@ -1,0 +1,21 @@
+{
+  "note": "Fixture: the sites the eval sets name without a domain.",
+  "sites": {
+    "youtube": "youtube.com",
+    "gmail": "mail.google.com",
+    "google mail": "mail.google.com",
+    "google": "google.com",
+    "github": "github.com",
+    "reddit": "reddit.com",
+    "wikipedia": "wikipedia.org",
+    "hacker news": "news.ycombinator.com",
+    "twitter": "x.com",
+    "linkedin": "linkedin.com",
+    "google drive": "drive.google.com",
+    "google calendar": "calendar.google.com",
+    "chatgpt": "chatgpt.com",
+    "netflix": "netflix.com",
+    "amazon": "amazon.com",
+    "stack overflow": "stackoverflow.com"
+  }
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "id": "my-app-navigation",
+    "note": "Written before the first run: three surfaces. The simulated desktop, the simulated browser inside Brave, and my own web app on localhost:3000 in its tab. Moving around my app by its pages and projects, then its own actions.",
+    "desktop": { "open": ["Brave", "Visual Studio Code", "Terminal", "Spotify"], "foreground": "Brave" },
+    "browser": { "page": "localhost-dashboard", "app": "Brave" },
+    "webapp": true,
+    "turns": [
+      { "said": "open projects", "expect": { "decision": "act", "plan": "projects" } },
+      { "said": "open the mobile app project", "expect": { "decision": "act", "plan": "projects/2" } },
+      { "said": "rename this project to mobile app v2", "expect": { "operation": "acme.rename_project", "name": "mobile app v2", "surface": "web app" } },
+      { "said": "archive this project", "expect": { "decision": "confirm", "operation": "acme.archive_project" } },
+      { "said": "cancel", "expect": { "decision": "ignore" } },
+      { "said": "go back to the dashboard", "expect": { "decision": "act", "plan": "dashboard" } },
+      { "said": "switch to dark mode", "expect": { "operation": "acme.theme", "theme": "dark", "surface": "web app" } }
+    ]
+  },
+  {
+    "id": "app-and-desktop",
+    "note": "My app's settings page wins over the desktop's Settings while I'm in my app; a password field is never typed into; then back out to the desktop.",
+    "desktop": { "open": ["Brave", "Visual Studio Code", "Terminal", "Spotify"], "foreground": "Brave" },
+    "browser": { "page": "localhost-dashboard", "app": "Brave" },
+    "webapp": true,
+    "turns": [
+      { "said": "new project called billing revamp", "expect": { "operation": "acme.new_project", "name": "billing revamp", "surface": "web app" } },
+      { "said": "open settings", "expect": { "decision": "act", "plan": "settings", "surface": "web app" } },
+      { "said": "type rahul into the display name", "expect": { "operation": "acme.type_into", "item_label": "Display name", "span": "rahul" } },
+      { "said": "type hunter2 into the password", "expect": { "decision": "ask|ignore|wait" } },
+      { "said": "save changes", "expect": { "item_label": "Save changes" } },
+      { "said": "switch to vs code", "expect": { "operation": "focus_app|open_app", "app": "Visual Studio Code", "surface": "desktop" } },
+      { "said": "go back to brave", "expect": { "operation": "focus_app|open_app", "app": "Brave", "surface": "desktop" } }
+    ]
+  },
+  {
+    "id": "page-and-app-search",
+    "note": "A web search from my app goes to the browser; my app's team page and its people.",
+    "desktop": { "open": ["Brave", "Visual Studio Code", "Terminal", "Spotify"], "foreground": "Brave" },
+    "browser": { "page": "localhost-dashboard", "app": "Brave" },
+    "webapp": true,
+    "turns": [
+      { "said": "search for next.js server actions", "expect": { "operation": "search_web", "surface": "browser" } },
+      { "said": "go back", "expect": { "operation": "page.back", "surface": "browser" } },
+      { "said": "open the team page", "expect": { "decision": "act", "plan": "team" } },
+      { "said": "click sam carter", "expect": { "item_label": "Sam Carter" } },
+      { "said": "remove member", "expect": { "decision": "confirm", "item_label": "Remove member" } },
+      { "said": "no", "expect": { "decision": "ignore" } }
+    ]
+  },
+  {
+    "id": "browser-around-my-app",
+    "note": "The browser's own actions while my app is in front, my app's docs, and the desktop's music.",
+    "desktop": { "open": ["Brave", "Visual Studio Code", "Terminal", "Spotify"], "foreground": "Brave" },
+    "browser": { "page": "localhost-dashboard", "app": "Brave" },
+    "webapp": true,
+    "turns": [
+      { "said": "open a new tab", "expect": { "operation": "page.tab_new", "surface": "browser" } },
+      { "said": "next tab", "expect": { "operation": "page.tab_next", "surface": "browser" } },
+      { "said": "reload the page", "expect": { "operation": "page.reload", "surface": "browser" } },
+      { "said": "open the docs", "expect": { "decision": "act", "plan": "docs" } },
+      { "said": "open getting started", "expect": { "item_label": "Getting started" } },
+      { "said": "play some music", "expect": { "operation": "media", "surface": "desktop" } },
+      { "said": "next song", "expect": { "operation": "media", "media": "next", "surface": "desktop" } }
+    ]
+  },
+  {
+    "id": "close-things",
+    "note": "Destructive actions at every level wait for a spoken confirm.",
+    "desktop": { "open": ["Brave", "Visual Studio Code", "Terminal", "Spotify"], "foreground": "Brave" },
+    "browser": { "page": "localhost-project", "app": "Brave" },
+    "webapp": true,
+    "turns": [
+      { "said": "delete this project", "expect": { "decision": "confirm", "operation": "acme.delete_project" } },
+      { "said": "confirm", "expect": { "decision": "act", "operation": "acme.delete_project", "surface": "web app" } },
+      { "said": "close this tab", "expect": { "decision": "confirm", "operation": "page.tab_close" } },
+      { "said": "cancel", "expect": { "decision": "ignore" } },
+      { "said": "close spotify", "expect": { "decision": "confirm", "operation": "close_app", "app": "Spotify" } },
+      { "said": "cancel", "expect": { "decision": "ignore" } }
+    ]
+  },
+  {
+    "id": "from-the-editor",
+    "note": "With the editor in front my app isn't where I am: \"settings\" is the desktop's. Once Brave is back in front, my app's pages count again.",
+    "desktop": { "open": ["Brave", "Visual Studio Code", "Terminal", "Spotify"], "foreground": "Visual Studio Code" },
+    "browser": { "page": "localhost-dashboard", "app": "Brave" },
+    "webapp": true,
+    "turns": [
+      { "said": "open settings", "expect": { "operation": "open_app", "app": "Settings", "surface": "desktop" } },
+      { "said": "go back to vs code", "expect": { "operation": "focus_app|open_app", "app": "Visual Studio Code", "surface": "desktop" } },
+      { "said": "switch to brave", "expect": { "operation": "focus_app|open_app", "app": "Brave", "surface": "desktop" } },
+      { "said": "open projects", "expect": { "decision": "act", "plan": "projects" } }
+    ]
+  }
+]

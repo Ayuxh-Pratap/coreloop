@@ -1,0 +1,21 @@
+{
+  "//": "The engine, checked as browser code: no Node types, only what a browser has. npm run typecheck:engine",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": [],
+    "lib": [
+      "ES2024",
+      "DOM"
+    ]
+  },
+  "include": [
+    "src/index.ts",
+    "src/core",
+    "src/skills",
+    "src/profile/profile.ts",
+    "src/surface",
+    "src/live/actor.ts",
+    "src/backends/systemone.ts",
+    "src/backends/codeonly.ts"
+  ]
+}

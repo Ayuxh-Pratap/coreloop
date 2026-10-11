@@ -1,0 +1,24 @@
+node_modules/
+runs/
+models/
+.env
+.env.*
+!.env.example
+*.log
+.venv*/
+.models/
+.venv-models/
+eval/audio/recordings/
+/journal/
+
+# the engine package build (npm run build:engine)
+packages/*/dist/
+
+# development notes: kept on this machine, not published
+/CLAUDE.md
+/docs/*.md
+/docs/research/
+
+# my own data, never published: my profile (the evals use eval/profile/) and my personal eval set
+/profile/
+/eval/personal.jsonl

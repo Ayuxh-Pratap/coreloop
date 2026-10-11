@@ -1,0 +1,849 @@
+[
+  {
+    "raw": "Um, can you close Chrome?",
+    "text": "close chrome",
+    "fixes": [],
+    "codeOnly": true,
+    "target": null,
+    "skill": false,
+    "model": null,
+    "outcome": {
+      "decision": "confirm",
+      "operation": "close_app",
+      "slots": {
+        "app": "Google Chrome",
+        "app_id": "Chrome"
+      },
+      "reason": "code: \"close\" + installed app \"Google Chrome\""
+    },
+    "plan": {
+      "summary": "close \"Inbox - Google Chrome\"",
+      "steps": [
+        "close \"Inbox - Google Chrome\""
+      ],
+      "shows": null
+    }
+  },
+  {
+    "raw": "Put explain this error into clawed code.",
+    "text": "put explain this error into claude code",
+    "fixes": [
+      "clawed code → claude code"
+    ],
+    "codeOnly": true,
+    "target": null,
+    "skill": true,
+    "model": null,
+    "outcome": {
+      "decision": "act",
+      "operation": "claude.prompt",
+      "slots": {
+        "span": "explain this error",
+        "claude_target": "app",
+        "app": "Claude"
+      },
+      "reason": "code: \"(paste|put|send|type|write|give) [in] {span} (into|to|in|on) claude [code] [app|desktop] [in the app|on the app]\""
+    },
+    "plan": {
+      "summary": "bring Claude to the front and paste \"explain this error\" (not sent)",
+      "steps": [
+        "focus \"Claude\"",
+        "wait 400 ms",
+        "paste \"explain this error\" (no Enter)"
+      ],
+      "shows": "Claude"
+    }
+  },
+  {
+    "raw": "Mute.",
+    "text": "mute",
+    "fixes": [],
+    "codeOnly": true,
+    "target": null,
+    "skill": false,
+    "model": null,
+    "outcome": {
+      "decision": "act",
+      "operation": "media",
+      "slots": {
+        "media": "mute"
+      },
+      "reason": "code: media phrase"
+    },
+    "plan": {
+      "summary": "media: mute",
+      "steps": [
+        "keys volume_mute"
+      ],
+      "shows": null
+    }
+  },
+  {
+    "raw": "go to",
+    "text": "go to",
+    "fixes": [],
+    "codeOnly": true,
+    "target": null,
+    "skill": false,
+    "model": null,
+    "outcome": {
+      "decision": "wait",
+      "reason": "ends on \"to\""
+    },
+    "plan": null
+  },
+  {
+    "raw": "so anyway I think we should get lunch",
+    "text": "anyway i think we should get lunch",
+    "fixes": [],
+    "codeOnly": false,
+    "target": null,
+    "skill": false,
+    "model": {
+      "questions": [
+        "operation",
+        "complete"
+      ],
+      "tokens": 385,
+      "ms": 122,
+      "answers": {
+        "operation": [
+          [
+            "none",
+            52
+          ],
+          [
+            "press_key",
+            16.4
+          ],
+          [
+            "confirm",
+            10.1
+          ]
+        ],
+        "complete": [
+          [
+            "finished",
+            73.7
+          ],
+          [
+            "unfinished",
+            26.3
+          ]
+        ]
+      }
+    },
+    "outcome": {
+      "decision": "ignore",
+      "reason": "model: not a command"
+    },
+    "plan": null
+  },
+  {
+    "raw": "open gmail",
+    "text": "open gmail",
+    "fixes": [],
+    "codeOnly": false,
+    "target": null,
+    "skill": false,
+    "model": {
+      "questions": [
+        "operation",
+        "complete"
+      ],
+      "tokens": 379,
+      "ms": 120,
+      "answers": {
+        "operation": [
+          [
+            "open_url",
+            46.2
+          ],
+          [
+            "open_app",
+            40.9
+          ],
+          [
+            "search_web",
+            4.3
+          ]
+        ],
+        "complete": [
+          [
+            "finished",
+            81.1
+          ],
+          [
+            "unfinished",
+            18.9
+          ]
+        ]
+      }
+    },
+    "outcome": {
+      "decision": "act",
+      "operation": "open_url",
+      "slots": {
+        "url": "mail.google.com"
+      },
+      "reason": "code: \"mail.google.com\" is a site → open_url (model: open_app 41%, open_url 46%)"
+    },
+    "plan": {
+      "summary": "open https://mail.google.com",
+      "steps": [
+        "open https://mail.google.com"
+      ],
+      "shows": null
+    }
+  },
+  {
+    "raw": "fire up obs",
+    "text": "fire up obs",
+    "fixes": [],
+    "codeOnly": true,
+    "target": null,
+    "skill": false,
+    "model": null,
+    "outcome": {
+      "decision": "act",
+      "operation": "open_app",
+      "slots": {
+        "app": "OBS Studio",
+        "app_id": "fixture.obs-studio"
+      },
+      "reason": "code: \"fire up\" + installed app \"OBS Studio\""
+    },
+    "plan": {
+      "summary": "launch OBS Studio",
+      "steps": [
+        "launch OBS Studio"
+      ],
+      "shows": "OBS Studio"
+    }
+  },
+  {
+    "raw": "type meeting moved to friday",
+    "text": "type meeting moved to friday",
+    "fixes": [],
+    "codeOnly": false,
+    "target": null,
+    "skill": false,
+    "model": {
+      "questions": [
+        "operation",
+        "complete"
+      ],
+      "tokens": 382,
+      "ms": 121,
+      "answers": {
+        "operation": [
+          [
+            "type_text",
+            39.4
+          ],
+          [
+            "none",
+            19
+          ],
+          [
+            "confirm",
+            14.1
+          ]
+        ],
+        "complete": [
+          [
+            "finished",
+            88.7
+          ],
+          [
+            "unfinished",
+            11.3
+          ]
+        ]
+      }
+    },
+    "outcome": {
+      "decision": "act",
+      "operation": "type_text",
+      "slots": {
+        "span": "meeting moved to friday"
+      },
+      "reason": "model: type_text 39%"
+    },
+    "plan": {
+      "summary": "type \"meeting moved to friday\"",
+      "steps": [
+        "type \"meeting moved to friday\" (no Enter)"
+      ],
+      "shows": null
+    }
+  },
+  {
+    "raw": "send add dark mode to claude code in the terminal",
+    "text": "send add dark mode to claude code in the terminal",
+    "fixes": [],
+    "codeOnly": true,
+    "target": null,
+    "skill": true,
+    "model": null,
+    "outcome": {
+      "decision": "act",
+      "operation": "claude.prompt",
+      "slots": {
+        "span": "add dark mode",
+        "claude_target": "terminal",
+        "app": "Claude"
+      },
+      "reason": "code: \"(paste|put|send|type|write|give) [in] {span} (into|to|in|on) claude [code] [app|desktop] (in|on) the terminal\""
+    },
+    "plan": {
+      "summary": "open Claude Code in a terminal and paste \"add dark mode\" (not sent)",
+      "steps": [
+        "launch Terminal",
+        "wait 3500 ms",
+        "paste \"add dark mode\" (no Enter)"
+      ],
+      "shows": "Terminal"
+    }
+  },
+  {
+    "raw": "google how to center a div",
+    "text": "google how to center a div",
+    "fixes": [],
+    "codeOnly": true,
+    "target": null,
+    "skill": false,
+    "model": null,
+    "outcome": {
+      "decision": "act",
+      "operation": "search_web",
+      "slots": {
+        "span": "how to center a div"
+      },
+      "reason": "code: search verb"
+    },
+    "plan": {
+      "summary": "search for \"how to center a div\"",
+      "steps": [
+        "open https://www.google.com/search?q=how%20to%20center%20a%20div"
+      ],
+      "shows": null
+    }
+  },
+  {
+    "raw": "Open Spotify and search for Panther.",
+    "text": "open spotify and search for panther",
+    "fixes": [],
+    "codeOnly": true,
+    "target": null,
+    "skill": true,
+    "model": null,
+    "outcome": {
+      "decision": "act",
+      "operation": "spotify.search",
+      "slots": {
+        "query": "panther",
+        "app": "Spotify"
+      },
+      "reason": "2 commands in a row, each decided by code"
+    },
+    "plan": {
+      "summary": "bring Spotify to the front, then search Spotify for \"panther\"",
+      "steps": [
+        "focus \"Spotify Premium\"",
+        "wait for it to open",
+        "spotify.search in Spotify"
+      ],
+      "shows": "Spotify"
+    }
+  },
+  {
+    "raw": "Search for Panther on Spotify.",
+    "text": "search for panther on spotify",
+    "fixes": [],
+    "codeOnly": true,
+    "target": {
+      "app": "Spotify",
+      "via": "named",
+      "named": "on spotify",
+      "command": "search for panther"
+    },
+    "skill": true,
+    "model": null,
+    "outcome": {
+      "decision": "act",
+      "operation": "spotify.search",
+      "slots": {
+        "query": "panther",
+        "app": "Spotify"
+      },
+      "reason": "code: spotify \"search [spotify] [for] {query}\" (Spotify, named)"
+    },
+    "plan": {
+      "summary": "search Spotify for \"panther\"",
+      "steps": [
+        "focus \"Spotify Premium\"",
+        "wait 300 ms",
+        "spotify.search in Spotify"
+      ],
+      "shows": "Spotify"
+    }
+  },
+  {
+    "raw": "Search for Panther.",
+    "text": "search for panther",
+    "fixes": [],
+    "codeOnly": true,
+    "target": {
+      "app": "Brave",
+      "via": "front",
+      "command": "search for panther"
+    },
+    "skill": true,
+    "model": null,
+    "outcome": {
+      "decision": "act",
+      "operation": "browser.search",
+      "slots": {
+        "query": "panther",
+        "app": "Brave"
+      },
+      "reason": "code: browser \"search [the web|online|google|the internet] [for] {query}\" (Brave, front)"
+    },
+    "plan": {
+      "summary": "search Brave for \"panther\"",
+      "steps": [
+        "browser.search in Brave"
+      ],
+      "shows": "Brave"
+    }
+  },
+  {
+    "raw": "Open a new tab.",
+    "text": "open a new tab",
+    "fixes": [],
+    "codeOnly": true,
+    "target": {
+      "app": "Terminal",
+      "via": "front",
+      "command": "open a new tab"
+    },
+    "skill": true,
+    "model": null,
+    "outcome": {
+      "decision": "act",
+      "operation": "terminal.tab_new",
+      "slots": {
+        "app": "Terminal"
+      },
+      "reason": "code: terminal \"[open|create|make|give me] [a] new tab\" (Terminal, front)"
+    },
+    "plan": {
+      "summary": "open a new Terminal tab",
+      "steps": [
+        "terminal.tab_new in Terminal"
+      ],
+      "shows": "Terminal"
+    }
+  },
+  {
+    "raw": "Open cloud.",
+    "text": "open cloud",
+    "fixes": [],
+    "codeOnly": true,
+    "target": null,
+    "skill": false,
+    "model": null,
+    "outcome": {
+      "decision": "act",
+      "operation": "open_app",
+      "slots": {
+        "app": "Claude",
+        "app_id": "com.squirrel.AnthropicClaude.claude"
+      },
+      "reason": "code: \"open\" + installed app \"Claude\""
+    },
+    "plan": {
+      "summary": "bring Claude to the front",
+      "steps": [
+        "focus \"Claude\""
+      ],
+      "shows": "Claude"
+    }
+  },
+  {
+    "raw": "Minimize the Spotify.",
+    "text": "minimize the spotify",
+    "fixes": [],
+    "codeOnly": true,
+    "target": null,
+    "skill": true,
+    "model": null,
+    "outcome": {
+      "decision": "act",
+      "operation": "window.minimize",
+      "slots": {
+        "app": "Spotify",
+        "app_id": "SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify"
+      },
+      "reason": "code: \"(minimize|minimise|hide) [the|my] {app}\""
+    },
+    "plan": {
+      "summary": "minimize \"Spotify Premium\"",
+      "steps": [
+        "minimize \"Spotify Premium\""
+      ],
+      "shows": null
+    }
+  },
+  {
+    "raw": "Type hello and send.",
+    "text": "type hello and send",
+    "fixes": [],
+    "codeOnly": false,
+    "target": null,
+    "skill": false,
+    "model": {
+      "questions": [
+        "operation",
+        "complete"
+      ],
+      "tokens": 381,
+      "ms": 121,
+      "answers": {
+        "operation": [
+          [
+            "type_text",
+            69.4
+          ],
+          [
+            "paste_text",
+            26.3
+          ],
+          [
+            "press_key",
+            2.3
+          ]
+        ],
+        "complete": [
+          [
+            "finished",
+            70.1
+          ],
+          [
+            "unfinished",
+            30
+          ]
+        ]
+      }
+    },
+    "outcome": {
+      "decision": "confirm",
+      "operation": "type_text",
+      "slots": {
+        "span": "hello",
+        "submit": true
+      },
+      "reason": "model: type_text 69%"
+    },
+    "plan": {
+      "summary": "type \"hello\" and press Enter",
+      "steps": [
+        "type \"hello\" (no Enter)",
+        "wait 150 ms",
+        "keys enter"
+      ],
+      "shows": null
+    }
+  },
+  {
+    "raw": "Click the first result.",
+    "surface": "browser",
+    "page": "search-results",
+    "text": "click the first result",
+    "fixes": [],
+    "codeOnly": true,
+    "target": null,
+    "skill": true,
+    "model": null,
+    "outcome": {
+      "decision": "act",
+      "operation": "page.click",
+      "slots": {
+        "item": "e20",
+        "item_label": "TypeSafe — Jev, the System One model",
+        "app": "Browser"
+      },
+      "reason": "code: page \"(click|press|tap|hit|select|choose|pick) [on] [the] {item}\" (Browser, front)"
+    },
+    "plan": {
+      "summary": "click \"TypeSafe — Jev, the System One model\"",
+      "steps": [
+        "click e20 \"TypeSafe — Jev, the System One model\""
+      ],
+      "shows": "Browser"
+    }
+  },
+  {
+    "raw": "Click the GitHub link.",
+    "surface": "browser",
+    "page": "search-results",
+    "text": "click the github link",
+    "fixes": [],
+    "codeOnly": false,
+    "target": null,
+    "skill": true,
+    "model": {
+      "questions": [
+        "operation",
+        "complete",
+        "item"
+      ],
+      "tokens": 789,
+      "ms": 195,
+      "answers": {
+        "operation": [
+          [
+            "open_url",
+            92.8
+          ],
+          [
+            "page.click",
+            6.4
+          ],
+          [
+            "page.tab_new",
+            0.2
+          ]
+        ],
+        "complete": [
+          [
+            "finished",
+            83.7
+          ],
+          [
+            "unfinished",
+            16.3
+          ]
+        ],
+        "item": [
+          [
+            "e25",
+            66.8
+          ],
+          [
+            "e24",
+            32.2
+          ],
+          [
+            "e05",
+            0.2
+          ]
+        ]
+      }
+    },
+    "outcome": {
+      "decision": "act",
+      "operation": "page.click",
+      "slots": {
+        "item": "e25",
+        "item_label": "github.com",
+        "app": "Browser"
+      },
+      "reason": "code: page \"(click|press|tap|hit|select|choose|pick) [on] [the] {item}\" (Browser, front)"
+    },
+    "plan": {
+      "summary": "click \"github.com\"",
+      "steps": [
+        "click e25 \"github.com\""
+      ],
+      "shows": "Browser"
+    }
+  },
+  {
+    "raw": "Click place order.",
+    "surface": "browser",
+    "page": "checkout",
+    "text": "click place order",
+    "fixes": [],
+    "codeOnly": true,
+    "target": null,
+    "skill": true,
+    "model": null,
+    "outcome": {
+      "decision": "confirm",
+      "operation": "page.click",
+      "slots": {
+        "item": "e05",
+        "item_label": "Place order",
+        "app": "Browser"
+      },
+      "reason": "code: page \"(click|press|tap|hit|select|choose|pick) [on] [the] {item}\" (Browser, front); \"Place order\" looks destructive"
+    },
+    "plan": {
+      "summary": "click \"Place order\"",
+      "steps": [
+        "click e05 \"Place order\""
+      ],
+      "shows": "Browser"
+    }
+  },
+  {
+    "raw": "Type bob at example dot com in the email field.",
+    "surface": "browser",
+    "page": "checkout",
+    "text": "type bob at example dot com in the email field",
+    "fixes": [],
+    "codeOnly": true,
+    "target": null,
+    "skill": true,
+    "model": null,
+    "outcome": {
+      "decision": "act",
+      "operation": "page.type_into",
+      "slots": {
+        "span": "bob at example dot com",
+        "item": "e02",
+        "item_label": "Email address",
+        "app": "Browser"
+      },
+      "reason": "code: page \"(type|enter|write|put|fill in) {span} (into|in|on) [the] {item}\" (Browser, front)"
+    },
+    "plan": {
+      "summary": "type \"bob at example dot com\" into \"Email address\"",
+      "steps": [
+        "type \"bob at example dot com\" into e02 (no Enter)"
+      ],
+      "shows": null
+    }
+  },
+  {
+    "raw": "Turn it up.",
+    "surface": "desktop + browser",
+    "page": "youtube-lofi",
+    "front": "Brave",
+    "ranOn": "simulated desktop",
+    "text": "turn it up",
+    "fixes": [],
+    "codeOnly": true,
+    "target": null,
+    "skill": false,
+    "model": null,
+    "outcome": {
+      "decision": "act",
+      "operation": "media",
+      "slots": {
+        "media": "volume_up"
+      },
+      "reason": "code: media phrase"
+    },
+    "plan": {
+      "summary": "media: volume_up",
+      "steps": [
+        "keys volume_up"
+      ],
+      "shows": null
+    }
+  },
+  {
+    "raw": "Search for lumen caching on Brave.",
+    "surface": "desktop + browser",
+    "page": "ddg-lumen",
+    "front": "Spotify",
+    "ranOn": "simulated browser",
+    "text": "search for lumen caching on brave",
+    "fixes": [],
+    "codeOnly": true,
+    "target": {
+      "app": "Brave",
+      "via": "named",
+      "named": "on brave",
+      "command": "search for lumen caching"
+    },
+    "skill": false,
+    "model": null,
+    "outcome": {
+      "decision": "act",
+      "operation": "search_web",
+      "slots": {
+        "span": "lumen caching",
+        "app": "Brave"
+      },
+      "reason": "code: search verb"
+    },
+    "plan": {
+      "summary": "search this site for \"lumen caching\"",
+      "steps": [
+        "type \"lumen caching\" into e02 and submit the search"
+      ],
+      "shows": "Brave"
+    }
+  },
+  {
+    "raw": "Open settings.",
+    "surface": "desktop + browser",
+    "page": "localhost-dashboard",
+    "front": "Brave",
+    "text": "open settings",
+    "fixes": [],
+    "codeOnly": true,
+    "target": null,
+    "skill": false,
+    "model": null,
+    "outcome": {
+      "decision": "ask",
+      "options": [],
+      "reason": "\"Settings\" is an app and \"Settings\" is on the screen",
+      "choices": [
+        {
+          "operation": "page.click",
+          "slots": {
+            "item": "e05",
+            "item_label": "Settings",
+            "app": "Brave"
+          },
+          "label": "click it: Settings"
+        },
+        {
+          "operation": "open_app",
+          "slots": {
+            "app": "Settings",
+            "app_id": "windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel"
+          },
+          "label": "open the Settings app"
+        }
+      ]
+    },
+    "plan": null
+  },
+  {
+    "raw": "Save changes.",
+    "surface": "desktop + browser",
+    "page": "localhost-project",
+    "front": "Brave",
+    "ranOn": "simulated browser",
+    "text": "save changes",
+    "fixes": [],
+    "codeOnly": true,
+    "target": null,
+    "skill": true,
+    "model": null,
+    "outcome": {
+      "decision": "act",
+      "operation": "page.click",
+      "slots": {
+        "item": "e15",
+        "item_label": "Save changes",
+        "app": "Brave"
+      },
+      "reason": "code: \"Save changes\" is on the screen"
+    },
+    "plan": {
+      "summary": "click \"Save changes\"",
+      "steps": [
+        "click e15 \"Save changes\""
+      ],
+      "shows": "Brave"
+    }
+  }
+]

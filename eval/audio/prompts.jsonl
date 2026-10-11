@@ -1,0 +1,20 @@
+{"id":"v-open-01","said":"open spotify","expect":{"operation":"open_app","app":"Spotify"}}
+{"id":"v-focus-01","said":"switch to chrome","expect":{"operation":"focus_app","app":"Google Chrome"}}
+{"id":"v-focus-02","said":"bring up vs code","expect":{"operation":"focus_app","app":"Visual Studio Code"}}
+{"id":"v-close-01","said":"close discord","expect":{"operation":"close_app","app":"Discord"},"tags":["destructive"]}
+{"id":"v-claude-01","said":"paste refactor the auth module into claude code","expect":{"operation":"claude.prompt","span":"refactor the auth module","claude_target":"app"}}
+{"id":"v-claude-02","said":"send run the tests to claude code in the terminal","expect":{"operation":"claude.prompt","span":"run the tests","claude_target":"terminal"}}
+{"id":"v-type-01","said":"type see you tomorrow","expect":{"operation":"type_text","span":"see you tomorrow"}}
+{"id":"v-paste-01","said":"paste thanks for the update","expect":{"operation":"paste_text","span":"thanks for the update"}}
+{"id":"v-key-01","said":"press enter","expect":{"operation":"press_key","key":"enter"}}
+{"id":"v-media-01","said":"next song","expect":{"operation":"media","media":"next"}}
+{"id":"v-media-02","said":"turn the volume up","expect":{"operation":"media","media":"volume_up"}}
+{"id":"v-media-03","said":"mute","expect":{"operation":"media","media":"mute"}}
+{"id":"v-url-01","said":"go to youtube","expect":{"operation":"open_url","url":"youtube.com"}}
+{"id":"v-url-02","said":"open github dot com","expect":{"operation":"open_url","url":"github.com"}}
+{"id":"v-search-01","said":"search for best pizza near me","expect":{"operation":"search_web","span":"best pizza near me"}}
+{"id":"v-search-02","said":"google how to center a div","expect":{"operation":"search_web","span":"how to center a div"}}
+{"id":"v-confirm-01","said":"confirm","expect":{"operation":"confirm"}}
+{"id":"v-cancel-01","said":"never mind","expect":{"operation":"cancel"}}
+{"id":"v-chat-01","said":"so anyway I think we should get lunch","expect":{"operation":"none"},"tags":["ignore"]}
+{"id":"v-frag-01","said":"open the","expect":{},"tags":["fragment"]}

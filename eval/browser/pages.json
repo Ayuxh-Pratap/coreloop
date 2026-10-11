@@ -1,0 +1,5373 @@
+{
+  "news": {
+    "url": "https://news.example.com/",
+    "title": "Orbit News",
+    "searchBox": "e229",
+    "items": [
+      {
+        "id": "e02",
+        "role": "link",
+        "label": "Orbit News",
+        "href": "news.example.com/news"
+      },
+      {
+        "id": "e03",
+        "role": "link",
+        "label": "new",
+        "href": "news.example.com/newest"
+      },
+      {
+        "id": "e04",
+        "role": "link",
+        "label": "past",
+        "href": "news.example.com/front"
+      },
+      {
+        "id": "e05",
+        "role": "link",
+        "label": "comments",
+        "href": "news.example.com/newcomments"
+      },
+      {
+        "id": "e06",
+        "role": "link",
+        "label": "ask",
+        "href": "news.example.com/ask"
+      },
+      {
+        "id": "e07",
+        "role": "link",
+        "label": "show",
+        "href": "news.example.com/show"
+      },
+      {
+        "id": "e08",
+        "role": "link",
+        "label": "jobs",
+        "href": "news.example.com/jobs"
+      },
+      {
+        "id": "e09",
+        "role": "link",
+        "label": "submit",
+        "href": "news.example.com/submit"
+      },
+      {
+        "id": "e10",
+        "role": "link",
+        "label": "login",
+        "href": "news.example.com/login"
+      },
+      {
+        "id": "e12",
+        "role": "link",
+        "label": "One year of funding an independent browser engine",
+        "href": "lumenweb.example.org/one-year-of-funding-an-independent-brows"
+      },
+      {
+        "id": "e13",
+        "role": "link",
+        "label": "lumenweb.example.org",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e14",
+        "role": "link",
+        "label": "ashleyb",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e15",
+        "role": "link",
+        "label": "3 hours ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e16",
+        "role": "link",
+        "label": "hide",
+        "href": "news.example.com/hide"
+      },
+      {
+        "id": "e17",
+        "role": "link",
+        "label": "46 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e19",
+        "role": "link",
+        "label": "How we built our own inference servers",
+        "href": "blog.example.ai/how-we-built-our-own-inference-servers"
+      },
+      {
+        "id": "e20",
+        "role": "link",
+        "label": "blog.example.ai",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e21",
+        "role": "link",
+        "label": "whiterose",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e22",
+        "role": "link",
+        "label": "2 hours ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e24",
+        "role": "link",
+        "label": "55 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e26",
+        "role": "link",
+        "label": "Native GPU programming arrives in a systems language",
+        "href": "gpu.example.com/native-gpu-programming-arrives-in-a-syst"
+      },
+      {
+        "id": "e27",
+        "role": "link",
+        "label": "gpu.example.com",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e28",
+        "role": "link",
+        "label": "nonmask",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e29",
+        "role": "link",
+        "label": "14 hours ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e31",
+        "role": "link",
+        "label": "299 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e33",
+        "role": "link",
+        "label": "Recovering lost signing keys from old firmware",
+        "href": "notes.example.net/recovering-lost-signing-keys-from-old-fi"
+      },
+      {
+        "id": "e34",
+        "role": "link",
+        "label": "notes.example.net",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e35",
+        "role": "link",
+        "label": "ryan5",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e36",
+        "role": "link",
+        "label": "8 hours ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e38",
+        "role": "link",
+        "label": "70 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e40",
+        "role": "link",
+        "label": "My temporary fix from 2014 now has 20M installs",
+        "href": "jsmith.example.dev/my-temporary-fix-from-2014-now-has-20m-i"
+      },
+      {
+        "id": "e41",
+        "role": "link",
+        "label": "jsmith.example.dev",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e42",
+        "role": "link",
+        "label": "jsmith",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e43",
+        "role": "link",
+        "label": "6 hours ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e45",
+        "role": "link",
+        "label": "31 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e47",
+        "role": "link",
+        "label": "The relation between mathematics and physics, revisited",
+        "href": "lectures.example.edu/the-relation-between-mathematics-and-phy"
+      },
+      {
+        "id": "e48",
+        "role": "link",
+        "label": "lectures.example.edu",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e49",
+        "role": "link",
+        "label": "rramad",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e50",
+        "role": "link",
+        "label": "5 hours ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e52",
+        "role": "link",
+        "label": "21 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e54",
+        "role": "link",
+        "label": "Better vector search for long documents: chunking inside the index",
+        "href": "search.example.io/better-vector-search-for-long-documents-"
+      },
+      {
+        "id": "e55",
+        "role": "link",
+        "label": "search.example.io",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e56",
+        "role": "link",
+        "label": "gloriav",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e57",
+        "role": "link",
+        "label": "51 minutes ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e59",
+        "role": "link",
+        "label": "discuss",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e61",
+        "role": "link",
+        "label": "Ask ON: what would you do with an unused donation?",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e62",
+        "role": "link",
+        "label": "jmanger",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e63",
+        "role": "link",
+        "label": "37 minutes ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e65",
+        "role": "link",
+        "label": "2 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e67",
+        "role": "link",
+        "label": "Training a small model to write faster query plans",
+        "href": "rohan.example.com/training-a-small-model-to-write-faster-q"
+      },
+      {
+        "id": "e68",
+        "role": "link",
+        "label": "rohan.example.com",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e69",
+        "role": "link",
+        "label": "polyph",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e70",
+        "role": "link",
+        "label": "16 hours ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e72",
+        "role": "link",
+        "label": "120 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e74",
+        "role": "link",
+        "label": "A report on model misbehaviour in the wild",
+        "href": "research.example.org/a-report-on-model-misbehaviour-in-the-wi"
+      },
+      {
+        "id": "e75",
+        "role": "link",
+        "label": "research.example.org",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e76",
+        "role": "link",
+        "label": "qprof",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e77",
+        "role": "link",
+        "label": "4 hours ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e79",
+        "role": "link",
+        "label": "20 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e81",
+        "role": "link",
+        "label": "An online guide to an SMT solver",
+        "href": "solver.example.io/an-online-guide-to-an-smt-solver"
+      },
+      {
+        "id": "e82",
+        "role": "link",
+        "label": "solver.example.io",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e83",
+        "role": "link",
+        "label": "bluest",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e84",
+        "role": "link",
+        "label": "1 hour ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e86",
+        "role": "link",
+        "label": "5 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e88",
+        "role": "link",
+        "label": "The afterlife of a 90s adventure game studio",
+        "href": "retrogames.example.net/the-afterlife-of-a-90s-adventure-game-st"
+      },
+      {
+        "id": "e89",
+        "role": "link",
+        "label": "retrogames.example.net",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e90",
+        "role": "link",
+        "label": "bondi",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e93",
+        "role": "link",
+        "label": "18 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e95",
+        "role": "link",
+        "label": "A live dashboard for a model's post-training run",
+        "href": "dash.example.ai/a-live-dashboard-for-a-model-s-post-trai"
+      },
+      {
+        "id": "e96",
+        "role": "link",
+        "label": "dash.example.ai",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e97",
+        "role": "link",
+        "label": "krack",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e98",
+        "role": "link",
+        "label": "15 hours ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e100",
+        "role": "link",
+        "label": "122 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e102",
+        "role": "link",
+        "label": "Comparing memory allocators, with graphs",
+        "href": "egbert.example.net/comparing-memory-allocators-with-graphs"
+      },
+      {
+        "id": "e103",
+        "role": "link",
+        "label": "egbert.example.net",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e104",
+        "role": "link",
+        "label": "egbert1",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e105",
+        "role": "link",
+        "label": "7 hours ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e107",
+        "role": "link",
+        "label": "12 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e109",
+        "role": "link",
+        "label": "Small programming tricks I keep reusing",
+        "href": "will.example.com/small-programming-tricks-i-keep-reusing"
+      },
+      {
+        "id": "e110",
+        "role": "link",
+        "label": "will.example.com",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e111",
+        "role": "link",
+        "label": "signa",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e112",
+        "role": "link",
+        "label": "19 hours ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e114",
+        "role": "link",
+        "label": "241 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e116",
+        "role": "link",
+        "label": "Backups aren't simple",
+        "href": "filip.example.net/backups-aren-t-simple"
+      },
+      {
+        "id": "e117",
+        "role": "link",
+        "label": "filip.example.net",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e118",
+        "role": "link",
+        "label": "afilip",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e119",
+        "role": "link",
+        "label": "13 hours ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e121",
+        "role": "link",
+        "label": "155 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e123",
+        "role": "link",
+        "label": "Breaking the two-bit barrier for tiny language models",
+        "href": "papers.example.org/breaking-the-two-bit-barrier-for-tiny-la"
+      },
+      {
+        "id": "e124",
+        "role": "link",
+        "label": "papers.example.org",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e125",
+        "role": "link",
+        "label": "mattd",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e128",
+        "role": "link",
+        "label": "34 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e130",
+        "role": "link",
+        "label": "Writing provably correct code with a verifier",
+        "href": "science.example.com/writing-provably-correct-code-with-a-ver"
+      },
+      {
+        "id": "e131",
+        "role": "link",
+        "label": "science.example.com",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e132",
+        "role": "link",
+        "label": "betelb",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e133",
+        "role": "link",
+        "label": "11 hours ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e137",
+        "role": "link",
+        "label": "A 30-year-old bug walks into a terminal server",
+        "href": "labs.example.com/a-30-year-old-bug-walks-into-a-terminal-"
+      },
+      {
+        "id": "e138",
+        "role": "link",
+        "label": "labs.example.com",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e139",
+        "role": "link",
+        "label": "paima",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e140",
+        "role": "link",
+        "label": "9 hours ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e142",
+        "role": "link",
+        "label": "27 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e144",
+        "role": "link",
+        "label": "A security audit skill for coding agents",
+        "href": "github.com/example-sec/a-security-audit-skill-for-coding-agents"
+      },
+      {
+        "id": "e145",
+        "role": "link",
+        "label": "github.com/example-sec",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e146",
+        "role": "link",
+        "label": "donk",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e149",
+        "role": "link",
+        "label": "16 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e151",
+        "role": "link",
+        "label": "The engineering behind a national fuel reserve",
+        "href": "jwang.example.com/the-engineering-behind-a-national-fuel-r"
+      },
+      {
+        "id": "e152",
+        "role": "link",
+        "label": "jwang.example.com",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e153",
+        "role": "link",
+        "label": "jwang",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e156",
+        "role": "link",
+        "label": "84 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e158",
+        "role": "link",
+        "label": "Show ON: an e-ink frame that hears birds and draws them",
+        "href": "github.com/example-birds/show-on-an-e-ink-frame-that-hears-birds-"
+      },
+      {
+        "id": "e159",
+        "role": "link",
+        "label": "github.com/example-birds",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e160",
+        "role": "link",
+        "label": "arnek",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e161",
+        "role": "link",
+        "label": "1 day ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e163",
+        "role": "link",
+        "label": "243 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e165",
+        "role": "link",
+        "label": "A cloud provider says it can't restore some lost data",
+        "href": "news.example.org/a-cloud-provider-says-it-can-t-restore-s"
+      },
+      {
+        "id": "e166",
+        "role": "link",
+        "label": "news.example.org",
+        "href": "news.example.com/from"
+      },
+      {
+        "id": "e167",
+        "role": "link",
+        "label": "berkj",
+        "href": "news.example.com/user"
+      },
+      {
+        "id": "e168",
+        "role": "link",
+        "label": "18 hours ago",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e170",
+        "role": "link",
+        "label": "351 comments",
+        "href": "news.example.com/item"
+      },
+      {
+        "id": "e172",
+        "role": "link",
+        "label": "How much does the harness matter for coding agents?",
+        "href": "harness.example.io/how-much-does-the-harness-matter"
+      }
+    ]
+  },
+  "wiki-article": {
+    "url": "https://wiki.example.org/wiki/Mira_Castell",
+    "title": "Mira Castell - Openpedia",
+    "searchBox": "e02",
+    "items": [
+      {
+        "id": "e02",
+        "role": "searchbox",
+        "label": "Search Openpedia"
+      },
+      {
+        "id": "e03",
+        "role": "button",
+        "label": "Search"
+      },
+      {
+        "id": "e04",
+        "role": "link",
+        "label": "Donate",
+        "href": "donate.example.org"
+      },
+      {
+        "id": "e05",
+        "role": "link",
+        "label": "Create account",
+        "href": "wiki.example.org/w/index.php"
+      },
+      {
+        "id": "e06",
+        "role": "link",
+        "label": "Log in",
+        "href": "wiki.example.org/w/index.php"
+      },
+      {
+        "id": "e07",
+        "role": "link",
+        "label": "Photo week: share a picture of a local landmark",
+        "href": "wiki.example.org/wiki/Wikipedia:Wiki_Loves_Monume…"
+      },
+      {
+        "id": "e08",
+        "role": "link",
+        "label": "Hide",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e27",
+        "role": "link",
+        "label": "Article",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e28",
+        "role": "link",
+        "label": "Talk",
+        "href": "wiki.example.org/wiki/Talk:Mira_Castell"
+      },
+      {
+        "id": "e29",
+        "role": "link",
+        "label": "Read",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e30",
+        "role": "link",
+        "label": "View source",
+        "href": "wiki.example.org/w/index.php"
+      },
+      {
+        "id": "e31",
+        "role": "link",
+        "label": "View history",
+        "href": "wiki.example.org/w/index.php"
+      },
+      {
+        "id": "e09",
+        "role": "button",
+        "label": "Hide Contents"
+      },
+      {
+        "id": "e32",
+        "role": "button",
+        "label": "Hide Appearance"
+      },
+      {
+        "id": "e10",
+        "role": "link",
+        "label": "(Top)",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e33",
+        "role": "link",
+        "label": "This is a good article. Click here for more information.",
+        "href": "wiki.example.org/wiki/Openpedia:Good_articles*"
+      },
+      {
+        "id": "e34",
+        "role": "link",
+        "label": "This article is semi-protected.",
+        "href": "wiki.example.org/wiki/Openpedia:Protection_policy"
+      },
+      {
+        "id": "e11",
+        "role": "link",
+        "label": "Early life and education",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e12",
+        "role": "button",
+        "label": "Toggle Early life and education subsection"
+      },
+      {
+        "id": "e35",
+        "role": "link",
+        "label": "Mira Castell (sculpture)",
+        "href": "wiki.example.org/wiki/Mira_Castell_sculpture"
+      },
+      {
+        "id": "e13",
+        "role": "link",
+        "label": "Career and research",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e14",
+        "role": "button",
+        "label": "Toggle Career and research subsection"
+      },
+      {
+        "id": "e36",
+        "role": "link",
+        "label": "Castell (disambiguation)",
+        "href": "wiki.example.org/wiki/Castell_disambiguation"
+      },
+      {
+        "id": "e15",
+        "role": "link",
+        "label": "Personal life",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e16",
+        "role": "button",
+        "label": "Toggle Personal life subsection"
+      },
+      {
+        "id": "e77",
+        "role": "link",
+        "label": "/kæˈstɛl/",
+        "href": "wiki.example.org/wiki/k_st_l"
+      },
+      {
+        "id": "e17",
+        "role": "link",
+        "label": "Death",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e18",
+        "role": "button",
+        "label": "Toggle Death subsection"
+      },
+      {
+        "id": "e78",
+        "role": "link",
+        "label": "computer scientist",
+        "href": "wiki.example.org/wiki/Computer_scientist"
+      },
+      {
+        "id": "e37",
+        "role": "link",
+        "label": "OBE",
+        "href": "wiki.example.org/wiki/Officer_of_the_Order_of_the…"
+      },
+      {
+        "id": "e38",
+        "role": "link",
+        "label": "FRS",
+        "href": "wiki.example.org/wiki/Fellow_of_the_Royal_Society"
+      },
+      {
+        "id": "e19",
+        "role": "link",
+        "label": "Government apology and pardon",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e79",
+        "role": "link",
+        "label": "logician",
+        "href": "wiki.example.org/wiki/Logic"
+      },
+      {
+        "id": "e81",
+        "role": "link",
+        "label": "theoretical biologist",
+        "href": "wiki.example.org/wiki/Theoretical_biologist"
+      },
+      {
+        "id": "e80",
+        "role": "link",
+        "label": "cryptanalyst",
+        "href": "wiki.example.org/wiki/Cryptanalyst"
+      },
+      {
+        "id": "e82",
+        "role": "link",
+        "label": "[6]",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e20",
+        "role": "link",
+        "label": "Further reading",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e21",
+        "role": "button",
+        "label": "Toggle Further reading subsection"
+      },
+      {
+        "id": "e83",
+        "role": "link",
+        "label": "theoretical computer science",
+        "href": "wiki.example.org/wiki/Theoretical_computer_science"
+      },
+      {
+        "id": "e22",
+        "role": "link",
+        "label": "See also",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e23",
+        "role": "button",
+        "label": "Toggle See also subsection"
+      },
+      {
+        "id": "e86",
+        "role": "link",
+        "label": "Castell machine",
+        "href": "wiki.example.org/wiki/Castell_machine"
+      },
+      {
+        "id": "e84",
+        "role": "link",
+        "label": "algorithm",
+        "href": "wiki.example.org/wiki/Algorithm"
+      },
+      {
+        "id": "e85",
+        "role": "link",
+        "label": "computation",
+        "href": "wiki.example.org/wiki/Computation"
+      },
+      {
+        "id": "e24",
+        "role": "link",
+        "label": "Notes",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e25",
+        "role": "link",
+        "label": "References",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e87",
+        "role": "link",
+        "label": "[7]",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e88",
+        "role": "link",
+        "label": "[8]",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e89",
+        "role": "link",
+        "label": "[9]",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e26",
+        "role": "link",
+        "label": "External links",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e90",
+        "role": "link",
+        "label": "[10]",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e91",
+        "role": "link",
+        "label": "the southern coast",
+        "href": "wiki.example.org/wiki/the_southern_coast"
+      },
+      {
+        "id": "e92",
+        "role": "link",
+        "label": "Halden College",
+        "href": "wiki.example.org/wiki/Halden_College"
+      },
+      {
+        "id": "e93",
+        "role": "link",
+        "label": "Northfield University",
+        "href": "wiki.example.org/wiki/Northfield_University"
+      },
+      {
+        "id": "e94",
+        "role": "link",
+        "label": "the Long War",
+        "href": "wiki.example.org/wiki/the_Long_War"
+      },
+      {
+        "id": "e95",
+        "role": "link",
+        "label": "the Signals Office",
+        "href": "wiki.example.org/wiki/the_Signals_Office"
+      },
+      {
+        "id": "e96",
+        "role": "link",
+        "label": "Ashgrove House",
+        "href": "wiki.example.org/wiki/Ashgrove_House"
+      },
+      {
+        "id": "e97",
+        "role": "link",
+        "label": "codebreaking",
+        "href": "wiki.example.org/wiki/Codebreaking"
+      },
+      {
+        "id": "e98",
+        "role": "link",
+        "label": "Lantern",
+        "href": "wiki.example.org/wiki/Lantern"
+      },
+      {
+        "id": "e99",
+        "role": "link",
+        "label": "Room 4",
+        "href": "wiki.example.org/wiki/Room_4"
+      },
+      {
+        "id": "e100",
+        "role": "link",
+        "label": "ciphers",
+        "href": "wiki.example.org/wiki/Cipher"
+      },
+      {
+        "id": "e40",
+        "role": "link",
+        "label": "Westbrook",
+        "href": "wiki.example.org/wiki/Westbrook"
+      },
+      {
+        "id": "e101",
+        "role": "link",
+        "label": "the Sorter",
+        "href": "wiki.example.org/wiki/the_Sorter"
+      },
+      {
+        "id": "e102",
+        "role": "link",
+        "label": "electromechanical",
+        "href": "wiki.example.org/wiki/Electromechanical"
+      },
+      {
+        "id": "e41",
+        "role": "link",
+        "label": "Ellsworth",
+        "href": "wiki.example.org/wiki/Ellsworth"
+      },
+      {
+        "id": "e103",
+        "role": "link",
+        "label": "the Kestrel machine",
+        "href": "wiki.example.org/wiki/the_Kestrel_machine"
+      },
+      {
+        "id": "e42",
+        "role": "link",
+        "label": "heart failure",
+        "href": "wiki.example.org/wiki/heart_failure"
+      },
+      {
+        "id": "e43",
+        "role": "link",
+        "label": "[note 1]",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e104",
+        "role": "link",
+        "label": "the coalition",
+        "href": "wiki.example.org/wiki/the_coalition"
+      },
+      {
+        "id": "e105",
+        "role": "link",
+        "label": "the opposing alliance",
+        "href": "wiki.example.org/wiki/the_opposing_alliance"
+      },
+      {
+        "id": "e106",
+        "role": "link",
+        "label": "the Battle of the Narrows",
+        "href": "wiki.example.org/wiki/the_Battle_of_the_Narrows"
+      },
+      {
+        "id": "e44",
+        "role": "link",
+        "label": "Halden University",
+        "href": "wiki.example.org/wiki/Halden_University"
+      },
+      {
+        "id": "e45",
+        "role": "link",
+        "label": "MA",
+        "href": "wiki.example.org/wiki/Master_of_Arts_(Oxford,_Cam…"
+      },
+      {
+        "id": "e107",
+        "role": "link",
+        "label": "[11]",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e108",
+        "role": "link",
+        "label": "[12]",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e47",
+        "role": "link",
+        "label": "Breaking the Kestrel codes",
+        "href": "wiki.example.org/wiki/Breaking_the_Kestrel_codes"
+      },
+      {
+        "id": "e109",
+        "role": "link",
+        "label": "National Research Bureau",
+        "href": "wiki.example.org/wiki/National_Research_Bureau"
+      },
+      {
+        "id": "e48",
+        "role": "link",
+        "label": "Castell's proof",
+        "href": "wiki.example.org/wiki/Castell_s_proof"
+      },
+      {
+        "id": "e110",
+        "role": "link",
+        "label": "Lattice Engine",
+        "href": "wiki.example.org/wiki/Lattice_Engine"
+      },
+      {
+        "id": "e50",
+        "role": "link",
+        "label": "Castell test",
+        "href": "wiki.example.org/wiki/Castell_test"
+      },
+      {
+        "id": "e51",
+        "role": "link",
+        "label": "self-organising machine",
+        "href": "wiki.example.org/wiki/self_organising_machine"
+      },
+      {
+        "id": "e53",
+        "role": "link",
+        "label": "Castell reduction",
+        "href": "wiki.example.org/wiki/Castell_reduction"
+      },
+      {
+        "id": "e52",
+        "role": "link",
+        "label": "Castell pattern",
+        "href": "wiki.example.org/wiki/Castell_pattern"
+      },
+      {
+        "id": "e112",
+        "role": "link",
+        "label": "Machine Design Laboratory",
+        "href": "wiki.example.org/wiki/Machine_Design_Laboratory"
+      },
+      {
+        "id": "e111",
+        "role": "link",
+        "label": "Owen Marsh",
+        "href": "wiki.example.org/wiki/Owen_Marsh"
+      },
+      {
+        "id": "e54",
+        "role": "link",
+        "label": "On Growing Patterns",
+        "href": "wiki.example.org/wiki/On_Growing_Patterns"
+      },
+      {
+        "id": "e113",
+        "role": "link",
+        "label": "Westbrook University",
+        "href": "wiki.example.org/wiki/Westbrook_University"
+      },
+      {
+        "id": "e55",
+        "role": "link",
+        "label": "Castell paradox",
+        "href": "wiki.example.org/wiki/Castell_paradox"
+      },
+      {
+        "id": "e114",
+        "role": "link",
+        "label": "Westbrook computers",
+        "href": "wiki.example.org/wiki/Westbrook_computers"
+      },
+      {
+        "id": "e115",
+        "role": "link",
+        "label": "[13]",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e56",
+        "role": "link",
+        "label": "Joan Arden",
+        "href": "wiki.example.org/wiki/Joan_Arden"
+      },
+      {
+        "id": "e116",
+        "role": "link",
+        "label": "mathematical biology",
+        "href": "wiki.example.org/wiki/Mathematical_biology"
+      },
+      {
+        "id": "e57",
+        "role": "link",
+        "label": "Hale Prize",
+        "href": "wiki.example.org/wiki/Hale_Prize"
+      },
+      {
+        "id": "e118",
+        "role": "link",
+        "label": "[14]",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e119",
+        "role": "link",
+        "label": "[2]",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e117",
+        "role": "link",
+        "label": "morphogenesis",
+        "href": "wiki.example.org/wiki/Morphogenesis"
+      },
+      {
+        "id": "e120",
+        "role": "link",
+        "label": "oscillating chemical reactions",
+        "href": "wiki.example.org/wiki/Chemical_oscillator"
+      },
+      {
+        "id": "e121",
+        "role": "link",
+        "label": "the Varga reaction",
+        "href": "wiki.example.org/wiki/the_Varga_reaction"
+      },
+      {
+        "id": "e58",
+        "role": "link",
+        "label": "Logic",
+        "href": "wiki.example.org/wiki/Logic"
+      },
+      {
+        "id": "e59",
+        "role": "link",
+        "label": "cryptanalysis",
+        "href": "wiki.example.org/wiki/Cryptanalysis"
+      },
+      {
+        "id": "e60",
+        "role": "link",
+        "label": "computer science",
+        "href": "wiki.example.org/wiki/Computer_science"
+      },
+      {
+        "id": "e61",
+        "role": "link",
+        "label": "mathematical and theoretical biology",
+        "href": "wiki.example.org/wiki/Mathematical_and_theoretica…"
+      },
+      {
+        "id": "e123",
+        "role": "link",
+        "label": "[15]",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e122",
+        "role": "link",
+        "label": "State Secrets Act",
+        "href": "wiki.example.org/wiki/State_Secrets_Act"
+      },
+      {
+        "id": "e124",
+        "role": "link",
+        "label": "a disputed charge",
+        "href": "wiki.example.org/wiki/a_disputed_charge"
+      },
+      {
+        "id": "e125",
+        "role": "link",
+        "label": "forced treatment",
+        "href": "wiki.example.org/wiki/forced_treatment"
+      },
+      {
+        "id": "e67",
+        "role": "link",
+        "label": "Logic Built on Ordinals",
+        "href": "archive.example.org/castell-thesis"
+      },
+      {
+        "id": "e66",
+        "role": "link",
+        "label": "Thesis",
+        "href": "wiki.example.org/wiki/Thesis"
+      },
+      {
+        "id": "e70",
+        "role": "link",
+        "label": "[3]",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e68",
+        "role": "link",
+        "label": "Doctoral advisor",
+        "href": "wiki.example.org/wiki/Doctoral_advisor"
+      },
+      {
+        "id": "e69",
+        "role": "link",
+        "label": "Albrecht Kirch",
+        "href": "wiki.example.org/wiki/Albrecht_Kirch"
+      },
+      {
+        "id": "e127",
+        "role": "link",
+        "label": "[1]",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e128",
+        "role": "link",
+        "label": "the prime minister",
+        "href": "wiki.example.org/wiki/the_prime_minister"
+      },
+      {
+        "id": "e73",
+        "role": "link",
+        "label": "[4]",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e71",
+        "role": "link",
+        "label": "Robin Gale",
+        "href": "wiki.example.org/wiki/Robin_Gale"
+      },
+      {
+        "id": "e129",
+        "role": "link",
+        "label": "official public apology",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e75",
+        "role": "link",
+        "label": "[5]",
+        "href": "wiki.example.org/wiki/Mira_Castell"
+      },
+      {
+        "id": "e74",
+        "role": "link",
+        "label": "Beatrice Worth",
+        "href": "wiki.example.org/wiki/Beatrice_Worth"
+      },
+      {
+        "id": "e130",
+        "role": "link",
+        "label": "the queen",
+        "href": "wiki.example.org/wiki/the_queen"
+      },
+      {
+        "id": "e131",
+        "role": "link",
+        "label": "pardon",
+        "href": "wiki.example.org/wiki/Royal_prerogative_of_mercy"
+      }
+    ]
+  },
+  "wiki-main": {
+    "url": "https://wiki.example.org/wiki/Main_Page",
+    "title": "Openpedia, the free encyclopedia",
+    "searchBox": "e02",
+    "items": [
+      {
+        "id": "e02",
+        "role": "searchbox",
+        "label": "Search Openpedia"
+      },
+      {
+        "id": "e03",
+        "role": "button",
+        "label": "Search"
+      },
+      {
+        "id": "e04",
+        "role": "link",
+        "label": "Donate",
+        "href": "donate.example.org"
+      },
+      {
+        "id": "e05",
+        "role": "link",
+        "label": "Create account",
+        "href": "wiki.example.org/w/index.php"
+      },
+      {
+        "id": "e06",
+        "role": "link",
+        "label": "Log in",
+        "href": "wiki.example.org/w/index.php"
+      },
+      {
+        "id": "e07",
+        "role": "link",
+        "label": "Photo week: share a picture of a local landmark",
+        "href": "wiki.example.org/wiki/Wikipedia:Wiki_Loves_Monume…"
+      },
+      {
+        "id": "e08",
+        "role": "link",
+        "label": "Hide",
+        "href": "wiki.example.org/wiki/Main_Page"
+      },
+      {
+        "id": "e09",
+        "role": "link",
+        "label": "Main Page",
+        "href": "wiki.example.org/wiki/Main_Page"
+      },
+      {
+        "id": "e10",
+        "role": "link",
+        "label": "Talk",
+        "href": "wiki.example.org/wiki/Talk:Main_Page"
+      },
+      {
+        "id": "e11",
+        "role": "link",
+        "label": "Read",
+        "href": "wiki.example.org/wiki/Main_Page"
+      },
+      {
+        "id": "e12",
+        "role": "link",
+        "label": "View source",
+        "href": "wiki.example.org/w/index.php"
+      },
+      {
+        "id": "e13",
+        "role": "link",
+        "label": "View history",
+        "href": "wiki.example.org/w/index.php"
+      },
+      {
+        "id": "e14",
+        "role": "button",
+        "label": "Hide Appearance"
+      },
+      {
+        "id": "e15",
+        "role": "link",
+        "label": "Openpedia",
+        "href": "wiki.example.org/wiki/Openpedia"
+      },
+      {
+        "id": "e16",
+        "role": "link",
+        "label": "free",
+        "href": "wiki.example.org/wiki/Free_content"
+      },
+      {
+        "id": "e17",
+        "role": "link",
+        "label": "anyone can edit",
+        "href": "wiki.example.org/wiki/Help:Introduction_to_Wikipe…"
+      },
+      {
+        "id": "e18",
+        "role": "link",
+        "label": "262,745",
+        "href": "wiki.example.org/wiki/Special:Statistics"
+      },
+      {
+        "id": "e19",
+        "role": "link",
+        "label": "7,240,688",
+        "href": "wiki.example.org/wiki/Special:Statistics"
+      },
+      {
+        "id": "e20",
+        "role": "link",
+        "label": "English",
+        "href": "wiki.example.org/wiki/English_language"
+      },
+      {
+        "id": "e22",
+        "role": "link",
+        "label": "Glass Harbor",
+        "href": "wiki.example.org/wiki/Glass_Harbor"
+      },
+      {
+        "id": "e61",
+        "role": "link",
+        "label": "A ferry runs aground",
+        "href": "wiki.example.org/wiki/A_ferry_runs_aground"
+      },
+      {
+        "id": "e62",
+        "role": "link",
+        "label": "Kessel Strait",
+        "href": "wiki.example.org/wiki/Kessel_Strait"
+      },
+      {
+        "id": "e23",
+        "role": "link",
+        "label": "heavy-metal",
+        "href": "wiki.example.org/wiki/Heavy_metal_music"
+      },
+      {
+        "id": "e24",
+        "role": "link",
+        "label": "Northlight",
+        "href": "wiki.example.org/wiki/Northlight"
+      },
+      {
+        "id": "e60",
+        "role": "link",
+        "label": "MV Coastal Star",
+        "href": "wiki.example.org/wiki/MV_Coastal_Star"
+      },
+      {
+        "id": "e25",
+        "role": "link",
+        "label": "Riverstone Records",
+        "href": "wiki.example.org/wiki/Riverstone_Records"
+      },
+      {
+        "id": "e26",
+        "role": "link",
+        "label": "Ines Halvorsen",
+        "href": "wiki.example.org/wiki/Ines_Halvorsen"
+      },
+      {
+        "id": "e21",
+        "role": "link",
+        "label": "Ines Halvorsen",
+        "href": "wiki.example.org/wiki/Ines_Halvorsen"
+      },
+      {
+        "id": "e63",
+        "role": "link",
+        "label": "A warehouse fire",
+        "href": "wiki.example.org/wiki/A_warehouse_fire"
+      },
+      {
+        "id": "e64",
+        "role": "link",
+        "label": "Port Avery",
+        "href": "wiki.example.org/wiki/Port_Avery"
+      },
+      {
+        "id": "e27",
+        "role": "link",
+        "label": "Paper Lanterns",
+        "href": "wiki.example.org/wiki/Paper_Lanterns"
+      },
+      {
+        "id": "e65",
+        "role": "link",
+        "label": "heavy flooding",
+        "href": "wiki.example.org/wiki/heavy_flooding"
+      },
+      {
+        "id": "e66",
+        "role": "link",
+        "label": "the river valley",
+        "href": "wiki.example.org/wiki/the_river_valley"
+      },
+      {
+        "id": "e67",
+        "role": "link",
+        "label": "Regional Council",
+        "href": "wiki.example.org/wiki/Regional_Council"
+      },
+      {
+        "id": "e28",
+        "role": "link",
+        "label": "a long tour break",
+        "href": "wiki.example.org/wiki/a_long_tour_break"
+      },
+      {
+        "id": "e68",
+        "role": "link",
+        "label": "Lena Moravec",
+        "href": "wiki.example.org/wiki/Lena_Moravec"
+      },
+      {
+        "id": "e29",
+        "role": "link",
+        "label": "Ironwood",
+        "href": "wiki.example.org/wiki/Ironwood"
+      },
+      {
+        "id": "e69",
+        "role": "link",
+        "label": "the valley floods",
+        "href": "wiki.example.org/wiki/the_valley_floods"
+      },
+      {
+        "id": "e70",
+        "role": "link",
+        "label": "the delta storms",
+        "href": "wiki.example.org/wiki/the_delta_storms"
+      },
+      {
+        "id": "e71",
+        "role": "link",
+        "label": "the northern drought",
+        "href": "wiki.example.org/wiki/the_northern_drought"
+      },
+      {
+        "id": "e30",
+        "role": "link",
+        "label": "Static Bloom",
+        "href": "wiki.example.org/wiki/Static_Bloom"
+      },
+      {
+        "id": "e31",
+        "role": "link",
+        "label": "Velvet Signal",
+        "href": "wiki.example.org/wiki/Velvet_Signal"
+      },
+      {
+        "id": "e32",
+        "role": "link",
+        "label": "The Long Weekend",
+        "href": "wiki.example.org/wiki/The_Long_Weekend"
+      },
+      {
+        "id": "e72",
+        "role": "link",
+        "label": "timeline",
+        "href": "wiki.example.org/wiki/Timeline_of_the_Russo-Ukrai…"
+      },
+      {
+        "id": "e73",
+        "role": "link",
+        "label": "Recent deaths",
+        "href": "wiki.example.org/wiki/Deaths_in_2026"
+      },
+      {
+        "id": "e75",
+        "role": "link",
+        "label": "Tom Haverly",
+        "href": "wiki.example.org/wiki/Tom_Haverly"
+      },
+      {
+        "id": "e74",
+        "role": "link",
+        "label": "Margit Ellery",
+        "href": "wiki.example.org/wiki/Margit_Ellery"
+      },
+      {
+        "id": "e76",
+        "role": "link",
+        "label": "Rosa Quintel",
+        "href": "wiki.example.org/wiki/Rosa_Quintel"
+      },
+      {
+        "id": "e77",
+        "role": "link",
+        "label": "Paul Brenner",
+        "href": "wiki.example.org/wiki/Paul_Brenner"
+      },
+      {
+        "id": "e78",
+        "role": "link",
+        "label": "Marta Solis",
+        "href": "wiki.example.org/wiki/Marta_Solis"
+      },
+      {
+        "id": "e79",
+        "role": "link",
+        "label": "Luka Novak",
+        "href": "wiki.example.org/wiki/Luka_Novak"
+      },
+      {
+        "id": "e33",
+        "role": "link",
+        "label": "Tidewater",
+        "href": "wiki.example.org/wiki/Tidewater"
+      },
+      {
+        "id": "e80",
+        "role": "link",
+        "label": "More current events",
+        "href": "wiki.example.org/wiki/Portal:Current_events"
+      },
+      {
+        "id": "e81",
+        "role": "link",
+        "label": "Nominate an article",
+        "href": "wiki.example.org/wiki/Openpedia:In_the_news/Candi…"
+      },
+      {
+        "id": "e34",
+        "role": "link",
+        "label": "Full article...",
+        "href": "wiki.example.org/wiki/Eternal_Blue_(album)"
+      },
+      {
+        "id": "e35",
+        "role": "link",
+        "label": "Agnes Whitlow",
+        "href": "wiki.example.org/wiki/Agnes_Whitlow"
+      },
+      {
+        "id": "e36",
+        "role": "link",
+        "label": "Harlan Brothers",
+        "href": "wiki.example.org/wiki/Harlan_Brothers"
+      },
+      {
+        "id": "e37",
+        "role": "link",
+        "label": "Queen Elspeth of Varno",
+        "href": "wiki.example.org/wiki/Queen_Elspeth_of_Varno"
+      },
+      {
+        "id": "e38",
+        "role": "link",
+        "label": "Archive",
+        "href": "wiki.example.org/wiki/Openpedia:Today's_featured_…"
+      },
+      {
+        "id": "e39",
+        "role": "link",
+        "label": "By email",
+        "href": "lists.example.org/postorius/lists/daily-article…"
+      },
+      {
+        "id": "e40",
+        "role": "link",
+        "label": "More featured articles",
+        "href": "wiki.example.org/wiki/Openpedia:Featured_articles…"
+      },
+      {
+        "id": "e41",
+        "role": "link",
+        "label": "About",
+        "href": "wiki.example.org/wiki/Openpedia:About_Today's_fea…"
+      },
+      {
+        "id": "e82",
+        "role": "link",
+        "label": "September 17",
+        "href": "wiki.example.org/wiki/September_17"
+      },
+      {
+        "id": "e83",
+        "role": "link",
+        "label": "Founders' Day",
+        "href": "wiki.example.org/wiki/Founders_Day"
+      },
+      {
+        "id": "e85",
+        "role": "link",
+        "label": "1382",
+        "href": "wiki.example.org/wiki/1382"
+      },
+      {
+        "id": "e86",
+        "role": "link",
+        "label": "King Arno I",
+        "href": "wiki.example.org/wiki/King_Arno_I"
+      },
+      {
+        "id": "e43",
+        "role": "link",
+        "label": "Tropical Storm Iris",
+        "href": "wiki.example.org/wiki/Tropical_Storm_Iris"
+      },
+      {
+        "id": "e87",
+        "role": "link",
+        "label": "Queen Mara",
+        "href": "wiki.example.org/wiki/Queen_Mara"
+      },
+      {
+        "id": "e84",
+        "role": "link",
+        "label": "Hannah Bright",
+        "href": "wiki.example.org/wiki/Hannah_Bright"
+      },
+      {
+        "id": "e42",
+        "role": "link",
+        "label": "Tropical Storm Iris",
+        "href": "wiki.example.org/wiki/Tropical_Storm_Iris"
+      },
+      {
+        "id": "e44",
+        "role": "link",
+        "label": "the Old Mill Bridge",
+        "href": "wiki.example.org/wiki/the_Old_Mill_Bridge"
+      },
+      {
+        "id": "e88",
+        "role": "link",
+        "label": "1849",
+        "href": "wiki.example.org/wiki/1849"
+      },
+      {
+        "id": "e89",
+        "role": "link",
+        "label": "Hannah Bright",
+        "href": "wiki.example.org/wiki/Hannah_Bright"
+      },
+      {
+        "id": "e45",
+        "role": "link",
+        "label": "Governor Odile Marchand",
+        "href": "wiki.example.org/wiki/Governor_Odile_Marchand"
+      },
+      {
+        "id": "e90",
+        "role": "link",
+        "label": "Easton County",
+        "href": "wiki.example.org/wiki/Easton_County"
+      },
+      {
+        "id": "e46",
+        "role": "link",
+        "label": "The Pine Coast",
+        "href": "wiki.example.org/wiki/The_Pine_Coast"
+      },
+      {
+        "id": "e91",
+        "role": "link",
+        "label": "the Freedom Road",
+        "href": "wiki.example.org/wiki/the_Freedom_Road"
+      },
+      {
+        "id": "e47",
+        "role": "link",
+        "label": "Gerd Albers",
+        "href": "wiki.example.org/wiki/Gerd_Albers"
+      },
+      {
+        "id": "e92",
+        "role": "link",
+        "label": "1939",
+        "href": "wiki.example.org/wiki/1939"
+      },
+      {
+        "id": "e94",
+        "role": "link",
+        "label": "crossed the eastern border",
+        "href": "wiki.example.org/wiki/crossed_the_eastern_border"
+      },
+      {
+        "id": "e93",
+        "role": "link",
+        "label": "the Long War",
+        "href": "wiki.example.org/wiki/the_Long_War"
+      },
+      {
+        "id": "e48",
+        "role": "link",
+        "label": "the Northfield Gazette",
+        "href": "wiki.example.org/wiki/the_Northfield_Gazette"
+      },
+      {
+        "id": "e95",
+        "role": "link",
+        "label": "the first assault from the west",
+        "href": "wiki.example.org/wiki/the_first_assault_from_the_west"
+      },
+      {
+        "id": "e49",
+        "role": "link",
+        "label": "Lantern Night Fireworks",
+        "href": "wiki.example.org/wiki/Lantern_Night_Fireworks"
+      },
+      {
+        "id": "e96",
+        "role": "link",
+        "label": "1962",
+        "href": "wiki.example.org/wiki/1962"
+      },
+      {
+        "id": "e97",
+        "role": "link",
+        "label": "the space agency",
+        "href": "wiki.example.org/wiki/the_space_agency"
+      },
+      {
+        "id": "e98",
+        "role": "link",
+        "label": "the second astronaut group",
+        "href": "wiki.example.org/wiki/the_second_astronaut_group"
+      },
+      {
+        "id": "e99",
+        "role": "link",
+        "label": "landing on the Moon",
+        "href": "wiki.example.org/wiki/Moon_landing"
+      },
+      {
+        "id": "e50",
+        "role": "link",
+        "label": "Shelly Archer",
+        "href": "wiki.example.org/wiki/Shelly_Archer"
+      },
+      {
+        "id": "e100",
+        "role": "link",
+        "label": "2008",
+        "href": "wiki.example.org/wiki/2008"
+      },
+      {
+        "id": "e102",
+        "role": "link",
+        "label": "attacked the harbour office",
+        "href": "wiki.example.org/wiki/attacked_the_harbour_office"
+      },
+      {
+        "id": "e101",
+        "role": "link",
+        "label": "an armed group",
+        "href": "wiki.example.org/wiki/an_armed_group"
+      },
+      {
+        "id": "e51",
+        "role": "link",
+        "label": "Hurricane Delia",
+        "href": "wiki.example.org/wiki/Hurricane_Delia"
+      },
+      {
+        "id": "e103",
+        "role": "link",
+        "label": "Port Avery",
+        "href": "wiki.example.org/wiki/Port_Avery"
+      },
+      {
+        "id": "e53",
+        "role": "link",
+        "label": "Cyclone Pira",
+        "href": "wiki.example.org/wiki/Cyclone_Pira"
+      },
+      {
+        "id": "e52",
+        "role": "link",
+        "label": "MV Harrow",
+        "href": "wiki.example.org/wiki/MV_Harrow"
+      },
+      {
+        "id": "e104",
+        "role": "link",
+        "label": "Li Wen",
+        "href": "wiki.example.org/wiki/Li_Wen"
+      },
+      {
+        "id": "e105",
+        "role": "link",
+        "label": "Stephen Hale",
+        "href": "wiki.example.org/wiki/Stephen_Hale"
+      },
+      {
+        "id": "e106",
+        "role": "link",
+        "label": "Arne Lund",
+        "href": "wiki.example.org/wiki/Arne_Lund"
+      },
+      {
+        "id": "e107",
+        "role": "link",
+        "label": "Red Shelby",
+        "href": "wiki.example.org/wiki/Red_Shelby"
+      },
+      {
+        "id": "e54",
+        "role": "link",
+        "label": "Thomas Verne",
+        "href": "wiki.example.org/wiki/Thomas_Verne"
+      },
+      {
+        "id": "e108",
+        "role": "link",
+        "label": "September 16",
+        "href": "wiki.example.org/wiki/September_16"
+      },
+      {
+        "id": "e110",
+        "role": "link",
+        "label": "September 18",
+        "href": "wiki.example.org/wiki/September_18"
+      },
+      {
+        "id": "e55",
+        "role": "link",
+        "label": "Who's Who in Coastal Towns",
+        "href": "wiki.example.org/wiki/Who_s_Who_in_Coastal_Towns"
+      },
+      {
+        "id": "e111",
+        "role": "link",
+        "label": "Archive",
+        "href": "wiki.example.org/wiki/Openpedia:Selected_annivers…"
+      },
+      {
+        "id": "e113",
+        "role": "link",
+        "label": "List of days of the year",
+        "href": "wiki.example.org/wiki/List_of_days_of_the_year"
+      },
+      {
+        "id": "e114",
+        "role": "link",
+        "label": "About",
+        "href": "wiki.example.org/wiki/Openpedia:Selected_annivers…"
+      },
+      {
+        "id": "e56",
+        "role": "link",
+        "label": "a lighthouse was moved 900 metres inland",
+        "href": "wiki.example.org/wiki/a_lighthouse_was_moved_900_metres_inland"
+      },
+      {
+        "id": "e57",
+        "role": "link",
+        "label": "Archive",
+        "href": "wiki.example.org/wiki/Openpedia:Did_you_know_arch…"
+      },
+      {
+        "id": "e58",
+        "role": "link",
+        "label": "Start a new article",
+        "href": "wiki.example.org/wiki/Help:Your_first_article"
+      },
+      {
+        "id": "e59",
+        "role": "link",
+        "label": "Nominate an article",
+        "href": "wiki.example.org/wiki/Template_talk:Did_you_know"
+      },
+      {
+        "id": "e115",
+        "role": "link",
+        "label": "Airship Meridian",
+        "href": "wiki.example.org/wiki/Airship_Meridian"
+      },
+      {
+        "id": "e116",
+        "role": "link",
+        "label": "Airship Meridian",
+        "href": "wiki.example.org/wiki/Airship_Meridian"
+      },
+      {
+        "id": "e117",
+        "role": "link",
+        "label": "airship",
+        "href": "wiki.example.org/wiki/airship"
+      },
+      {
+        "id": "e118",
+        "role": "link",
+        "label": "Meridian program",
+        "href": "wiki.example.org/wiki/Meridian_program"
+      },
+      {
+        "id": "e119",
+        "role": "link",
+        "label": "Halvard Works",
+        "href": "wiki.example.org/wiki/Halvard_Works"
+      },
+      {
+        "id": "e121",
+        "role": "link",
+        "label": "Starward",
+        "href": "wiki.example.org/wiki/Starward"
+      },
+      {
+        "id": "e122",
+        "role": "link",
+        "label": "SS Meridian",
+        "href": "wiki.example.org/wiki/SS_Meridian"
+      },
+      {
+        "id": "e123",
+        "role": "link",
+        "label": "SS Meridian",
+        "href": "wiki.example.org/wiki/SS_Meridian"
+      },
+      {
+        "id": "e124",
+        "role": "link",
+        "label": "a cargo plane",
+        "href": "wiki.example.org/wiki/a_cargo_plane"
+      }
+    ]
+  },
+  "example": {
+    "url": "https://example.com/",
+    "title": "Example Domain",
+    "items": [
+      {
+        "id": "e01",
+        "role": "link",
+        "label": "Learn more",
+        "href": "iana.org/domains/example"
+      }
+    ]
+  },
+  "search-results": {
+    "url": "https://duckduckgo.com/?q=jev+typesafe",
+    "title": "jev typesafe at DuckDuckGo",
+    "searchBox": "e02",
+    "items": [
+      {
+        "id": "e01",
+        "role": "link",
+        "label": "DuckDuckGo home",
+        "href": "duckduckgo.com"
+      },
+      {
+        "id": "e02",
+        "role": "combobox",
+        "label": "jev typesafe"
+      },
+      {
+        "id": "e03",
+        "role": "button",
+        "label": "Search"
+      },
+      {
+        "id": "e05",
+        "role": "link",
+        "label": "All",
+        "href": "duckduckgo.com"
+      },
+      {
+        "id": "e06",
+        "role": "link",
+        "label": "Images",
+        "href": "duckduckgo.com"
+      },
+      {
+        "id": "e07",
+        "role": "link",
+        "label": "Videos",
+        "href": "duckduckgo.com"
+      },
+      {
+        "id": "e08",
+        "role": "link",
+        "label": "News",
+        "href": "duckduckgo.com"
+      },
+      {
+        "id": "e12",
+        "role": "button",
+        "label": "Search Settings"
+      },
+      {
+        "id": "e20",
+        "role": "link",
+        "label": "TypeSafe — Jev, the System One model",
+        "href": "typesafe.ai/jev",
+        "group": "result"
+      },
+      {
+        "id": "e21",
+        "role": "link",
+        "label": "typesafe.ai",
+        "href": "typesafe.ai",
+        "group": "result"
+      },
+      {
+        "id": "e22",
+        "role": "link",
+        "label": "Jev 1.13 | TypeSafe Documentation",
+        "href": "docs.typesafe.ai/models/jev",
+        "group": "result"
+      },
+      {
+        "id": "e23",
+        "role": "link",
+        "label": "docs.typesafe.ai",
+        "href": "docs.typesafe.ai",
+        "group": "result"
+      },
+      {
+        "id": "e24",
+        "role": "link",
+        "label": "GitHub - typesafe-ai/typesafe-sdk-js: TypeScript SDK",
+        "href": "github.com/typesafe-ai/typesafe-sdk-js",
+        "group": "result"
+      },
+      {
+        "id": "e25",
+        "role": "link",
+        "label": "github.com",
+        "href": "github.com",
+        "group": "result"
+      },
+      {
+        "id": "e26",
+        "role": "link",
+        "label": "TypeSafe (@typesafe_ai) / X",
+        "href": "x.com/typesafe_ai",
+        "group": "result"
+      },
+      {
+        "id": "e27",
+        "role": "button",
+        "label": "More results"
+      },
+      {
+        "id": "e28",
+        "role": "link",
+        "label": "Settings",
+        "href": "duckduckgo.com/settings"
+      },
+      {
+        "id": "e29",
+        "role": "link",
+        "label": "Privacy Policy",
+        "href": "duckduckgo.com/privacy"
+      }
+    ]
+  },
+  "checkout": {
+    "url": "https://shop.example.com/checkout",
+    "title": "Checkout — Example Shop",
+    "items": [
+      {
+        "id": "e01",
+        "role": "link",
+        "label": "Example Shop"
+      },
+      {
+        "id": "e02",
+        "role": "textbox",
+        "label": "Email address"
+      },
+      {
+        "id": "e03",
+        "role": "textbox",
+        "label": "Card number"
+      },
+      {
+        "id": "e04",
+        "role": "select",
+        "label": "Country"
+      },
+      {
+        "id": "e05",
+        "role": "button",
+        "label": "Place order"
+      },
+      {
+        "id": "e06",
+        "role": "link",
+        "label": "Back to cart"
+      },
+      {
+        "id": "e07",
+        "role": "button",
+        "label": "Delete account"
+      }
+    ]
+  },
+  "product": {
+    "url": "https://typesafe.ai/jev",
+    "title": "Jev — the System One model | TypeSafe",
+    "items": [
+      {
+        "id": "e01",
+        "role": "link",
+        "label": "TypeSafe",
+        "href": "typesafe.ai"
+      },
+      {
+        "id": "e02",
+        "role": "link",
+        "label": "Product"
+      },
+      {
+        "id": "e03",
+        "role": "link",
+        "label": "Documentation",
+        "href": "docs.typesafe.ai"
+      },
+      {
+        "id": "e04",
+        "role": "link",
+        "label": "Pricing"
+      },
+      {
+        "id": "e05",
+        "role": "link",
+        "label": "Blog"
+      },
+      {
+        "id": "e06",
+        "role": "button",
+        "label": "Get an API key"
+      },
+      {
+        "id": "e07",
+        "role": "link",
+        "label": "Read the docs",
+        "href": "docs.typesafe.ai/introduction"
+      },
+      {
+        "id": "e08",
+        "role": "link",
+        "label": "Join Discord",
+        "href": "discord.com"
+      }
+    ]
+  },
+  "ddg-lumen": {
+    "url": "https://html.duckduckgo.com/html/?q=lumen+app+router+tutorial",
+    "title": "lumen app router tutorial at DuckDuckGo",
+    "searchBox": "e02",
+    "items": [
+      {
+        "id": "e01",
+        "role": "link",
+        "label": "DuckDuckGo",
+        "href": "html.duckduckgo.com/html"
+      },
+      {
+        "id": "e02",
+        "role": "textbox",
+        "label": "lumen app router tutorial"
+      },
+      {
+        "id": "e03",
+        "role": "button",
+        "label": "Search"
+      },
+      {
+        "id": "e04",
+        "role": "select",
+        "label": "All Regions Argentina Australia Austria Belgium (fr) Belgium (nl) Brazil Bulgaria Canada ("
+      },
+      {
+        "id": "e05",
+        "role": "select",
+        "label": "Any Time Past Day Past Week Past Month Past Year"
+      },
+      {
+        "id": "e06",
+        "role": "link",
+        "label": "Routing: Getting Started | Lumen",
+        "href": "lumen.example.com/docs/routing/getting-started",
+        "group": "result"
+      },
+      {
+        "id": "e07",
+        "role": "link",
+        "label": "lumen.example.com/docs/routing/getting-started",
+        "href": "lumen.example.com/docs/routing/getting-started"
+      },
+      {
+        "id": "e08",
+        "role": "link",
+        "label": "Learn how to build full-stack web apps with the Lumen router.",
+        "href": "lumen.example.com/docs/routing/getting-started"
+      },
+      {
+        "id": "e09",
+        "role": "link",
+        "label": "The Router - Lumen",
+        "href": "lumen.example.com/learn/dashboard-app",
+        "group": "result"
+      },
+      {
+        "id": "e10",
+        "role": "link",
+        "label": "lumen.example.com/learn/dashboard-app",
+        "href": "lumen.example.com/learn/dashboard-app"
+      },
+      {
+        "id": "e11",
+        "role": "link",
+        "label": "Build a full-stack web application step by step with the free Lumen course.",
+        "href": "lumen.example.com/learn/dashboard-app"
+      },
+      {
+        "id": "e12",
+        "role": "link",
+        "label": "Lumen Router Tutorial: A Step-by-Step Guide for Beginners",
+        "href": "blog.example.org/lumen/router-tutorial-for-beginners",
+        "group": "result"
+      },
+      {
+        "id": "e13",
+        "role": "link",
+        "label": "blog.example.org/lumen/router-tutorial-for-beginners",
+        "href": "blog.example.org/lumen/router-tutorial-for-beginners"
+      },
+      {
+        "id": "e14",
+        "role": "link",
+        "label": "Learn how to use the Lumen router with this step-by-step tutorial for beginners.",
+        "href": "blog.example.org/lumen/router-tutorial-for-beginners"
+      },
+      {
+        "id": "e15",
+        "role": "link",
+        "label": "Lumen - Router Setup - Tutorials Library",
+        "href": "tutorials.example.net/lumen/router-setup.htm",
+        "group": "result"
+      },
+      {
+        "id": "e16",
+        "role": "link",
+        "label": "tutorials.example.net/lumen/router-setup.htm",
+        "href": "tutorials.example.net/lumen/router-setup.htm"
+      },
+      {
+        "id": "e17",
+        "role": "link",
+        "label": "From version 3, Lumen uses folder-based routing: the structure of your app folder is your routes.",
+        "href": "tutorials.example.net/lumen/router-setup.htm"
+      },
+      {
+        "id": "e18",
+        "role": "link",
+        "label": "Lumen Tutorial: Build a Full-Stack App in 12 Steps",
+        "href": "devnotes.example.com/lumen-tutorial-full-stack-app",
+        "group": "result"
+      },
+      {
+        "id": "e19",
+        "role": "link",
+        "label": "devnotes.example.com/lumen-tutorial-full-stack-app",
+        "href": "devnotes.example.com/lumen-tutorial-full-stack-app"
+      },
+      {
+        "id": "e20",
+        "role": "link",
+        "label": "Learn Lumen in 12 steps. Build a full-stack app with the router, server components and caching.",
+        "href": "devnotes.example.com/lumen-tutorial-full-stack-app"
+      },
+      {
+        "id": "e21",
+        "role": "link",
+        "label": "Lumen 3 Router - DevsForDevs",
+        "href": "devsfordevs.example.org/lumen/router",
+        "group": "result"
+      },
+      {
+        "id": "e22",
+        "role": "link",
+        "label": "devsfordevs.example.org/lumen/router",
+        "href": "devsfordevs.example.org/lumen/router"
+      },
+      {
+        "id": "e23",
+        "role": "link",
+        "label": "In this article we look at the Lumen 3 router. Routing is central to every web app.",
+        "href": "devsfordevs.example.org/lumen/router"
+      },
+      {
+        "id": "e24",
+        "role": "link",
+        "label": "Lumen Router Tutorial: From Pages to Production",
+        "href": "blog.example.dev/lumen-router-guide",
+        "group": "result"
+      },
+      {
+        "id": "e25",
+        "role": "link",
+        "label": "blog.example.dev/lumen-router-guide",
+        "href": "blog.example.dev/lumen-router-guide"
+      },
+      {
+        "id": "e26",
+        "role": "link",
+        "label": "A practical Lumen router guide. Covers layouts, route groups, server components and deploys.",
+        "href": "blog.example.dev/lumen-router-guide"
+      },
+      {
+        "id": "e27",
+        "role": "link",
+        "label": "Lumen Deep Dive: Getting Started with the Router and Server Components",
+        "href": "learn.example.io/tutorials/lumen-router-getting-started",
+        "group": "result"
+      },
+      {
+        "id": "e28",
+        "role": "link",
+        "label": "learn.example.io/tutorials/lumen-router-getting-started",
+        "href": "learn.example.io/tutorials/lumen-router-getting-started"
+      },
+      {
+        "id": "e29",
+        "role": "link",
+        "label": "A beginner-friendly guide to modern Lumen: the router, server components and data loading.",
+        "href": "learn.example.io/tutorials/lumen-router-getting-started"
+      },
+      {
+        "id": "e30",
+        "role": "link",
+        "label": "Lumen Tutorial",
+        "href": "tutorials.example.net/lumen/index.htm",
+        "group": "result"
+      },
+      {
+        "id": "e31",
+        "role": "link",
+        "label": "tutorials.example.net/lumen/index.htm",
+        "href": "tutorials.example.net/lumen/index.htm"
+      },
+      {
+        "id": "e32",
+        "role": "link",
+        "label": "This Lumen tutorial covers the fundamentals: installing, routing, pages and data.",
+        "href": "tutorials.example.net/lumen/index.htm"
+      },
+      {
+        "id": "e33",
+        "role": "link",
+        "label": "The Lumen Router: A Complete Guide to Modern Routing",
+        "href": "handbook.example.com/tutorials/lumen-router-guide",
+        "group": "result"
+      },
+      {
+        "id": "e34",
+        "role": "link",
+        "label": "handbook.example.com/tutorials/lumen-router-guide",
+        "href": "handbook.example.com/tutorials/lumen-router-guide"
+      },
+      {
+        "id": "e35",
+        "role": "link",
+        "label": "Published January 15 · 20 min read · Reference / Web Development",
+        "href": "handbook.example.com/tutorials/lumen-router-guide"
+      },
+      {
+        "id": "e36",
+        "role": "button",
+        "label": "Next"
+      },
+      {
+        "id": "e37",
+        "role": "link",
+        "label": "Feedback",
+        "href": "duckduckgo.com/feedback.html"
+      }
+    ]
+  },
+  "github-issues": {
+    "url": "https://github.com/acme-labs/lumen/issues",
+    "title": "Issues · acme-labs/lumen · GitHub",
+    "items": [
+      {
+        "id": "e01",
+        "role": "link",
+        "label": "Skip to content",
+        "href": "github.com/acme-labs/lumen/issues#start-of-content"
+      },
+      {
+        "id": "e02",
+        "role": "link",
+        "label": "Homepage",
+        "href": "github.com"
+      },
+      {
+        "id": "e03",
+        "role": "button",
+        "label": "Platform"
+      },
+      {
+        "id": "e04",
+        "role": "button",
+        "label": "Solutions"
+      },
+      {
+        "id": "e05",
+        "role": "button",
+        "label": "Resources"
+      },
+      {
+        "id": "e06",
+        "role": "button",
+        "label": "Open Source"
+      },
+      {
+        "id": "e07",
+        "role": "button",
+        "label": "Enterprise"
+      },
+      {
+        "id": "e08",
+        "role": "link",
+        "label": "Pricing",
+        "href": "github.com/pricing"
+      },
+      {
+        "id": "e09",
+        "role": "button",
+        "label": "Search or jump to, type / to search"
+      },
+      {
+        "id": "e10",
+        "role": "link",
+        "label": "Sign in",
+        "href": "github.com/login"
+      },
+      {
+        "id": "e11",
+        "role": "link",
+        "label": "Sign up",
+        "href": "github.com/signup"
+      },
+      {
+        "id": "e12",
+        "role": "link",
+        "label": "Code",
+        "href": "github.com/acme-labs/lumen"
+      },
+      {
+        "id": "e13",
+        "role": "link",
+        "label": "Issues",
+        "href": "github.com/acme-labs/lumen/issues?q=is%3Aissue+state%3Aopen"
+      },
+      {
+        "id": "e14",
+        "role": "link",
+        "label": "Pull requests",
+        "href": "github.com/acme-labs/lumen/pulls"
+      },
+      {
+        "id": "e15",
+        "role": "link",
+        "label": "Actions",
+        "href": "github.com/acme-labs/lumen/actions"
+      },
+      {
+        "id": "e16",
+        "role": "link",
+        "label": "Assigned to me",
+        "href": "github.com/acme-labs/lumen/issues?q=assignee%3A%40me"
+      },
+      {
+        "id": "e17",
+        "role": "link",
+        "label": "Created by me",
+        "href": "github.com/acme-labs/lumen/issues?q=author%3A%40me"
+      },
+      {
+        "id": "e18",
+        "role": "link",
+        "label": "Mentioned",
+        "href": "github.com/acme-labs/lumen/issues?q=mentions%3A%40me"
+      },
+      {
+        "id": "e19",
+        "role": "link",
+        "label": "Recent activity",
+        "href": "github.com/acme-labs/lumen/issues?q=updated%3A%3E%40today-1w"
+      },
+      {
+        "id": "e20",
+        "role": "link",
+        "label": "Views",
+        "href": "github.com/acme-labs/lumen/issues/views"
+      },
+      {
+        "id": "e21",
+        "role": "link",
+        "label": "Milestones",
+        "href": "github.com/acme-labs/lumen/milestones"
+      },
+      {
+        "id": "e22",
+        "role": "link",
+        "label": "Labels",
+        "href": "github.com/acme-labs/lumen/labels"
+      },
+      {
+        "id": "e23",
+        "role": "link",
+        "label": "Feedback Preview",
+        "href": "gh.io/issues-sidebar-feedback"
+      },
+      {
+        "id": "e24",
+        "role": "button",
+        "label": "Collapse sidebar"
+      },
+      {
+        "id": "e25",
+        "role": "link",
+        "label": "New issue",
+        "href": "github.com/login"
+      },
+      {
+        "id": "e26",
+        "role": "combobox",
+        "label": "is:issue state:open"
+      },
+      {
+        "id": "e27",
+        "role": "link",
+        "label": "Open 1,058 (1,058)",
+        "href": "github.com/acme-labs/lumen/issues#open"
+      },
+      {
+        "id": "e28",
+        "role": "link",
+        "label": "Closed 24,436 (24,436)",
+        "href": "github.com/acme-labs/lumen/issues#closed"
+      },
+      {
+        "id": "e29",
+        "role": "button",
+        "label": "Filter by author"
+      },
+      {
+        "id": "e30",
+        "role": "button",
+        "label": "Filter by labels"
+      },
+      {
+        "id": "e31",
+        "role": "button",
+        "label": "Filter by projects"
+      },
+      {
+        "id": "e32",
+        "role": "button",
+        "label": "Filter by milestones"
+      },
+      {
+        "id": "e33",
+        "role": "button",
+        "label": "Filter by assignees"
+      },
+      {
+        "id": "e34",
+        "role": "button",
+        "label": "Filter by issue type"
+      },
+      {
+        "id": "e35",
+        "role": "button",
+        "label": "Sort by Newest descending"
+      },
+      {
+        "id": "e36",
+        "role": "link",
+        "label": "Refresh inside a modal route falls back to a full page load when the back button is used",
+        "href": "github.com/acme-labs/lumen/issues/4658",
+        "group": "issue"
+      },
+      {
+        "id": "e37",
+        "role": "button",
+        "label": "Filter by label Nested Routes"
+      },
+      {
+        "id": "e38",
+        "role": "button",
+        "label": "Filter by author dev-one"
+      },
+      {
+        "id": "e39",
+        "role": "link",
+        "label": "1 linked pull request acme-labs/lumen#4663: fix(router): keep the modal URL on refresh",
+        "href": "github.com/acme-labs/lumen/pull/4663"
+      },
+      {
+        "id": "e40",
+        "role": "link",
+        "label": "Menu bug on phones and tablets: the side menu stays open over the search field",
+        "href": "github.com/acme-labs/lumen/issues/4656",
+        "group": "issue"
+      },
+      {
+        "id": "e41",
+        "role": "link",
+        "label": "Documentation",
+        "href": "github.com/acme-labs/lumen/issues?q=type%3ADocumentation"
+      },
+      {
+        "id": "e42",
+        "role": "button",
+        "label": "Filter by author dev-two"
+      },
+      {
+        "id": "e43",
+        "role": "link",
+        "label": "Since 4.1.0 the published types need a newer TypeScript: cannot find name 'URLPattern'",
+        "href": "github.com/acme-labs/lumen/issues/4631",
+        "group": "issue"
+      },
+      {
+        "id": "e44",
+        "role": "button",
+        "label": "Filter by label TypeScript"
+      },
+      {
+        "id": "e45",
+        "role": "button",
+        "label": "Filter by author dev-three"
+      },
+      {
+        "id": "e46",
+        "role": "link",
+        "label": "1 linked pull request acme-labs/lumen#4632: fix(types): keep the url pattern types local",
+        "href": "github.com/acme-labs/lumen/pull/4632"
+      },
+      {
+        "id": "e47",
+        "role": "link",
+        "label": "Bolt: a stylesheet imported as an asset fails when used from a server component",
+        "href": "github.com/acme-labs/lumen/issues/4603",
+        "group": "issue"
+      },
+      {
+        "id": "e48",
+        "role": "button",
+        "label": "Filter by label Styles"
+      },
+      {
+        "id": "e49",
+        "role": "button",
+        "label": "Filter by label Module Resolution"
+      },
+      {
+        "id": "e50",
+        "role": "button",
+        "label": "Filter by label Bolt"
+      },
+      {
+        "id": "e51",
+        "role": "link",
+        "label": "Bug",
+        "href": "github.com/acme-labs/lumen/issues?q=type%3ABug"
+      },
+      {
+        "id": "e52",
+        "role": "button",
+        "label": "Filter by author dev-four"
+      },
+      {
+        "id": "e53",
+        "role": "link",
+        "label": "Bolt: \"cannot resolve style helper\" warning on every reload",
+        "href": "github.com/acme-labs/lumen/issues/4595",
+        "group": "issue"
+      },
+      {
+        "id": "e54",
+        "role": "button",
+        "label": "Filter by label Pages"
+      },
+      {
+        "id": "e55",
+        "role": "button",
+        "label": "Filter by author dev-five"
+      },
+      {
+        "id": "e56",
+        "role": "link",
+        "label": "Bolt: compiler plugins run in the wrong order, so macro plugins see compiled code",
+        "href": "github.com/acme-labs/lumen/issues/4580",
+        "group": "issue"
+      },
+      {
+        "id": "e57",
+        "role": "button",
+        "label": "Filter by label Components"
+      },
+      {
+        "id": "e58",
+        "role": "button",
+        "label": "Filter by label Compiler"
+      },
+      {
+        "id": "e59",
+        "role": "button",
+        "label": "Filter by author dev-six"
+      },
+      {
+        "id": "e60",
+        "role": "link",
+        "label": "Bolt: a build reusing a cache from another pipeline fails with a missing chunk",
+        "href": "github.com/acme-labs/lumen/issues/4579",
+        "group": "issue"
+      },
+      {
+        "id": "e61",
+        "role": "button",
+        "label": "Filter by label Performance"
+      },
+      {
+        "id": "e62",
+        "role": "link",
+        "label": "Soft navigation into a nested layout scrolls past the new layout",
+        "href": "github.com/acme-labs/lumen/issues/4578",
+        "group": "issue"
+      },
+      {
+        "id": "e63",
+        "role": "button",
+        "label": "Filter by label Navigation"
+      },
+      {
+        "id": "e64",
+        "role": "button",
+        "label": "Filter by author dev-seven"
+      },
+      {
+        "id": "e65",
+        "role": "link",
+        "label": "1 linked pull request acme-labs/lumen#4609: Fix scrolling past newly entered layouts",
+        "href": "github.com/acme-labs/lumen/pull/4609"
+      },
+      {
+        "id": "e66",
+        "role": "link",
+        "label": "Building with an alternative runtime prints a bogus \"outside of Suspense\" error",
+        "href": "github.com/acme-labs/lumen/issues/4575",
+        "group": "issue"
+      },
+      {
+        "id": "e67",
+        "role": "button",
+        "label": "Filter by label Runtime"
+      },
+      {
+        "id": "e68",
+        "role": "button",
+        "label": "Filter by author dev-eight"
+      },
+      {
+        "id": "e69",
+        "role": "link",
+        "label": "Layout redirect loops on link navigation even with a middleware response",
+        "href": "github.com/acme-labs/lumen/issues/4568",
+        "group": "issue"
+      },
+      {
+        "id": "e70",
+        "role": "button",
+        "label": "Filter by label Redirects"
+      },
+      {
+        "id": "e71",
+        "role": "button",
+        "label": "Filter by author dev-nine"
+      },
+      {
+        "id": "e72",
+        "role": "link",
+        "label": "Cache invalidation during a streaming response is silently dropped",
+        "href": "github.com/acme-labs/lumen/issues/4566",
+        "group": "issue"
+      },
+      {
+        "id": "e73",
+        "role": "button",
+        "label": "Filter by author dev-ten"
+      },
+      {
+        "id": "e74",
+        "role": "link",
+        "label": "1 linked pull request acme-labs/lumen#4567: Apply invalidations queued during a stream",
+        "href": "github.com/acme-labs/lumen/pull/4567"
+      },
+      {
+        "id": "e75",
+        "role": "link",
+        "label": "Hydration mismatch reported for an attribute added by a browser extension",
+        "href": "github.com/acme-labs/lumen/issues/4554",
+        "group": "issue"
+      },
+      {
+        "id": "e76",
+        "role": "button",
+        "label": "Filter by label Error Overlay"
+      },
+      {
+        "id": "e77",
+        "role": "button",
+        "label": "Filter by author dev-eleven"
+      },
+      {
+        "id": "e78",
+        "role": "link",
+        "label": "Pages: a stylesheet shared by a page and a lazy component is removed after navigation",
+        "href": "github.com/acme-labs/lumen/issues/4531",
+        "group": "issue"
+      },
+      {
+        "id": "e79",
+        "role": "button",
+        "label": "Filter by label Lazy Loading"
+      },
+      {
+        "id": "e80",
+        "role": "button",
+        "label": "Filter by label Bundling"
+      },
+      {
+        "id": "e81",
+        "role": "link",
+        "label": "1 linked pull request acme-labs/lumen#4636: fix: keep stylesheets shared with lazy components",
+        "href": "github.com/acme-labs/lumen/pull/4636"
+      },
+      {
+        "id": "e82",
+        "role": "link",
+        "label": "Invalid URL error in response to an OPTIONS * request",
+        "href": "github.com/acme-labs/lumen/issues/4520",
+        "group": "issue"
+      },
+      {
+        "id": "e83",
+        "role": "link",
+        "label": "1 linked pull request acme-labs/lumen#4530: fix: answer 400 for unparseable requests",
+        "href": "github.com/acme-labs/lumen/pull/4530"
+      },
+      {
+        "id": "e84",
+        "role": "link",
+        "label": "Cached components: the tracing setup is read during rendering",
+        "href": "github.com/acme-labs/lumen/issues/4510",
+        "group": "issue"
+      },
+      {
+        "id": "e85",
+        "role": "button",
+        "label": "Filter by label Instrumentation"
+      },
+      {
+        "id": "e86",
+        "role": "link",
+        "label": "Bundling: a byte-order mark in concatenated styles breaks the next rule",
+        "href": "github.com/acme-labs/lumen/issues/4502",
+        "group": "issue"
+      },
+      {
+        "id": "e87",
+        "role": "link",
+        "label": "Cached components: form requests to a literal dynamic route fail with a 500",
+        "href": "github.com/acme-labs/lumen/issues/4500",
+        "group": "issue"
+      },
+      {
+        "id": "e88",
+        "role": "link",
+        "label": "Bolt dev server causes first navigation to fail until the page is reloaded",
+        "href": "github.com/acme-labs/lumen/issues/4454",
+        "group": "issue"
+      },
+      {
+        "id": "e89",
+        "role": "link",
+        "label": "Router: refresh() reloads the whole page when parallel routes are kept",
+        "href": "github.com/acme-labs/lumen/issues/4444",
+        "group": "issue"
+      },
+      {
+        "id": "e90",
+        "role": "link",
+        "label": "Bolt: new Worker() cannot find a module built as ESM",
+        "href": "github.com/acme-labs/lumen/issues/4442",
+        "group": "issue"
+      },
+      {
+        "id": "e91",
+        "role": "link",
+        "label": "Bolt: declaration files reached through a dynamic worker path are bundled",
+        "href": "github.com/acme-labs/lumen/issues/4432",
+        "group": "issue"
+      },
+      {
+        "id": "e92",
+        "role": "link",
+        "label": "Next page",
+        "href": "github.com/acme-labs/lumen/issues?page=2"
+      }
+    ]
+  },
+  "docs-array-map": {
+    "url": "https://jsdocs.example.org/js/builtins/Array/map",
+    "title": "Array.prototype.map() - JavaScript | JSDocs",
+    "items": [
+      {
+        "id": "e01",
+        "role": "link",
+        "label": "Skip to main content",
+        "href": "jsdocs.example.org/js/builtins/Array/map#content"
+      },
+      {
+        "id": "e02",
+        "role": "link",
+        "label": "Skip to search",
+        "href": "jsdocs.example.org/js/builtins/Array/map#mdn-search"
+      },
+      {
+        "id": "e03",
+        "role": "button",
+        "label": "HTML"
+      },
+      {
+        "id": "e04",
+        "role": "button",
+        "label": "CSS"
+      },
+      {
+        "id": "e05",
+        "role": "button",
+        "label": "JavaScript"
+      },
+      {
+        "id": "e06",
+        "role": "button",
+        "label": "Web APIs"
+      },
+      {
+        "id": "e07",
+        "role": "button",
+        "label": "All"
+      },
+      {
+        "id": "e08",
+        "role": "button",
+        "label": "Learn"
+      },
+      {
+        "id": "e09",
+        "role": "button",
+        "label": "Tools"
+      },
+      {
+        "id": "e10",
+        "role": "button",
+        "label": "About"
+      },
+      {
+        "id": "e11",
+        "role": "link",
+        "label": "Blog",
+        "href": "jsdocs.example.org/blog"
+      },
+      {
+        "id": "e12",
+        "role": "link",
+        "label": "Web",
+        "href": "jsdocs.example.org/docs/Web"
+      },
+      {
+        "id": "e13",
+        "role": "link",
+        "label": "JavaScript",
+        "href": "jsdocs.example.org/docs/Web/JavaScript"
+      },
+      {
+        "id": "e14",
+        "role": "link",
+        "label": "Reference",
+        "href": "jsdocs.example.org/docs/Web/JavaScript/Reference"
+      },
+      {
+        "id": "e15",
+        "role": "link",
+        "label": "Standard built-in objects",
+        "href": "jsdocs.example.org/js/builtins"
+      },
+      {
+        "id": "e16",
+        "role": "link",
+        "label": "Array",
+        "href": "jsdocs.example.org/js/builtins/Array"
+      },
+      {
+        "id": "e17",
+        "role": "link",
+        "label": "map()",
+        "href": "jsdocs.example.org/js/builtins/Array/map"
+      },
+      {
+        "id": "e18",
+        "role": "button",
+        "label": "Baseline WIDELY AVAILABLE"
+      },
+      {
+        "id": "e19",
+        "role": "link",
+        "label": "Try it",
+        "href": "jsdocs.example.org/js/builtins/Array/map#try_it"
+      },
+      {
+        "id": "e20",
+        "role": "link",
+        "label": "Syntax",
+        "href": "jsdocs.example.org/js/builtins/Array/map#syntax"
+      },
+      {
+        "id": "e21",
+        "role": "link",
+        "label": "Description",
+        "href": "jsdocs.example.org/js/builtins/Array/map#description"
+      },
+      {
+        "id": "e22",
+        "role": "link",
+        "label": "Examples",
+        "href": "jsdocs.example.org/js/builtins/Array/map#examples"
+      },
+      {
+        "id": "e23",
+        "role": "link",
+        "label": "Specifications",
+        "href": "jsdocs.example.org/js/builtins/Array/map#specifications"
+      },
+      {
+        "id": "e24",
+        "role": "link",
+        "label": "Browser compatibility",
+        "href": "jsdocs.example.org/js/builtins/Array/map#browser_compatibility"
+      },
+      {
+        "id": "e25",
+        "role": "link",
+        "label": "See also",
+        "href": "jsdocs.example.org/js/builtins/Array/map#see_also"
+      },
+      {
+        "id": "e26",
+        "role": "link",
+        "label": "Parameters",
+        "href": "jsdocs.example.org/js/builtins/Array/map#parameters"
+      },
+      {
+        "id": "e27",
+        "role": "link",
+        "label": "callbackFn",
+        "href": "jsdocs.example.org/js/builtins/Array/map#callbackfn"
+      },
+      {
+        "id": "e28",
+        "role": "link",
+        "label": "element",
+        "href": "jsdocs.example.org/js/builtins/Array/map#element"
+      },
+      {
+        "id": "e29",
+        "role": "link",
+        "label": "index",
+        "href": "jsdocs.example.org/js/builtins/Array/map#index"
+      },
+      {
+        "id": "e30",
+        "role": "link",
+        "label": "array",
+        "href": "jsdocs.example.org/js/builtins/Array/map#array"
+      },
+      {
+        "id": "e31",
+        "role": "link",
+        "label": "thisArg Optional",
+        "href": "jsdocs.example.org/js/builtins/Array/map#thisarg"
+      },
+      {
+        "id": "e32",
+        "role": "link",
+        "label": "iterative methods",
+        "href": "jsdocs.example.org/js/builtins/Array#iterative_methods"
+      },
+      {
+        "id": "e33",
+        "role": "link",
+        "label": "Return value",
+        "href": "jsdocs.example.org/js/builtins/Array/map#return_value"
+      },
+      {
+        "id": "e34",
+        "role": "link",
+        "label": "iterative method",
+        "href": "jsdocs.example.org/js/builtins/Array#iterative_methods"
+      },
+      {
+        "id": "e35",
+        "role": "link",
+        "label": "sparse arrays",
+        "href": "jsdocs.example.org/js/guide/Indexed_collections#sparse_arrays"
+      },
+      {
+        "id": "e36",
+        "role": "link",
+        "label": "generic",
+        "href": "jsdocs.example.org/js/builtins/Array#generic_array_methods"
+      },
+      {
+        "id": "e37",
+        "role": "link",
+        "label": "forEach",
+        "href": "jsdocs.example.org/js/builtins/Array/forEach"
+      },
+      {
+        "id": "e38",
+        "role": "link",
+        "label": "for...of",
+        "href": "jsdocs.example.org/docs/Web/JavaScript/Reference/Statements/for...of"
+      },
+      {
+        "id": "e39",
+        "role": "link",
+        "label": "Turning a list of numbers into their square roots",
+        "href": "jsdocs.example.org/js/builtins/Array/map#mapping_an_array_of_numbers_to_an_array_of_square_roots"
+      },
+      {
+        "id": "e40",
+        "role": "link",
+        "label": "Reshaping objects with map",
+        "href": "jsdocs.example.org/js/builtins/Array/map#using_map_to_reformat_objects_in_an_array"
+      },
+      {
+        "id": "e41",
+        "role": "link",
+        "label": "Why parseInt() and map() don't mix",
+        "href": "jsdocs.example.org/js/builtins/Array/map#using_parseint_with_map"
+      },
+      {
+        "id": "e42",
+        "role": "link",
+        "label": "parseInt",
+        "href": "jsdocs.example.org/js/builtins/parseInt"
+      },
+      {
+        "id": "e43",
+        "role": "link",
+        "label": "Number",
+        "href": "jsdocs.example.org/js/builtins/Number"
+      },
+      {
+        "id": "e44",
+        "role": "link",
+        "label": "Optional arguments and callbacks",
+        "href": "blog.example.com/optional-arguments"
+      },
+      {
+        "id": "e45",
+        "role": "link",
+        "label": "When the result has holes",
+        "href": "jsdocs.example.org/js/builtins/Array/map#mapped_array_contains_undefined"
+      },
+      {
+        "id": "e46",
+        "role": "link",
+        "label": "undefined",
+        "href": "jsdocs.example.org/js/builtins/undefined"
+      },
+      {
+        "id": "e47",
+        "role": "link",
+        "label": "filter()",
+        "href": "jsdocs.example.org/js/builtins/Array/filter"
+      },
+      {
+        "id": "e48",
+        "role": "link",
+        "label": "flatMap()",
+        "href": "jsdocs.example.org/js/builtins/Array/flatMap"
+      },
+      {
+        "id": "e49",
+        "role": "link",
+        "label": "Mapping with side effects",
+        "href": "jsdocs.example.org/js/builtins/Array/map#side-effectful_mapping"
+      },
+      {
+        "id": "e50",
+        "role": "link",
+        "label": "Reading the whole array in the callback",
+        "href": "jsdocs.example.org/js/builtins/Array/map#using_the_third_argument_of_callbackfn"
+      },
+      {
+        "id": "e51",
+        "role": "link",
+        "label": "map() and arrays with holes",
+        "href": "jsdocs.example.org/js/builtins/Array/map#using_map_on_sparse_arrays"
+      },
+      {
+        "id": "e52",
+        "role": "link",
+        "label": "map() on array-like objects",
+        "href": "jsdocs.example.org/js/builtins/Array/map#calling_map_on_non-array_objects"
+      },
+      {
+        "id": "e53",
+        "role": "link",
+        "label": "Array.from()",
+        "href": "jsdocs.example.org/js/builtins/Array/from"
+      },
+      {
+        "id": "e54",
+        "role": "link",
+        "label": "ECMAScript Language Specification: Array.prototype.map",
+        "href": "tc39.es/ecma262/#sec-array.prototype.map"
+      },
+      {
+        "id": "e55",
+        "role": "link",
+        "label": "A polyfill of Array.prototype.map",
+        "href": "github.com/example/polyfills#array-map"
+      },
+      {
+        "id": "e56",
+        "role": "link",
+        "label": "Another polyfill of Array.prototype.map",
+        "href": "www.npmjs.com/package/example-array-map"
+      },
+      {
+        "id": "e57",
+        "role": "link",
+        "label": "Indexed collections",
+        "href": "jsdocs.example.org/js/guide/Indexed_collections"
+      },
+      {
+        "id": "e58",
+        "role": "link",
+        "label": "Array.prototype.forEach()",
+        "href": "jsdocs.example.org/js/builtins/Array/forEach"
+      },
+      {
+        "id": "e59",
+        "role": "link",
+        "label": "TypedArray.prototype.map()",
+        "href": "jsdocs.example.org/js/builtins/TypedArray/map"
+      },
+      {
+        "id": "e60",
+        "role": "link",
+        "label": "Map",
+        "href": "jsdocs.example.org/js/builtins/Map"
+      },
+      {
+        "id": "e61",
+        "role": "link",
+        "label": "How to contribute",
+        "href": "jsdocs.example.org/community/Getting_started"
+      },
+      {
+        "id": "e62",
+        "role": "link",
+        "label": "JSDocs contributors",
+        "href": "jsdocs.example.org/js/builtins/Array/map/contributors.txt"
+      },
+      {
+        "id": "e63",
+        "role": "link",
+        "label": "View this page's source",
+        "href": "github.com/example/jsdocs/blob/main/array/map.md"
+      },
+      {
+        "id": "e64",
+        "role": "link",
+        "label": "Report a problem with this page",
+        "href": "github.com/example/jsdocs/issues/new"
+      },
+      {
+        "id": "e65",
+        "role": "button",
+        "label": "Constructor"
+      },
+      {
+        "id": "e66",
+        "role": "link",
+        "label": "Array()",
+        "href": "jsdocs.example.org/js/builtins/Array/Array"
+      },
+      {
+        "id": "e67",
+        "role": "button",
+        "label": "Static methods"
+      },
+      {
+        "id": "e68",
+        "role": "link",
+        "label": "from()",
+        "href": "jsdocs.example.org/js/builtins/Array/from"
+      },
+      {
+        "id": "e69",
+        "role": "link",
+        "label": "fromAsync()",
+        "href": "jsdocs.example.org/js/builtins/Array/fromAsync"
+      },
+      {
+        "id": "e70",
+        "role": "link",
+        "label": "isArray()",
+        "href": "jsdocs.example.org/js/builtins/Array/isArray"
+      },
+      {
+        "id": "e71",
+        "role": "link",
+        "label": "of()",
+        "href": "jsdocs.example.org/js/builtins/Array/of"
+      },
+      {
+        "id": "e72",
+        "role": "button",
+        "label": "Instance methods"
+      },
+      {
+        "id": "e73",
+        "role": "link",
+        "label": "at()",
+        "href": "jsdocs.example.org/js/builtins/Array/at"
+      },
+      {
+        "id": "e74",
+        "role": "link",
+        "label": "concat()",
+        "href": "jsdocs.example.org/js/builtins/Array/concat"
+      },
+      {
+        "id": "e75",
+        "role": "link",
+        "label": "entries()",
+        "href": "jsdocs.example.org/js/builtins/Array/entries"
+      },
+      {
+        "id": "e76",
+        "role": "link",
+        "label": "every()",
+        "href": "jsdocs.example.org/js/builtins/Array/every"
+      },
+      {
+        "id": "e77",
+        "role": "link",
+        "label": "fill()",
+        "href": "jsdocs.example.org/js/builtins/Array/fill"
+      },
+      {
+        "id": "e78",
+        "role": "link",
+        "label": "find()",
+        "href": "jsdocs.example.org/js/builtins/Array/find"
+      },
+      {
+        "id": "e79",
+        "role": "link",
+        "label": "findIndex()",
+        "href": "jsdocs.example.org/js/builtins/Array/findIndex"
+      },
+      {
+        "id": "e80",
+        "role": "link",
+        "label": "flat()",
+        "href": "jsdocs.example.org/js/builtins/Array/flat"
+      },
+      {
+        "id": "e81",
+        "role": "link",
+        "label": "forEach()",
+        "href": "jsdocs.example.org/js/builtins/Array/forEach"
+      },
+      {
+        "id": "e82",
+        "role": "link",
+        "label": "includes()",
+        "href": "jsdocs.example.org/js/builtins/Array/includes"
+      },
+      {
+        "id": "e83",
+        "role": "link",
+        "label": "indexOf()",
+        "href": "jsdocs.example.org/js/builtins/Array/indexOf"
+      },
+      {
+        "id": "e84",
+        "role": "link",
+        "label": "join()",
+        "href": "jsdocs.example.org/js/builtins/Array/join"
+      },
+      {
+        "id": "e85",
+        "role": "link",
+        "label": "keys()",
+        "href": "jsdocs.example.org/js/builtins/Array/keys"
+      },
+      {
+        "id": "e86",
+        "role": "link",
+        "label": "pop()",
+        "href": "jsdocs.example.org/js/builtins/Array/pop"
+      },
+      {
+        "id": "e87",
+        "role": "link",
+        "label": "push()",
+        "href": "jsdocs.example.org/js/builtins/Array/push"
+      },
+      {
+        "id": "e88",
+        "role": "link",
+        "label": "reduce()",
+        "href": "jsdocs.example.org/js/builtins/Array/reduce"
+      },
+      {
+        "id": "e89",
+        "role": "link",
+        "label": "reverse()",
+        "href": "jsdocs.example.org/js/builtins/Array/reverse"
+      },
+      {
+        "id": "e90",
+        "role": "link",
+        "label": "slice()",
+        "href": "jsdocs.example.org/js/builtins/Array/slice"
+      },
+      {
+        "id": "e91",
+        "role": "link",
+        "label": "some()",
+        "href": "jsdocs.example.org/js/builtins/Array/some"
+      },
+      {
+        "id": "e92",
+        "role": "link",
+        "label": "sort()",
+        "href": "jsdocs.example.org/js/builtins/Array/sort"
+      }
+    ]
+  },
+  "npm-lumen": {
+    "url": "https://www.npmjs.com/package/lumen",
+    "title": "lumen - npm",
+    "searchBox": "e12",
+    "items": [
+      {
+        "id": "e01",
+        "role": "link",
+        "label": "Read about the new package provenance badges",
+        "href": "blog.example.com/npm/provenance-badges"
+      },
+      {
+        "id": "e02",
+        "role": "button",
+        "label": "Close notification"
+      },
+      {
+        "id": "e03",
+        "role": "link",
+        "label": "skip to content",
+        "href": "www.npmjs.com/package/lumen#main"
+      },
+      {
+        "id": "e04",
+        "role": "link",
+        "label": "skip to package search",
+        "href": "www.npmjs.com/package/lumen#search"
+      },
+      {
+        "id": "e05",
+        "role": "link",
+        "label": "skip to sign in",
+        "href": "www.npmjs.com/package/lumen#signin"
+      },
+      {
+        "id": "e06",
+        "role": "button",
+        "label": "Light mode — click for dark"
+      },
+      {
+        "id": "e07",
+        "role": "link",
+        "label": "Pro",
+        "href": "www.npmjs.com/products/pro"
+      },
+      {
+        "id": "e08",
+        "role": "link",
+        "label": "Teams",
+        "href": "www.npmjs.com/products/teams"
+      },
+      {
+        "id": "e09",
+        "role": "link",
+        "label": "Pricing",
+        "href": "www.npmjs.com/products"
+      },
+      {
+        "id": "e10",
+        "role": "link",
+        "label": "Documentation",
+        "href": "docs.npmjs.com"
+      },
+      {
+        "id": "e11",
+        "role": "link",
+        "label": "Npm",
+        "href": "www.npmjs.com"
+      },
+      {
+        "id": "e12",
+        "role": "combobox",
+        "label": "Search packages"
+      },
+      {
+        "id": "e13",
+        "role": "button",
+        "label": "Search"
+      },
+      {
+        "id": "e14",
+        "role": "link",
+        "label": "Sign Up",
+        "href": "www.npmjs.com/signup"
+      },
+      {
+        "id": "e15",
+        "role": "link",
+        "label": "Sign In",
+        "href": "www.npmjs.com/login"
+      },
+      {
+        "id": "e16",
+        "role": "tab",
+        "label": "Readme",
+        "href": "www.npmjs.com/package/lumen?activeTab=readme"
+      },
+      {
+        "id": "e17",
+        "role": "tab",
+        "label": "Code Beta",
+        "href": "www.npmjs.com/package/lumen?activeTab=code"
+      },
+      {
+        "id": "e18",
+        "role": "tab",
+        "label": "0 Dependencies",
+        "href": "www.npmjs.com/package/lumen?activeTab=dependencies"
+      },
+      {
+        "id": "e19",
+        "role": "tab",
+        "label": "18,342 Dependents",
+        "href": "www.npmjs.com/package/lumen?activeTab=dependents"
+      },
+      {
+        "id": "e20",
+        "role": "tab",
+        "label": "412 Versions",
+        "href": "www.npmjs.com/package/lumen?activeTab=versions"
+      },
+      {
+        "id": "e21",
+        "role": "link",
+        "label": "Permalink: lumen",
+        "href": "www.npmjs.com/package/lumen#react"
+      },
+      {
+        "id": "e22",
+        "role": "link",
+        "label": "production build",
+        "href": "lumen.example.com/docs/production"
+      },
+      {
+        "id": "e23",
+        "role": "link",
+        "label": "Permalink: Usage",
+        "href": "www.npmjs.com/package/lumen#usage"
+      },
+      {
+        "id": "e24",
+        "role": "link",
+        "label": "Permalink: Documentation",
+        "href": "www.npmjs.com/package/lumen#documentation"
+      },
+      {
+        "id": "e25",
+        "role": "link",
+        "label": "https://lumen.example.com/",
+        "href": "lumen.example.com"
+      },
+      {
+        "id": "e26",
+        "role": "link",
+        "label": "Permalink: API",
+        "href": "www.npmjs.com/package/lumen#api"
+      },
+      {
+        "id": "e27",
+        "role": "link",
+        "label": "https://lumen.example.com/reference",
+        "href": "lumen.example.com/reference"
+      },
+      {
+        "id": "e28",
+        "role": "link",
+        "label": "lumen",
+        "href": "www.npmjs.com/search?q=keywords:lumen"
+      },
+      {
+        "id": "e29",
+        "role": "link",
+        "label": "View build summary",
+        "href": "github.com/acme-labs/lumen/actions/runs/34381683225/attempts/1"
+      },
+      {
+        "id": "e30",
+        "role": "link",
+        "label": "github.com/acme-labs/lumen@7c1e2a9",
+        "href": "github.com/acme-labs/lumen/tree/1d34f91"
+      },
+      {
+        "id": "e31",
+        "role": "link",
+        "label": ".github/workflows/release.yml",
+        "href": "github.com/acme-labs/lumen/actions/runs/34381683225/workflow"
+      },
+      {
+        "id": "e32",
+        "role": "link",
+        "label": "Transparency log entry",
+        "href": "search.sigstore.dev/?logIndex=2771636351"
+      },
+      {
+        "id": "e33",
+        "role": "link",
+        "label": "Share feedback",
+        "href": "github.com/npm/feedback"
+      },
+      {
+        "id": "e34",
+        "role": "button",
+        "label": "Copy install command line"
+      },
+      {
+        "id": "e35",
+        "role": "link",
+        "label": "github.com/acme-labs/lumen",
+        "href": "github.com/acme-labs/lumen"
+      },
+      {
+        "id": "e36",
+        "role": "link",
+        "label": "lumen.example.com/",
+        "href": "lumen.example.com"
+      },
+      {
+        "id": "e37",
+        "role": "button",
+        "label": "Showing weekly downloads"
+      },
+      {
+        "id": "e38",
+        "role": "button",
+        "label": "View more provenance details"
+      },
+      {
+        "id": "e39",
+        "role": "link",
+        "label": "Analyze security with Socket",
+        "href": "socket.dev/npm/package/lumen"
+      },
+      {
+        "id": "e40",
+        "role": "link",
+        "label": "Check bundle size",
+        "href": "bundlephobia.com/package/lumen"
+      },
+      {
+        "id": "e41",
+        "role": "link",
+        "label": "View package health",
+        "href": "snyk.io/advisor/npm-package/lumen"
+      },
+      {
+        "id": "e42",
+        "role": "link",
+        "label": "Explore dependencies",
+        "href": "npmgraph.js.org/?q=lumen"
+      },
+      {
+        "id": "e43",
+        "role": "link",
+        "label": "Report malware",
+        "href": "www.npmjs.com/support?inquire=security&package=lumen"
+      },
+      {
+        "id": "e44",
+        "role": "link",
+        "label": "Visit npm GitHub page",
+        "href": "github.com/npm"
+      },
+      {
+        "id": "e45",
+        "role": "link",
+        "label": "GitHub",
+        "href": "github.com"
+      },
+      {
+        "id": "e46",
+        "role": "link",
+        "label": "Help",
+        "href": "docs.npmjs.com"
+      },
+      {
+        "id": "e47",
+        "role": "link",
+        "label": "Advisories",
+        "href": "github.com/advisories"
+      },
+      {
+        "id": "e48",
+        "role": "link",
+        "label": "Status",
+        "href": "status.npmjs.org"
+      },
+      {
+        "id": "e49",
+        "role": "link",
+        "label": "Contact npm",
+        "href": "www.npmjs.com/support"
+      },
+      {
+        "id": "e50",
+        "role": "link",
+        "label": "About",
+        "href": "www.npmjs.com/about"
+      },
+      {
+        "id": "e51",
+        "role": "link",
+        "label": "Blog",
+        "href": "github.blog/tag/npm"
+      },
+      {
+        "id": "e52",
+        "role": "link",
+        "label": "Press",
+        "href": "www.npmjs.com/press"
+      },
+      {
+        "id": "e53",
+        "role": "link",
+        "label": "Policies",
+        "href": "www.npmjs.com/policies"
+      },
+      {
+        "id": "e54",
+        "role": "link",
+        "label": "Terms of Use",
+        "href": "www.npmjs.com/policies/terms"
+      },
+      {
+        "id": "e55",
+        "role": "link",
+        "label": "Code of Conduct",
+        "href": "www.npmjs.com/policies/conduct"
+      },
+      {
+        "id": "e56",
+        "role": "link",
+        "label": "Privacy",
+        "href": "www.npmjs.com/policies/privacy"
+      }
+    ]
+  },
+  "youtube-lofi": {
+    "url": "https://www.youtube.com/results?search_query=lofi+beats",
+    "title": "lofi beats - YouTube",
+    "searchBox": "e02",
+    "items": [
+      {
+        "id": "e01",
+        "role": "button",
+        "label": "Guide"
+      },
+      {
+        "id": "e02",
+        "role": "combobox",
+        "label": "lofi beats"
+      },
+      {
+        "id": "e03",
+        "role": "button",
+        "label": "Search"
+      },
+      {
+        "id": "e04",
+        "role": "link",
+        "label": "Home",
+        "href": "www.youtube.com"
+      },
+      {
+        "id": "e05",
+        "role": "link",
+        "label": "Shorts",
+        "href": "www.youtube.com/shorts"
+      },
+      {
+        "id": "e06",
+        "role": "link",
+        "label": "Subscriptions",
+        "href": "www.youtube.com/feed/subscriptions"
+      },
+      {
+        "id": "e07",
+        "role": "link",
+        "label": "You",
+        "href": "www.youtube.com/feed/you"
+      },
+      {
+        "id": "e08",
+        "role": "link",
+        "label": "History",
+        "href": "www.youtube.com/feed/history"
+      },
+      {
+        "id": "e09",
+        "role": "link",
+        "label": "Sign in",
+        "href": "accounts.google.com/ServiceLogin?service=youtube"
+      },
+      {
+        "id": "e10",
+        "role": "link",
+        "label": "About",
+        "href": "www.youtube.com/about"
+      },
+      {
+        "id": "e11",
+        "role": "link",
+        "label": "Press",
+        "href": "www.youtube.com/about/press"
+      },
+      {
+        "id": "e12",
+        "role": "link",
+        "label": "Copyright",
+        "href": "www.youtube.com/about/copyright"
+      },
+      {
+        "id": "e13",
+        "role": "link",
+        "label": "Contact us",
+        "href": "www.youtube.com/t/contact_us"
+      },
+      {
+        "id": "e14",
+        "role": "link",
+        "label": "Creators",
+        "href": "www.youtube.com/creators"
+      },
+      {
+        "id": "e15",
+        "role": "link",
+        "label": "Advertise",
+        "href": "www.youtube.com/ads"
+      },
+      {
+        "id": "e16",
+        "role": "link",
+        "label": "Developers",
+        "href": "developers.google.com/youtube"
+      },
+      {
+        "id": "e17",
+        "role": "link",
+        "label": "Terms",
+        "href": "www.youtube.com/t/terms"
+      },
+      {
+        "id": "e18",
+        "role": "link",
+        "label": "Privacy",
+        "href": "www.youtube.com/t/privacy"
+      },
+      {
+        "id": "e19",
+        "role": "link",
+        "label": "Policy & Safety",
+        "href": "www.youtube.com/about/policies"
+      },
+      {
+        "id": "e20",
+        "role": "link",
+        "label": "How YouTube works",
+        "href": "www.youtube.com/howyoutubeworks"
+      },
+      {
+        "id": "e21",
+        "role": "link",
+        "label": "Test new features",
+        "href": "www.youtube.com/new"
+      },
+      {
+        "id": "e22",
+        "role": "tab",
+        "label": "All"
+      },
+      {
+        "id": "e23",
+        "role": "tab",
+        "label": "Shorts"
+      },
+      {
+        "id": "e24",
+        "role": "tab",
+        "label": "Unwatched"
+      },
+      {
+        "id": "e25",
+        "role": "tab",
+        "label": "Videos"
+      },
+      {
+        "id": "e26",
+        "role": "tab",
+        "label": "Recently uploaded"
+      },
+      {
+        "id": "e27",
+        "role": "tab",
+        "label": "Live"
+      },
+      {
+        "id": "e28",
+        "role": "button",
+        "label": "Next"
+      },
+      {
+        "id": "e29",
+        "role": "button",
+        "label": "Search filters"
+      },
+      {
+        "id": "e30",
+        "role": "link",
+        "label": "piano, bass and brushes: lofi played by a real band",
+        "href": "www.googleadservices.com/pagead/aclk"
+      },
+      {
+        "id": "e31",
+        "role": "link",
+        "label": "Played live by The Quiet Hours.",
+        "href": "www.googleadservices.com/pagead/aclk"
+      },
+      {
+        "id": "e32",
+        "role": "button",
+        "label": "The Quiet Hours"
+      },
+      {
+        "id": "e33",
+        "role": "button",
+        "label": "My Ad Center"
+      },
+      {
+        "id": "e34",
+        "role": "link",
+        "label": "Watch",
+        "href": "www.youtube.com/watch?v=zK1l2M3n4O5"
+      },
+      {
+        "id": "e35",
+        "role": "link",
+        "label": "Watch now",
+        "href": "www.googleadservices.com/pagead/aclk"
+      },
+      {
+        "id": "e36",
+        "role": "link",
+        "label": "2 A.M Coding Session 🌙 [lofi beats] 1 hour, 4 minutes",
+        "href": "www.youtube.com/watch?v=xA1b2C3d4E5",
+        "group": "video"
+      },
+      {
+        "id": "e37",
+        "role": "button",
+        "label": "Action menu"
+      },
+      {
+        "id": "e38",
+        "role": "link",
+        "label": "Go to channel Lofi Desk",
+        "href": "www.youtube.com/channel/UCxLofiDeskExample0001"
+      },
+      {
+        "id": "e39",
+        "role": "link",
+        "label": "Lofi Desk",
+        "href": "www.youtube.com/channel/UCxLofiDeskExample0001"
+      },
+      {
+        "id": "e40",
+        "role": "button",
+        "label": "Intro | Late Bus | Window Rain | Slow Tide | Paper Moon | Last Train"
+      },
+      {
+        "id": "e41",
+        "role": "button",
+        "label": "More"
+      },
+      {
+        "id": "e42",
+        "role": "link",
+        "label": "Best of lofi beats 2024 ✨ [music to code to] 5 hours, 42 minutes",
+        "href": "www.youtube.com/watch?v=yF6g7H8i9J0",
+        "group": "video"
+      },
+      {
+        "id": "e43",
+        "role": "link",
+        "label": "Mix",
+        "href": "www.youtube.com/watch?v=xA1b2C3d4E5&list=RDxA1b2C3d4E5"
+      },
+      {
+        "id": "e44",
+        "role": "link",
+        "label": "Mix - 2 A.M Coding Session 🌙 [lofi beats]",
+        "href": "www.youtube.com/watch?v=xA1b2C3d4E5&list=RDxA1b2C3d4E5"
+      },
+      {
+        "id": "e45",
+        "role": "link",
+        "label": "2 A.M Coding Session 🌙 [lofi beats] · 1:04:12",
+        "href": "www.youtube.com/watch?v=xA1b2C3d4E5&list=RDxA1b2C3d4E5"
+      }
+    ]
+  },
+  "github-repo": {
+    "url": "https://github.com/acme-labs/lumen",
+    "title": "GitHub - acme-labs/lumen: The web framework for small teams · GitHub",
+    "searchBox": "e09",
+    "items": [
+      {
+        "id": "e01",
+        "role": "link",
+        "label": "Skip to content",
+        "href": "github.com/acme-labs/lumen#start-of-content"
+      },
+      {
+        "id": "e02",
+        "role": "link",
+        "label": "Homepage",
+        "href": "github.com"
+      },
+      {
+        "id": "e03",
+        "role": "button",
+        "label": "Platform"
+      },
+      {
+        "id": "e04",
+        "role": "button",
+        "label": "Solutions"
+      },
+      {
+        "id": "e05",
+        "role": "button",
+        "label": "Resources"
+      },
+      {
+        "id": "e06",
+        "role": "button",
+        "label": "Open Source"
+      },
+      {
+        "id": "e07",
+        "role": "button",
+        "label": "Enterprise"
+      },
+      {
+        "id": "e08",
+        "role": "link",
+        "label": "Pricing",
+        "href": "github.com/pricing"
+      },
+      {
+        "id": "e09",
+        "role": "button",
+        "label": "Search or jump to, type / to search"
+      },
+      {
+        "id": "e10",
+        "role": "link",
+        "label": "Sign in",
+        "href": "github.com/login?return_to=https%3A%2F%2Fgithub.com%2Facme-labs%2Flumen"
+      },
+      {
+        "id": "e11",
+        "role": "link",
+        "label": "Sign up",
+        "href": "github.com/signup"
+      },
+      {
+        "id": "e12",
+        "role": "link",
+        "label": "acme-labs",
+        "href": "github.com/acme-labs"
+      },
+      {
+        "id": "e13",
+        "role": "link",
+        "label": "lumen",
+        "href": "github.com/acme-labs/lumen"
+      },
+      {
+        "id": "e14",
+        "role": "link",
+        "label": "You must be signed in to change notification settings",
+        "href": "github.com/login?return_to=%2Facme-labs%2Flumen"
+      },
+      {
+        "id": "e15",
+        "role": "link",
+        "label": "Fork 33.9k",
+        "href": "github.com/login?return_to=%2Facme-labs%2Flumen"
+      },
+      {
+        "id": "e16",
+        "role": "link",
+        "label": "You must be signed in to star a repository",
+        "href": "github.com/login?return_to=%2Facme-labs%2Flumen"
+      },
+      {
+        "id": "e17",
+        "role": "link",
+        "label": "Code",
+        "href": "github.com/acme-labs/lumen"
+      },
+      {
+        "id": "e18",
+        "role": "link",
+        "label": "Issues 1.1k",
+        "href": "github.com/acme-labs/lumen/issues"
+      },
+      {
+        "id": "e19",
+        "role": "link",
+        "label": "Pull requests 2.5k",
+        "href": "github.com/acme-labs/lumen/pulls"
+      },
+      {
+        "id": "e20",
+        "role": "link",
+        "label": "Discussions",
+        "href": "github.com/acme-labs/lumen/discussions"
+      },
+      {
+        "id": "e21",
+        "role": "link",
+        "label": "Actions",
+        "href": "github.com/acme-labs/lumen/actions"
+      },
+      {
+        "id": "e22",
+        "role": "link",
+        "label": "Security and quality 69",
+        "href": "github.com/acme-labs/lumen/security"
+      },
+      {
+        "id": "e23",
+        "role": "link",
+        "label": "Insights",
+        "href": "github.com/acme-labs/lumen/pulse"
+      },
+      {
+        "id": "e24",
+        "role": "button",
+        "label": "canary branch"
+      },
+      {
+        "id": "e25",
+        "role": "link",
+        "label": "2737 Branches",
+        "href": "github.com/acme-labs/lumen/branches"
+      },
+      {
+        "id": "e26",
+        "role": "link",
+        "label": "4084 Tags",
+        "href": "github.com/acme-labs/lumen/tags"
+      },
+      {
+        "id": "e27",
+        "role": "combobox",
+        "label": "Go to file"
+      },
+      {
+        "id": "e28",
+        "role": "button",
+        "label": "Code"
+      },
+      {
+        "id": "e29",
+        "role": "link",
+        "label": "commits by lumen-bot[bot]",
+        "href": "github.com/acme-labs/lumen/commits?author=lumen-bot%5Bbot%5D"
+      },
+      {
+        "id": "e30",
+        "role": "link",
+        "label": "v4.2.0-canary.18",
+        "href": "github.com/acme-labs/lumen/commit/bf254be"
+      },
+      {
+        "id": "e31",
+        "role": "link",
+        "label": "Commit 7c1e2a9",
+        "href": "github.com/acme-labs/lumen/commit/bf254be"
+      },
+      {
+        "id": "e32",
+        "role": "link",
+        "label": "36,054 Commits",
+        "href": "github.com/acme-labs/lumen/commits/canary"
+      },
+      {
+        "id": "e33",
+        "role": "link",
+        "label": ".agents/skills, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/.agents/skills"
+      },
+      {
+        "id": "e34",
+        "role": "link",
+        "label": "[test] Show flaky end-to-end failures in the CI summary (",
+        "href": "github.com/acme-labs/lumen/commit/c391fea"
+      },
+      {
+        "id": "e35",
+        "role": "link",
+        "label": "#99528",
+        "href": "github.com/acme-labs/lumen/pull/99528"
+      },
+      {
+        "id": "e36",
+        "role": "link",
+        "label": ".cargo, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/.cargo"
+      },
+      {
+        "id": "e37",
+        "role": "link",
+        "label": "test(bolt-tasks): run the wasm tests on a headless host (",
+        "href": "github.com/acme-labs/lumen/commit/4db4413"
+      },
+      {
+        "id": "e38",
+        "role": "link",
+        "label": "#97789",
+        "href": "github.com/acme-labs/lumen/pull/97789"
+      },
+      {
+        "id": "e39",
+        "role": "link",
+        "label": ".editor, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/.claude-plugin"
+      },
+      {
+        "id": "e40",
+        "role": "link",
+        "label": "Ship the agent skills as a plugin bundle (",
+        "href": "github.com/acme-labs/lumen/commit/5556c21"
+      },
+      {
+        "id": "e41",
+        "role": "link",
+        "label": "#95907",
+        "href": "github.com/acme-labs/lumen/pull/95907"
+      },
+      {
+        "id": "e42",
+        "role": "link",
+        "label": ".editor, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/.claude"
+      },
+      {
+        "id": "e43",
+        "role": "link",
+        "label": "Split the triage skill into smaller files (",
+        "href": "github.com/acme-labs/lumen/commit/6d9367c"
+      },
+      {
+        "id": "e44",
+        "role": "link",
+        "label": ".editor, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/.conductor"
+      },
+      {
+        "id": "e45",
+        "role": "link",
+        "label": "fix: move workspace.json to the repo root so it is found (",
+        "href": "github.com/acme-labs/lumen/commit/af39d4c"
+      },
+      {
+        "id": "e46",
+        "role": "link",
+        "label": "#88184",
+        "href": "github.com/acme-labs/lumen/pull/88184"
+      },
+      {
+        "id": "e47",
+        "role": "link",
+        "label": ".config, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/.config"
+      },
+      {
+        "id": "e48",
+        "role": "link",
+        "label": "Collect modules with browser builds ahead of time (",
+        "href": "github.com/acme-labs/lumen/commit/d6b3384"
+      },
+      {
+        "id": "e49",
+        "role": "link",
+        "label": "#95200",
+        "href": "github.com/acme-labs/lumen/pull/95200"
+      },
+      {
+        "id": "e50",
+        "role": "link",
+        "label": ".editor, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/.cursor"
+      },
+      {
+        "id": "e51",
+        "role": "link",
+        "label": "docs: explain the stacked pull request workflow (",
+        "href": "github.com/acme-labs/lumen/commit/dcfede5"
+      },
+      {
+        "id": "e52",
+        "role": "link",
+        "label": "#89488",
+        "href": "github.com/acme-labs/lumen/pull/89488"
+      },
+      {
+        "id": "e53",
+        "role": "link",
+        "label": ".devcontainer, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/.devcontainer"
+      },
+      {
+        "id": "e54",
+        "role": "link",
+        "label": "test: run the unit tests under the memory checker too (",
+        "href": "github.com/acme-labs/lumen/commit/3e52bb4"
+      },
+      {
+        "id": "e55",
+        "role": "link",
+        "label": "#97535",
+        "href": "github.com/acme-labs/lumen/pull/97535"
+      },
+      {
+        "id": "e56",
+        "role": "link",
+        "label": ".github, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/.github"
+      },
+      {
+        "id": "e57",
+        "role": "link",
+        "label": "[ci] Pass preview build variables the same way everywhere (",
+        "href": "github.com/acme-labs/lumen/commit/5bacd32"
+      },
+      {
+        "id": "e58",
+        "role": "link",
+        "label": "#99323",
+        "href": "github.com/acme-labs/lumen/pull/99323"
+      },
+      {
+        "id": "e59",
+        "role": "link",
+        "label": ".husky, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/.husky"
+      },
+      {
+        "id": "e60",
+        "role": "link",
+        "label": "Use portable shell syntax in the pre-push hook (",
+        "href": "github.com/acme-labs/lumen/commit/592d062"
+      },
+      {
+        "id": "e61",
+        "role": "link",
+        "label": "#68421",
+        "href": "github.com/acme-labs/lumen/pull/68421"
+      },
+      {
+        "id": "e62",
+        "role": "link",
+        "label": ".vscode, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/.vscode"
+      },
+      {
+        "id": "e63",
+        "role": "link",
+        "label": "Move to the flat lint config (",
+        "href": "github.com/acme-labs/lumen/commit/3eebe1d"
+      },
+      {
+        "id": "e64",
+        "role": "link",
+        "label": "#84800",
+        "href": "github.com/acme-labs/lumen/pull/84800"
+      },
+      {
+        "id": "e65",
+        "role": "link",
+        "label": "apps/bundle-analyzer, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/apps/bundle-analyzer"
+      },
+      {
+        "id": "e66",
+        "role": "link",
+        "label": "Tidy the bundle analyzer toolbar (",
+        "href": "github.com/acme-labs/lumen/commit/4dcd1c3"
+      },
+      {
+        "id": "e67",
+        "role": "link",
+        "label": "#98920",
+        "href": "github.com/acme-labs/lumen/pull/98920"
+      },
+      {
+        "id": "e68",
+        "role": "link",
+        "label": "bench, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/bench"
+      },
+      {
+        "id": "e69",
+        "role": "link",
+        "label": "Keep the Bolt module cache in a Map (",
+        "href": "github.com/acme-labs/lumen/commit/4051143"
+      },
+      {
+        "id": "e70",
+        "role": "link",
+        "label": "#98947",
+        "href": "github.com/acme-labs/lumen/pull/98947"
+      },
+      {
+        "id": "e71",
+        "role": "link",
+        "label": "contributing, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/contributing"
+      },
+      {
+        "id": "e72",
+        "role": "link",
+        "label": "[cd] Fix the release branch check and drop an unused publish config (",
+        "href": "github.com/acme-labs/lumen/commit/2d214e8"
+      },
+      {
+        "id": "e73",
+        "role": "link",
+        "label": "#99039",
+        "href": "github.com/acme-labs/lumen/pull/99039"
+      },
+      {
+        "id": "e74",
+        "role": "link",
+        "label": "native, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/crates"
+      },
+      {
+        "id": "e75",
+        "role": "link",
+        "label": "Add allocation data to the trace viewer protocol (",
+        "href": "github.com/acme-labs/lumen/commit/28ffe00"
+      },
+      {
+        "id": "e76",
+        "role": "link",
+        "label": "#98546",
+        "href": "github.com/acme-labs/lumen/pull/98546"
+      },
+      {
+        "id": "e77",
+        "role": "link",
+        "label": "docs, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/docs"
+      },
+      {
+        "id": "e78",
+        "role": "link",
+        "label": "Add an option to keep memoized components stable (",
+        "href": "github.com/acme-labs/lumen/commit/84934c6"
+      },
+      {
+        "id": "e79",
+        "role": "link",
+        "label": "#98589",
+        "href": "github.com/acme-labs/lumen/pull/98589"
+      },
+      {
+        "id": "e80",
+        "role": "link",
+        "label": "errors, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/errors"
+      },
+      {
+        "id": "e81",
+        "role": "link",
+        "label": "docs: add the static rendering reference (",
+        "href": "github.com/acme-labs/lumen/commit/a408e19"
+      },
+      {
+        "id": "e82",
+        "role": "link",
+        "label": "#99355",
+        "href": "github.com/acme-labs/lumen/pull/99355"
+      },
+      {
+        "id": "e83",
+        "role": "link",
+        "label": "evals, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/evals"
+      },
+      {
+        "id": "e84",
+        "role": "link",
+        "label": "Make agent feedback reports more reliable (",
+        "href": "github.com/acme-labs/lumen/commit/80e75b1"
+      },
+      {
+        "id": "e85",
+        "role": "link",
+        "label": "#99591",
+        "href": "github.com/acme-labs/lumen/pull/99591"
+      },
+      {
+        "id": "e86",
+        "role": "link",
+        "label": "examples, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/examples"
+      },
+      {
+        "id": "e87",
+        "role": "link",
+        "label": "fix: fix workspace builds in the container examples (",
+        "href": "github.com/acme-labs/lumen/commit/6745150"
+      },
+      {
+        "id": "e88",
+        "role": "link",
+        "label": "#97352",
+        "href": "github.com/acme-labs/lumen/pull/97352"
+      },
+      {
+        "id": "e89",
+        "role": "link",
+        "label": "packages, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/packages"
+      },
+      {
+        "id": "e90",
+        "role": "link",
+        "label": "patches, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/patches"
+      },
+      {
+        "id": "e91",
+        "role": "link",
+        "label": "Harden",
+        "href": "github.com/acme-labs/lumen/commit/54c5939"
+      },
+      {
+        "id": "e92",
+        "role": "link",
+        "label": "lumen/og",
+        "href": "github.com/acme-labs/lumen/commit/54c5939"
+      },
+      {
+        "id": "e93",
+        "role": "link",
+        "label": "SVG output (",
+        "href": "github.com/acme-labs/lumen/commit/54c5939"
+      },
+      {
+        "id": "e94",
+        "role": "link",
+        "label": "#99061",
+        "href": "github.com/acme-labs/lumen/pull/99061"
+      },
+      {
+        "id": "e95",
+        "role": "link",
+        "label": "bundlers, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/rspack"
+      },
+      {
+        "id": "e96",
+        "role": "link",
+        "label": "scripts, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/scripts"
+      },
+      {
+        "id": "e97",
+        "role": "link",
+        "label": "skills, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/skills"
+      },
+      {
+        "id": "e98",
+        "role": "link",
+        "label": "test-config-errors, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/test-config-errors"
+      },
+      {
+        "id": "e99",
+        "role": "link",
+        "label": "test, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/test"
+      },
+      {
+        "id": "e100",
+        "role": "link",
+        "label": "tools/generators, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/turbo/generators"
+      },
+      {
+        "id": "e101",
+        "role": "link",
+        "label": "bolt, (Directory)",
+        "href": "github.com/acme-labs/lumen/tree/canary/turbopack"
+      },
+      {
+        "id": "e102",
+        "role": "button",
+        "label": "View all files"
+      },
+      {
+        "id": "e103",
+        "role": "link",
+        "label": "README",
+        "href": "github.com/acme-labs/lumen#readme"
+      },
+      {
+        "id": "e104",
+        "role": "link",
+        "label": "Code of conduct",
+        "href": "github.com/acme-labs/lumen#coc"
+      },
+      {
+        "id": "e105",
+        "role": "link",
+        "label": "Contributing",
+        "href": "github.com/acme-labs/lumen#contributing-ov-file"
+      },
+      {
+        "id": "e106",
+        "role": "link",
+        "label": "MIT license",
+        "href": "github.com/acme-labs/lumen#MIT-1-ov-file"
+      },
+      {
+        "id": "e107",
+        "role": "link",
+        "label": "Security",
+        "href": "github.com/acme-labs/lumen#security-ov-file"
+      },
+      {
+        "id": "e108",
+        "role": "link",
+        "label": "Learn Lumen",
+        "href": "lumen.example.com/learn"
+      },
+      {
+        "id": "e109",
+        "role": "link",
+        "label": "Lumen Showcase",
+        "href": "lumen.example.com/showcase"
+      },
+      {
+        "id": "e110",
+        "role": "link",
+        "label": "https://lumen.example.com/docs",
+        "href": "lumen.example.com/docs"
+      },
+      {
+        "id": "e111",
+        "role": "link",
+        "label": "GitHub Discussions",
+        "href": "github.com/acme-labs/lumen/discussions"
+      },
+      {
+        "id": "e112",
+        "role": "link",
+        "label": "Discord",
+        "href": "lumen.example.com/discord"
+      },
+      {
+        "id": "e113",
+        "role": "link",
+        "label": "Contribution Guidelines",
+        "href": "github.com/acme-labs/lumen/blob/canary/contributing.md"
+      },
+      {
+        "id": "e114",
+        "role": "link",
+        "label": "good first issues",
+        "href": "github.com/acme-labs/lumen/labels/good%20first%20issue"
+      },
+      {
+        "id": "e115",
+        "role": "link",
+        "label": "Releases",
+        "href": "github.com/acme-labs/lumen/releases"
+      },
+      {
+        "id": "e116",
+        "role": "link",
+        "label": "Used by",
+        "href": "github.com/acme-labs/lumen/network/dependents"
+      },
+      {
+        "id": "e117",
+        "role": "link",
+        "label": "Contributors",
+        "href": "github.com/acme-labs/lumen/graphs/contributors"
+      },
+      {
+        "id": "e118",
+        "role": "link",
+        "label": "JavaScript 49.4%",
+        "href": "github.com/acme-labs/lumen/search?l=javascript"
+      },
+      {
+        "id": "e119",
+        "role": "link",
+        "label": "TypeScript 34.5%",
+        "href": "github.com/acme-labs/lumen/search?l=typescript"
+      },
+      {
+        "id": "e120",
+        "role": "link",
+        "label": "Terms",
+        "href": "docs.github.com/site-policy/github-terms/github-terms-of-service"
+      },
+      {
+        "id": "e121",
+        "role": "link",
+        "label": "Privacy",
+        "href": "docs.github.com/site-policy/privacy-policies/github-privacy-statement"
+      },
+      {
+        "id": "e122",
+        "role": "link",
+        "label": "Status",
+        "href": "www.githubstatus.com"
+      }
+    ]
+  },
+  "localhost-dashboard": {
+    "url": "http://localhost:3000",
+    "title": "Dashboard · Acme",
+    "searchBox": "e06",
+    "items": [
+      {
+        "id": "e01",
+        "role": "link",
+        "label": "Acme",
+        "href": "localhost:3000"
+      },
+      {
+        "id": "e02",
+        "role": "link",
+        "label": "Dashboard",
+        "href": "localhost:3000/dashboard"
+      },
+      {
+        "id": "e03",
+        "role": "link",
+        "label": "Projects",
+        "href": "localhost:3000/projects"
+      },
+      {
+        "id": "e04",
+        "role": "link",
+        "label": "Team",
+        "href": "localhost:3000/team"
+      },
+      {
+        "id": "e05",
+        "role": "link",
+        "label": "Settings",
+        "href": "localhost:3000/settings"
+      },
+      {
+        "id": "e06",
+        "role": "searchbox",
+        "label": "Search projects"
+      },
+      {
+        "id": "e07",
+        "role": "button",
+        "label": "New project"
+      },
+      {
+        "id": "e08",
+        "role": "button",
+        "label": "Notifications"
+      },
+      {
+        "id": "e09",
+        "role": "button",
+        "label": "Open user menu"
+      },
+      {
+        "id": "e10",
+        "role": "link",
+        "label": "Sign out",
+        "href": "localhost:3000/logout"
+      },
+      {
+        "id": "e11",
+        "role": "tab",
+        "label": "Overview"
+      },
+      {
+        "id": "e12",
+        "role": "tab",
+        "label": "Analytics"
+      },
+      {
+        "id": "e13",
+        "role": "tab",
+        "label": "Reports"
+      },
+      {
+        "id": "e14",
+        "role": "link",
+        "label": "Website redesign",
+        "href": "localhost:3000/projects/1",
+        "group": "project"
+      },
+      {
+        "id": "e15",
+        "role": "link",
+        "label": "Mobile app",
+        "href": "localhost:3000/projects/2",
+        "group": "project"
+      },
+      {
+        "id": "e16",
+        "role": "link",
+        "label": "View all projects",
+        "href": "localhost:3000/projects"
+      },
+      {
+        "id": "e17",
+        "role": "link",
+        "label": "Docs",
+        "href": "localhost:3000/docs"
+      },
+      {
+        "id": "e18",
+        "role": "link",
+        "label": "Support",
+        "href": "localhost:3000/support"
+      }
+    ]
+  },
+  "localhost-projects": {
+    "url": "http://localhost:3000/projects",
+    "title": "Projects · Acme",
+    "searchBox": "e06",
+    "items": [
+      {
+        "id": "e01",
+        "role": "link",
+        "label": "Acme",
+        "href": "localhost:3000"
+      },
+      {
+        "id": "e02",
+        "role": "link",
+        "label": "Dashboard",
+        "href": "localhost:3000/dashboard"
+      },
+      {
+        "id": "e03",
+        "role": "link",
+        "label": "Projects",
+        "href": "localhost:3000/projects"
+      },
+      {
+        "id": "e04",
+        "role": "link",
+        "label": "Team",
+        "href": "localhost:3000/team"
+      },
+      {
+        "id": "e05",
+        "role": "link",
+        "label": "Settings",
+        "href": "localhost:3000/settings"
+      },
+      {
+        "id": "e06",
+        "role": "searchbox",
+        "label": "Search projects"
+      },
+      {
+        "id": "e07",
+        "role": "button",
+        "label": "New project"
+      },
+      {
+        "id": "e08",
+        "role": "button",
+        "label": "Notifications"
+      },
+      {
+        "id": "e09",
+        "role": "button",
+        "label": "Open user menu"
+      },
+      {
+        "id": "e10",
+        "role": "link",
+        "label": "Sign out",
+        "href": "localhost:3000/logout"
+      },
+      {
+        "id": "e11",
+        "role": "select",
+        "label": "Sort by"
+      },
+      {
+        "id": "e12",
+        "role": "link",
+        "label": "Website redesign",
+        "href": "localhost:3000/projects/1",
+        "group": "project"
+      },
+      {
+        "id": "e13",
+        "role": "link",
+        "label": "Mobile app",
+        "href": "localhost:3000/projects/2",
+        "group": "project"
+      },
+      {
+        "id": "e14",
+        "role": "link",
+        "label": "API migration",
+        "href": "localhost:3000/projects/3",
+        "group": "project"
+      },
+      {
+        "id": "e15",
+        "role": "button",
+        "label": "Previous"
+      },
+      {
+        "id": "e16",
+        "role": "button",
+        "label": "Next"
+      },
+      {
+        "id": "e17",
+        "role": "link",
+        "label": "Docs",
+        "href": "localhost:3000/docs"
+      },
+      {
+        "id": "e18",
+        "role": "link",
+        "label": "Support",
+        "href": "localhost:3000/support"
+      }
+    ]
+  },
+  "localhost-project": {
+    "url": "http://localhost:3000/projects/2",
+    "title": "Mobile app · Acme",
+    "searchBox": "e06",
+    "items": [
+      {
+        "id": "e01",
+        "role": "link",
+        "label": "Acme",
+        "href": "localhost:3000"
+      },
+      {
+        "id": "e02",
+        "role": "link",
+        "label": "Dashboard",
+        "href": "localhost:3000/dashboard"
+      },
+      {
+        "id": "e03",
+        "role": "link",
+        "label": "Projects",
+        "href": "localhost:3000/projects"
+      },
+      {
+        "id": "e04",
+        "role": "link",
+        "label": "Team",
+        "href": "localhost:3000/team"
+      },
+      {
+        "id": "e05",
+        "role": "link",
+        "label": "Settings",
+        "href": "localhost:3000/settings"
+      },
+      {
+        "id": "e06",
+        "role": "searchbox",
+        "label": "Search projects"
+      },
+      {
+        "id": "e07",
+        "role": "button",
+        "label": "New project"
+      },
+      {
+        "id": "e08",
+        "role": "button",
+        "label": "Notifications"
+      },
+      {
+        "id": "e09",
+        "role": "button",
+        "label": "Open user menu"
+      },
+      {
+        "id": "e10",
+        "role": "link",
+        "label": "Sign out",
+        "href": "localhost:3000/logout"
+      },
+      {
+        "id": "e11",
+        "role": "link",
+        "label": "Back to projects",
+        "href": "localhost:3000/projects"
+      },
+      {
+        "id": "e12",
+        "role": "textbox",
+        "label": "Project name"
+      },
+      {
+        "id": "e13",
+        "role": "textbox",
+        "label": "Description"
+      },
+      {
+        "id": "e14",
+        "role": "select",
+        "label": "Status"
+      },
+      {
+        "id": "e15",
+        "role": "button",
+        "label": "Save changes"
+      },
+      {
+        "id": "e16",
+        "role": "button",
+        "label": "Cancel"
+      },
+      {
+        "id": "e17",
+        "role": "button",
+        "label": "Archive"
+      },
+      {
+        "id": "e18",
+        "role": "button",
+        "label": "Delete project"
+      },
+      {
+        "id": "e19",
+        "role": "link",
+        "label": "Docs",
+        "href": "localhost:3000/docs"
+      },
+      {
+        "id": "e20",
+        "role": "link",
+        "label": "Support",
+        "href": "localhost:3000/support"
+      }
+    ]
+  }
+}

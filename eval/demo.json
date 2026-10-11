@@ -1,0 +1,722 @@
+[
+  {
+    "id": "book-loop-1", "title": "The loop", "tags": ["book","loop"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "open spotify", "expect": {"decision": "act", "operation": "open_app"}}
+    ]
+  },
+  {
+    "id": "book-loop-2", "title": "The loop", "tags": ["book","loop"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "what's the weather like today", "expect": {"decision": "ignore|ask"}}
+    ]
+  },
+  {
+    "id": "book-normalise-1", "title": "Normalise", "tags": ["book","normalise"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "Um, can you please open Discord for me?", "expect": {"decision": "act", "operation": "open_app"}}
+    ]
+  },
+  {
+    "id": "book-normalise-2", "title": "Normalise", "tags": ["book","normalise"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "search for p a n t h e r", "expect": {"decision": "act"}}
+    ]
+  },
+  {
+    "id": "book-normalise-3", "title": "Normalise", "tags": ["book","normalise"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "open clawed code", "expect": {"decision": "act", "operation": "open_app"}}
+    ]
+  },
+  {
+    "id": "book-normalise-noprofile", "title": "No profile", "tags": ["book","normalise"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true, "profile": false,
+    "turns": [
+      {"said": "open clawed code", "expect": {"decision": "act", "operation": "open_app"}}
+    ]
+  },
+  {
+    "id": "book-where-1", "title": "Places and paths", "tags": ["book","where"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "search for panther on spotify", "expect": {"decision": "act"}}
+    ]
+  },
+  {
+    "id": "book-where-2", "title": "Places and paths", "tags": ["book","where"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "open settings", "expect": {"decision": "act", "operation": "open_app"}}
+    ]
+  },
+  {
+    "id": "book-where-vscode", "title": "From VS Code", "tags": ["book","where"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "open settings", "expect": {"decision": "act", "operation": "open_app"}}
+    ]
+  },
+  {
+    "id": "book-code-first-1", "title": "Code first", "tags": ["book","code-first"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "open the", "expect": {"decision": "wait"}}
+    ]
+  },
+  {
+    "id": "book-code-first-2", "title": "Code first", "tags": ["book","code-first"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "next track", "expect": {"decision": "act"}}
+    ]
+  },
+  {
+    "id": "book-code-first-3", "title": "Code first", "tags": ["book","code-first"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "press escape", "expect": {"decision": "act"}}
+    ]
+  },
+  {
+    "id": "book-code-first-4", "title": "Code first", "tags": ["book","code-first"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "open spotify and search for panther", "expect": {"decision": "act|ask"}}
+    ]
+  },
+  {
+    "id": "book-skills-1", "title": "Skills as data", "tags": ["book","skills"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-project", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "switch to dark mode", "expect": {"decision": "act"}}
+    ]
+  },
+  {
+    "id": "book-skills-2", "title": "Skills as data", "tags": ["book","skills"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-project", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "open a new tab", "expect": {"decision": "act"}}
+    ]
+  },
+  {
+    "id": "book-skills-3", "title": "Skills as data", "tags": ["book","skills"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-project", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "rename this project to billing revamp", "expect": {"decision": "act"}}
+    ]
+  },
+  {
+    "id": "book-items-1", "title": "Items", "tags": ["book","items"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "search-results", "app": "Brave"},
+    "turns": [
+      {"said": "open the second result", "expect": {"decision": "act"}}
+    ]
+  },
+  {
+    "id": "book-items-2", "title": "Items", "tags": ["book","items"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "search-results", "app": "Brave"},
+    "turns": [
+      {"said": "open the documentation", "expect": {"decision": "act|ask"}}
+    ]
+  },
+  {
+    "id": "book-model-1", "title": "The model only picks", "tags": ["book","model"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "could you put on something relaxing", "expect": {"decision": "ask|act|ignore"}}
+    ]
+  },
+  {
+    "id": "book-model-2", "title": "The model only picks", "tags": ["book","model"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "what's the weather like today", "expect": {"decision": "ignore|ask"}}
+    ]
+  },
+  {
+    "id": "book-policy-1", "title": "Policy", "tags": ["book","policy"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "minimize the sidebar", "expect": {"decision": "ask"}}
+    ]
+  },
+  {
+    "id": "book-policy-2", "title": "Policy", "tags": ["book","policy"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "open youtube", "expect": {"decision": "act"}}
+    ]
+  },
+  {
+    "id": "book-safety-close", "title": "A conversation", "tags": ["book","safety"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "close spotify", "expect": {"decision": "confirm", "operation": "close_app"}},
+      {"said": "confirm", "expect": {"decision": "act", "operation": "close_app"}}
+    ]
+  },
+  {
+    "id": "book-safety-app", "title": "In my app", "tags": ["book","safety"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-project", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "delete this project", "expect": {"decision": "confirm"}},
+      {"said": "cancel", "expect": {"decision": "ignore"}}
+    ]
+  },
+  {
+    "id": "book-safety-secret", "title": "Secrets", "tags": ["book","safety"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "open settings", "expect": {"decision": "act"}, "setup": true},
+      {"said": "type hunter2 into the password", "expect": {"decision": "ask"}}
+    ]
+  },
+  {
+    "id": "book-conversation-repair", "title": "A repair", "tags": ["book","conversation"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "open discord", "expect": {"decision": "act|ask"}},
+      {"said": "no, I meant spotify", "expect": {"decision": "act"}}
+    ]
+  },
+  {
+    "id": "book-conversation-memory", "title": "Memory", "tags": ["book","conversation"], "desktop": {"open": ["Spotify","Visual Studio Code"], "foreground": "Spotify"},
+    "turns": [
+      {"said": "search for panther on spotify", "expect": {"decision": "act"}},
+      {"said": "play the first song", "expect": {"decision": "act"}}
+    ]
+  },
+  {
+    "id": "book-surfaces-1", "title": "Several surfaces", "tags": ["book","surfaces"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "switch to dark mode", "expect": {"decision": "act", "surface": "web app"}}
+    ]
+  },
+  {
+    "id": "book-surfaces-2", "title": "Several surfaces", "tags": ["book","surfaces"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "open a new tab", "expect": {"decision": "act", "surface": "browser"}}
+    ]
+  },
+  {
+    "id": "book-surfaces-3", "title": "Several surfaces", "tags": ["book","surfaces"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "mute", "expect": {"decision": "act", "surface": "desktop"}}
+    ]
+  },
+  {
+    "id": "book-surfaces-4", "title": "Several surfaces", "tags": ["book","surfaces"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "open spotify", "expect": {"decision": "act", "operation": "open_app", "surface": "desktop"}}
+    ]
+  },
+  {
+    "id": "book-profile-on", "title": "With my profile", "tags": ["book","profile"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "open gmail", "expect": {"decision": "act"}}
+    ]
+  },
+  {
+    "id": "book-profile-off", "title": "Without it", "tags": ["book","profile"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"}, "profile": false,
+    "turns": [
+      {"said": "open gmail", "expect": {"decision": "act|ask"}}
+    ]
+  },
+  {
+    "id": "book-no-model-1", "title": "No model", "tags": ["book","no-model"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true, "model": false,
+    "turns": [
+      {"said": "open spotify", "expect": {"decision": "act", "operation": "open_app"}}
+    ]
+  },
+  {
+    "id": "book-no-model-2", "title": "No model", "tags": ["book","no-model"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true, "model": false,
+    "turns": [
+      {"said": "could you put on something relaxing", "expect": {"decision": "ask"}}
+    ]
+  },
+  {
+    "id": "p-normalise-uh-open-spotify", "title": "uh open spotify", "tags": ["preset","normalise"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "uh open spotify", "expect": {"decision": "act", "operation": "open_app", "app": "Spotify"}}
+    ]
+  },
+  {
+    "id": "p-normalise-can-you-please-mute", "title": "can you please mute", "tags": ["preset","normalise"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "can you please mute", "expect": {"decision": "act", "operation": "media"}}
+    ]
+  },
+  {
+    "id": "p-normalise-open-spotify", "title": "Open Spotify.", "tags": ["preset","normalise"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "Open Spotify.", "expect": {"decision": "act", "operation": "open_app", "app": "Spotify"}}
+    ]
+  },
+  {
+    "id": "p-normalise-open-v-s-code", "title": "open v s code", "tags": ["preset","normalise"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "open v s code", "expect": {"decision": "act", "operation": "focus_app|open_app", "app": "Visual Studio Code"}}
+    ]
+  },
+  {
+    "id": "p-normalise-open-spotify-please-thank-you", "title": "open spotify please thank you", "tags": ["preset","normalise"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "open spotify please thank you", "expect": {"decision": "act", "operation": "open_app", "app": "Spotify"}}
+    ]
+  },
+  {
+    "id": "p-target-switch-to-the-terminal", "title": "switch to the terminal", "tags": ["preset","target"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "switch to the terminal", "expect": {"decision": "act", "operation": "focus_app", "app": "Terminal"}}
+    ]
+  },
+  {
+    "id": "p-target-go-to-brave", "title": "go to brave", "tags": ["preset","target"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "go to brave", "expect": {"decision": "act", "operation": "focus_app", "app": "Brave"}}
+    ]
+  },
+  {
+    "id": "p-target-open-discord", "title": "open discord", "tags": ["preset","target"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "open discord", "expect": {"decision": "act", "operation": "open_app", "app": "Discord"}}
+    ]
+  },
+  {
+    "id": "p-target-open-a-new-tab-in-the-terminal", "title": "open a new tab in the terminal", "tags": ["preset","target"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "open a new tab in the terminal", "expect": {"decision": "act", "surface": "desktop", "plan": "Terminal"}}
+    ]
+  },
+  {
+    "id": "p-places-go-to-projects", "title": "go to projects", "tags": ["preset","places"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "go to projects", "expect": {"decision": "act", "plan": "projects"}}
+    ]
+  },
+  {
+    "id": "p-places-open-the-mobile-app-project", "title": "open the mobile app project", "tags": ["preset","places"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "open the mobile app project", "expect": {"decision": "act", "plan": "projects/2"}}
+    ]
+  },
+  {
+    "id": "p-places-take-me-to-the-team-page", "title": "take me to the team page", "tags": ["preset","places"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "take me to the team page", "expect": {"decision": "act", "plan": "team"}}
+    ]
+  },
+  {
+    "id": "p-places-open-the-docs", "title": "open the docs", "tags": ["preset","places"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "open the docs", "expect": {"decision": "act", "plan": "docs"}}
+    ]
+  },
+  {
+    "id": "p-places-go-to-the-dashboard", "title": "go to the dashboard", "tags": ["preset","places"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "go to the dashboard", "expect": {"decision": "act", "plan": "dashboard"}}
+    ]
+  },
+  {
+    "id": "p-code-first-mute", "title": "mute", "tags": ["preset","code-first"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "mute", "expect": {"decision": "act", "operation": "media"}}
+    ]
+  },
+  {
+    "id": "p-code-first-volume-up", "title": "volume up", "tags": ["preset","code-first"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "volume up", "expect": {"decision": "act", "operation": "media"}}
+    ]
+  },
+  {
+    "id": "p-code-first-press-enter", "title": "press enter", "tags": ["preset","code-first"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "press enter", "expect": {"decision": "act", "operation": "press_key"}}
+    ]
+  },
+  {
+    "id": "p-code-first-go-to-youtube-com", "title": "go to youtube.com", "tags": ["preset","code-first"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "go to youtube.com", "expect": {"decision": "act", "operation": "open_url"}}
+    ]
+  },
+  {
+    "id": "p-code-first-google-how-to-center-a-div", "title": "google how to center a div", "tags": ["preset","code-first"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "google how to center a div", "expect": {"decision": "act", "operation": "search_web"}}
+    ]
+  },
+  {
+    "id": "p-code-first-type-meeting-moved-to-friday", "title": "type meeting moved to friday", "tags": ["preset","code-first"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "type meeting moved to friday", "expect": {"decision": "act", "operation": "type_text"}}
+    ]
+  },
+  {
+    "id": "p-code-first-open", "title": "open", "tags": ["preset","code-first"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "open", "expect": {"decision": "wait"}}
+    ]
+  },
+  {
+    "id": "p-code-first-send-it-to", "title": "send it to", "tags": ["preset","code-first"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "send it to", "expect": {"decision": "wait"}}
+    ]
+  },
+  {
+    "id": "p-code-first-", "title": ".", "tags": ["preset","code-first"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": ".", "expect": {"decision": "ignore"}}
+    ]
+  },
+  {
+    "id": "p-code-first-type-hello-into-the-comments-box", "title": "type hello into the comments box", "tags": ["preset","code-first"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "type hello into the comments box", "expect": {"decision": "ask"}}
+    ]
+  },
+  {
+    "id": "p-code-first-play-the-second-one", "title": "play the second one", "tags": ["preset","code-first"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "play the second one", "expect": {"decision": "ask"}}
+    ]
+  },
+  {
+    "id": "p-compound-open-spotify-and-search-for-panther", "title": "open spotify and search for panther", "tags": ["preset","compound"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "open spotify and search for panther", "expect": {"decision": "act|ask"}}
+    ]
+  },
+  {
+    "id": "p-compound-open-brave-and-go-to-youtube-com", "title": "open brave and go to youtube.com", "tags": ["preset","compound"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "open brave and go to youtube.com", "expect": {"decision": "act|ask"}}
+    ]
+  },
+  {
+    "id": "p-skills-play-panther-on-spotify", "title": "play panther on spotify", "tags": ["preset","skills"], "desktop": {"open": ["Spotify","Visual Studio Code"], "foreground": "Spotify"},
+    "turns": [
+      {"said": "play panther on spotify", "expect": {"decision": "act", "operation": "spotify.play"}}
+    ]
+  },
+  {
+    "id": "p-skills-search-for-lofi-beats", "title": "search for lofi beats", "tags": ["preset","skills"], "desktop": {"open": ["Spotify","Visual Studio Code"], "foreground": "Spotify"},
+    "turns": [
+      {"said": "search for lofi beats", "expect": {"decision": "act", "operation": "spotify.search"}}
+    ]
+  },
+  {
+    "id": "p-skills-like-this-song", "title": "like this song", "tags": ["preset","skills"], "desktop": {"open": ["Spotify","Visual Studio Code"], "foreground": "Spotify"},
+    "turns": [
+      {"said": "like this song", "expect": {"decision": "act", "operation": "spotify.like"}}
+    ]
+  },
+  {
+    "id": "p-skills-what-s-playing", "title": "what's playing", "tags": ["preset","skills"], "desktop": {"open": ["Spotify","Visual Studio Code"], "foreground": "Spotify"},
+    "turns": [
+      {"said": "what's playing", "expect": {"decision": "act", "operation": "spotify.now_playing"}}
+    ]
+  },
+  {
+    "id": "p-skills-split-the-terminal", "title": "split the terminal", "tags": ["preset","skills"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Terminal"},
+    "turns": [
+      {"said": "split the terminal", "expect": {"decision": "act", "operation": "terminal.split"}}
+    ]
+  },
+  {
+    "id": "p-skills-open-a-new-tab", "title": "open a new tab", "tags": ["preset","skills"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Terminal"},
+    "turns": [
+      {"said": "open a new tab", "expect": {"decision": "act", "operation": "terminal.tab_new"}}
+    ]
+  },
+  {
+    "id": "p-skills-search-for-lumen-caching", "title": "search for lumen caching", "tags": ["preset","skills"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "ddg-lumen", "app": "Brave"},
+    "turns": [
+      {"said": "search for lumen caching", "expect": {"decision": "act", "operation": "search_web"}}
+    ]
+  },
+  {
+    "id": "p-skills-reload-the-page", "title": "reload the page", "tags": ["preset","skills"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "ddg-lumen", "app": "Brave"},
+    "turns": [
+      {"said": "reload the page", "expect": {"decision": "act", "operation": "page.reload"}}
+    ]
+  },
+  {
+    "id": "p-skills-go-back", "title": "go back", "tags": ["preset","skills"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "ddg-lumen", "app": "Brave"},
+    "turns": [
+      {"said": "go back", "expect": {"decision": "act", "operation": "page.back"}}
+    ]
+  },
+  {
+    "id": "p-skills-create-a-new-project-called-billing", "title": "create a new project called billing", "tags": ["preset","skills"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-projects", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "create a new project called billing", "expect": {"decision": "act", "operation": "acme.new_project", "name": "billing"}}
+    ]
+  },
+  {
+    "id": "p-skills-switch-to-light-mode", "title": "switch to light mode", "tags": ["preset","skills"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-projects", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "switch to light mode", "expect": {"decision": "act", "operation": "acme.theme", "theme": "light"}}
+    ]
+  },
+  {
+    "id": "p-items-click-the-first-result", "title": "click the first result", "tags": ["preset","items"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "search-results", "app": "Brave"},
+    "turns": [
+      {"said": "click the first result", "expect": {"decision": "act"}}
+    ]
+  },
+  {
+    "id": "p-items-click-the-github-link", "title": "click the github link", "tags": ["preset","items"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "search-results", "app": "Brave"},
+    "turns": [
+      {"said": "click the github link", "expect": {"decision": "act"}}
+    ]
+  },
+  {
+    "id": "p-items-open-the-third-one", "title": "open the third one", "tags": ["preset","items"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "search-results", "app": "Brave"},
+    "turns": [
+      {"said": "open the third one", "expect": {"decision": "act|ask"}}
+    ]
+  },
+  {
+    "id": "p-items-type-bob-at-example-dot-com-in-the-email", "title": "type bob at example dot com in the email field", "tags": ["preset","items"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "checkout", "app": "Brave"},
+    "turns": [
+      {"said": "type bob at example dot com in the email field", "expect": {"decision": "act"}}
+    ]
+  },
+  {
+    "id": "p-items-click-back-to-cart", "title": "click back to cart", "tags": ["preset","items"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "checkout", "app": "Brave"},
+    "turns": [
+      {"said": "click back to cart", "expect": {"decision": "act"}}
+    ]
+  },
+  {
+    "id": "p-items-open-the-comments", "title": "open the comments", "tags": ["preset","items"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "news", "app": "Brave"},
+    "turns": [
+      {"said": "open the comments", "expect": {"decision": "act|ask"}}
+    ]
+  },
+  {
+    "id": "p-items-click-the-second-story", "title": "click the second story", "tags": ["preset","items"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "news", "app": "Brave"},
+    "turns": [
+      {"said": "click the second story", "expect": {"decision": "act|ask"}}
+    ]
+  },
+  {
+    "id": "p-items-click-view-history", "title": "click view history", "tags": ["preset","items"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "wiki-article", "app": "Brave"},
+    "turns": [
+      {"said": "click view history", "expect": {"decision": "act"}}
+    ]
+  },
+  {
+    "id": "p-items-search-openpedia-for-castles", "title": "search openpedia for castles", "tags": ["preset","items"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "wiki-article", "app": "Brave"},
+    "turns": [
+      {"said": "search openpedia for castles", "expect": {"decision": "act|ask"}}
+    ]
+  },
+  {
+    "id": "p-items-open-api-migration", "title": "open api migration", "tags": ["preset","items"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-projects", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "open api migration", "expect": {"decision": "act", "plan": "projects/3"}}
+    ]
+  },
+  {
+    "id": "p-items-sort-by-name", "title": "sort by name", "tags": ["preset","items"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-projects", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "sort by name", "expect": {"decision": "act|ask"}}
+    ]
+  },
+  {
+    "id": "p-model-could-you-put-on-something-relaxing", "title": "could you put on something relaxing", "tags": ["preset","model"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "could you put on something relaxing", "expect": {"decision": "ask|act|ignore"}}
+    ]
+  },
+  {
+    "id": "p-model-so-anyway-i-think-we-should-get-lunch", "title": "so anyway I think we should get lunch", "tags": ["preset","model"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "so anyway I think we should get lunch", "expect": {"decision": "ignore"}}
+    ]
+  },
+  {
+    "id": "p-model-can-you-make-it-louder", "title": "can you make it louder", "tags": ["preset","model"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "can you make it louder", "expect": {"decision": "act", "operation": "media|ask"}}
+    ]
+  },
+  {
+    "id": "p-model-i-need-to-write-some-code", "title": "I need to write some code", "tags": ["preset","model"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "I need to write some code", "expect": {"decision": "act|ask|ignore"}}
+    ]
+  },
+  {
+    "id": "p-model-hmm-let-me-think", "title": "hmm let me think", "tags": ["preset","model"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "hmm let me think", "expect": {"decision": "ignore|wait"}}
+    ]
+  },
+  {
+    "id": "p-policy-minimize-spotify", "title": "minimize spotify", "tags": ["preset","policy"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "minimize spotify", "expect": {"decision": "act", "operation": "window.minimize"}}
+    ]
+  },
+  {
+    "id": "p-policy-maximize-the-terminal", "title": "maximize the terminal", "tags": ["preset","policy"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "maximize the terminal", "expect": {"decision": "act", "operation": "window.maximize"}}
+    ]
+  },
+  {
+    "id": "p-policy-minimize-the-sidebar", "title": "minimize the sidebar", "tags": ["preset","policy"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "minimize the sidebar", "expect": {"decision": "ask"}}
+    ]
+  },
+  {
+    "id": "p-policy-rotate-the-screen", "title": "rotate the screen", "tags": ["preset","policy"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "rotate the screen", "expect": {"decision": "ask"}}
+    ]
+  },
+  {
+    "id": "p-policy-fire-up-obs", "title": "fire up obs", "tags": ["preset","policy"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "fire up obs", "expect": {"decision": "act", "operation": "open_app", "app": "OBS Studio"}}
+    ]
+  },
+  {
+    "id": "p-safety-close-spotify", "title": "close spotify", "tags": ["preset","safety"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "close spotify", "expect": {"decision": "confirm", "operation": "close_app"}}
+    ]
+  },
+  {
+    "id": "p-safety-quit-brave", "title": "quit brave", "tags": ["preset","safety"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "quit brave", "expect": {"decision": "confirm", "operation": "close_app"}}
+    ]
+  },
+  {
+    "id": "p-safety-close-it", "title": "close it", "tags": ["preset","safety"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "close it", "expect": {"decision": "confirm|ask"}}
+    ]
+  },
+  {
+    "id": "p-safety-click-place-order", "title": "click place order", "tags": ["preset","safety"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "checkout", "app": "Brave"},
+    "turns": [
+      {"said": "click place order", "expect": {"decision": "confirm|ask"}}
+    ]
+  },
+  {
+    "id": "p-safety-click-delete-account", "title": "click delete account", "tags": ["preset","safety"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "checkout", "app": "Brave"},
+    "turns": [
+      {"said": "click delete account", "expect": {"decision": "confirm|ask"}}
+    ]
+  },
+  {
+    "id": "p-safety-archive-this-project", "title": "archive this project", "tags": ["preset","safety"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-project", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "archive this project", "expect": {"decision": "confirm", "operation": "acme.archive_project"}}
+    ]
+  },
+  {
+    "id": "p-safety-delete-this-project", "title": "delete this project", "tags": ["preset","safety"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-project", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "delete this project", "expect": {"decision": "confirm", "operation": "acme.delete_project"}}
+    ]
+  },
+  {
+    "id": "p-safety-close-this-tab", "title": "close this tab", "tags": ["preset","safety"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "ddg-lumen", "app": "Brave"},
+    "turns": [
+      {"said": "close this tab", "expect": {"decision": "confirm", "operation": "page.tab_close"}}
+    ]
+  },
+  {
+    "id": "p-session-cancel", "title": "close spotify, then cancel", "tags": ["preset","session"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "close spotify", "expect": {"decision": "confirm", "operation": "close_app"}},
+      {"said": "cancel", "expect": {"decision": "ignore"}}
+    ]
+  },
+  {
+    "id": "p-session-confirm", "title": "close the terminal, then confirm", "tags": ["preset","session"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "close the terminal", "expect": {"decision": "confirm", "operation": "close_app"}},
+      {"said": "confirm", "expect": {"decision": "act", "operation": "close_app"}}
+    ]
+  },
+  {
+    "id": "p-session-repair", "title": "a repair", "tags": ["preset","session"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "open discord", "expect": {"decision": "act", "operation": "open_app"}},
+      {"said": "no, spotify", "expect": {"decision": "act", "operation": "open_app|focus_app"}}
+    ]
+  },
+  {
+    "id": "p-session-other", "title": "the other one", "tags": ["preset","session"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "search-results", "app": "Brave"},
+    "turns": [
+      {"said": "click the first result", "expect": {"decision": "act"}, "setup": true},
+      {"said": "no, the other one", "expect": {"decision": "act|ask"}}
+    ]
+  },
+  {
+    "id": "p-surfaces-switch-to-dark-mode", "title": "switch to dark mode", "tags": ["preset","surfaces"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "switch to dark mode", "expect": {"decision": "act", "operation": "acme.theme", "surface": "web app"}}
+    ]
+  },
+  {
+    "id": "p-surfaces-open-a-new-tab", "title": "open a new tab", "tags": ["preset","surfaces"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "open a new tab", "expect": {"decision": "act", "surface": "browser"}}
+    ]
+  },
+  {
+    "id": "p-surfaces-mute", "title": "mute", "tags": ["preset","surfaces"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "mute", "expect": {"decision": "act", "operation": "media", "surface": "desktop"}}
+    ]
+  },
+  {
+    "id": "p-surfaces-open-spotify", "title": "open spotify", "tags": ["preset","surfaces"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "open spotify", "expect": {"decision": "act", "operation": "open_app", "surface": "desktop"}}
+    ]
+  },
+  {
+    "id": "p-surfaces-open-settings", "title": "open settings", "tags": ["preset","surfaces"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "open settings", "expect": {"decision": "act", "surface": "web app"}}
+    ]
+  },
+  {
+    "id": "p-surfaces-search-for-panther-on-spotify", "title": "search for panther on spotify", "tags": ["preset","surfaces"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "localhost-dashboard", "app": "Brave"}, "webapp": true,
+    "turns": [
+      {"said": "search for panther on spotify", "expect": {"decision": "act", "surface": "desktop"}}
+    ]
+  },
+  {
+    "id": "p-profile-open-gmail", "title": "open gmail", "tags": ["preset","profile"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "open gmail", "expect": {"decision": "act"}}
+    ]
+  },
+  {
+    "id": "p-profile-open-clawed-code", "title": "open clawed code", "tags": ["preset","profile"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "open clawed code", "expect": {"decision": "act", "operation": "open_app"}}
+    ]
+  },
+  {
+    "id": "p-profile-focus-time", "title": "focus time", "tags": ["preset","profile"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "focus time", "expect": {"decision": "act", "operation": "media"}}
+    ]
+  },
+  {
+    "id": "p-policy-find-panther-in-the-terminal", "title": "find panther in the terminal", "tags": ["preset","policy"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Visual Studio Code"},
+    "turns": [
+      {"said": "find panther in the terminal", "expect": {"decision": "ask"}}
+    ]
+  },
+  {
+    "id": "p-session-offer", "title": "a yes/no question, then yes", "tags": ["preset","session"], "desktop": {"open": ["Spotify","Visual Studio Code"], "foreground": "Spotify"},
+    "turns": [
+      {"said": "save this track to my library", "expect": {"decision": "ask|act"}},
+      {"said": "yes", "expect": {"decision": "act", "operation": "spotify.like"}}
+    ]
+  },
+  {
+    "id": "p-session-which", "title": "a place or a link: which one?", "tags": ["preset","session"], "desktop": {"open": ["Brave","Visual Studio Code","Terminal","Spotify"], "foreground": "Brave"}, "browser": {"page": "search-results", "app": "Brave"},
+    "turns": [
+      {"said": "open settings", "expect": {"decision": "ask"}},
+      {"said": "confirm", "expect": {"decision": "ask"}},
+      {"said": "the second one", "expect": {"decision": "act"}}
+    ]
+  }
+]

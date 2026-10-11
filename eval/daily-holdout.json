@@ -1,0 +1,747 @@
+[
+  {
+    "id": "music",
+    "note": "Held out (written 2026-10-03 after the skills were built, before tuning on it). Spotify in daily use.",
+    "desktop": {
+      "open": [
+        "Spotify",
+        "Terminal"
+      ],
+      "foreground": "Terminal"
+    },
+    "turns": [
+      {
+        "said": "Switch to Spotify.",
+        "expect": {
+          "operation": "focus_app",
+          "app": "Spotify"
+        }
+      },
+      {
+        "said": "Play Radiohead.",
+        "expect": {
+          "operation": "spotify.play",
+          "query": "radiohead"
+        }
+      },
+      {
+        "said": "Next song.",
+        "expect": {
+          "operation": "media",
+          "media": "next"
+        }
+      },
+      {
+        "said": "Find Daft Punk.",
+        "expect": {
+          "operation": "spotify.search",
+          "query": "daft punk"
+        }
+      },
+      {
+        "said": "Play the song Blinding Lights.",
+        "expect": {
+          "operation": "spotify.play",
+          "query": "blinding lights"
+        }
+      },
+      {
+        "said": "Turn it up.",
+        "expect": {
+          "operation": "media",
+          "media": "volume_up"
+        }
+      },
+      {
+        "said": "Like this song.",
+        "expect": {
+          "operation": "spotify.like"
+        }
+      },
+      {
+        "said": "What's playing?",
+        "expect": {
+          "operation": "spotify.now_playing"
+        }
+      },
+      {
+        "said": "Put on some Arctic Monkeys.",
+        "expect": {
+          "operation": "spotify.play",
+          "query": "arctic monkeys"
+        }
+      },
+      {
+        "said": "Skip this one.",
+        "expect": {
+          "operation": "media",
+          "media": "next"
+        }
+      }
+    ]
+  },
+  {
+    "id": "browser",
+    "desktop": {
+      "open": [
+        "Google Chrome",
+        "Terminal"
+      ],
+      "foreground": "Google Chrome"
+    },
+    "turns": [
+      {
+        "said": "Search for the weather in Delhi.",
+        "expect": {
+          "operation": "browser.search",
+          "query": "the weather in delhi",
+          "app": "Google Chrome"
+        }
+      },
+      {
+        "said": "Open a new tab.",
+        "expect": {
+          "operation": "browser.tab_new",
+          "app": "Google Chrome"
+        }
+      },
+      {
+        "said": "Go to YouTube.",
+        "expect": {
+          "operation": "browser.open_site",
+          "url": "youtube.com",
+          "app": "Google Chrome"
+        }
+      },
+      {
+        "said": "Go back.",
+        "expect": {
+          "operation": "browser.back"
+        }
+      },
+      {
+        "said": "Reload the page.",
+        "expect": {
+          "operation": "browser.reload"
+        }
+      },
+      {
+        "said": "Close this tab.",
+        "expect": {
+          "operation": "browser.tab_close",
+          "decision": "confirm"
+        }
+      },
+      {
+        "said": "Cancel.",
+        "expect": {
+          "decision": "ignore"
+        }
+      },
+      {
+        "said": "Next tab.",
+        "expect": {
+          "operation": "browser.tab_next"
+        }
+      },
+      {
+        "said": "Search for Panther on Brave.",
+        "expect": {
+          "operation": "browser.search",
+          "query": "panther",
+          "app": "Brave"
+        }
+      },
+      {
+        "said": "Look up the React docs.",
+        "expect": {
+          "operation": "browser.search",
+          "query": "the react docs",
+          "app": "Brave"
+        }
+      }
+    ]
+  },
+  {
+    "id": "dev",
+    "desktop": {
+      "open": [
+        "Cursor",
+        "Terminal",
+        "Claude"
+      ],
+      "foreground": "Cursor"
+    },
+    "turns": [
+      {
+        "said": "Ask Cursor to add tests for the parser.",
+        "expect": {
+          "operation": "cursor.chat",
+          "span": "add tests for the parser"
+        }
+      },
+      {
+        "said": "Open the command palette.",
+        "expect": {
+          "operation": "cursor.palette"
+        }
+      },
+      {
+        "said": "Switch to the terminal.",
+        "expect": {
+          "operation": "focus_app",
+          "app": "Terminal"
+        }
+      },
+      {
+        "said": "Split the pane.",
+        "expect": {
+          "operation": "terminal.split"
+        }
+      },
+      {
+        "said": "New tab.",
+        "expect": {
+          "operation": "terminal.tab_new"
+        }
+      },
+      {
+        "said": "Bring Claude to the front.",
+        "expect": {
+          "operation": "focus_app",
+          "app": "Claude"
+        }
+      },
+      {
+        "said": "Start a new chat.",
+        "expect": {
+          "operation": "claude.new_chat"
+        }
+      },
+      {
+        "said": "Ask Claude Code to fix the failing tests.",
+        "expect": {
+          "operation": "claude.prompt",
+          "span": "fix the failing tests"
+        }
+      },
+      {
+        "said": "Go back to Cursor.",
+        "expect": {
+          "operation": "focus_app",
+          "app": "Cursor"
+        }
+      },
+      {
+        "said": "Find the file app dot tsx.",
+        "expect": {
+          "operation": "cursor.find_file",
+          "span": "app dot tsx"
+        }
+      }
+    ]
+  },
+  {
+    "id": "messages",
+    "desktop": {
+      "open": [
+        "Telegram",
+        "WhatsApp",
+        "Terminal"
+      ],
+      "foreground": "Terminal"
+    },
+    "turns": [
+      {
+        "said": "Open Telegram.",
+        "expect": {
+          "operation": "open_app",
+          "app": "Telegram"
+        }
+      },
+      {
+        "said": "Find Rahul.",
+        "expect": {
+          "operation": "telegram.find_chat",
+          "query": "rahul"
+        }
+      },
+      {
+        "said": "Next chat.",
+        "expect": {
+          "operation": "telegram.chat_next"
+        }
+      },
+      {
+        "said": "Switch to WhatsApp.",
+        "expect": {
+          "operation": "focus_app",
+          "app": "WhatsApp"
+        }
+      },
+      {
+        "said": "Find the chat with Mom.",
+        "expect": {
+          "operation": "whatsapp.find_chat",
+          "query": "mom"
+        }
+      },
+      {
+        "said": "Search for Rahul on Telegram.",
+        "expect": {
+          "operation": "telegram.find_chat",
+          "query": "rahul",
+          "app": "Telegram"
+        }
+      },
+      {
+        "said": "Send hello to Rahul.",
+        "expect": {
+          "decision": "ask"
+        },
+        "note": "sending a message isn't a skill yet: must never type or paste it somewhere"
+      }
+    ]
+  },
+  {
+    "id": "repairs",
+    "desktop": {
+      "open": [
+        "Terminal",
+        "Google Chrome"
+      ],
+      "foreground": "Terminal"
+    },
+    "turns": [
+      {
+        "said": "Open crawled code.",
+        "expect": {
+          "operation": "open_app",
+          "app": "Claude"
+        }
+      },
+      {
+        "said": "Open Notion.",
+        "expect": {
+          "decision": "ask"
+        },
+        "note": "not installed"
+      },
+      {
+        "said": "Open spot if I.",
+        "expect": {
+          "operation": "open_app",
+          "app": "Spotify"
+        },
+        "note": "a plausible mishearing of Spotify"
+      },
+      {
+        "said": "No, I meant Spotify.",
+        "expect": {
+          "operation": "open_app",
+          "app": "Spotify"
+        }
+      },
+      {
+        "said": "Search for Panther.",
+        "expect": {
+          "operation": "spotify.search",
+          "query": "panther"
+        },
+        "note": "Spotify was just opened"
+      },
+      {
+        "said": "No, search on Chrome.",
+        "expect": {
+          "operation": "browser.search",
+          "query": "panther",
+          "app": "Google Chrome"
+        }
+      },
+      {
+        "said": "Not Panther, Pantera.",
+        "expect": {
+          "operation": "browser.search",
+          "query": "pantera",
+          "app": "Google Chrome"
+        }
+      },
+      {
+        "said": "Undo that.",
+        "expect": {
+          "decision": "ask"
+        },
+        "note": "a search can't be undone safely"
+      },
+      {
+        "said": "Pause.",
+        "expect": {
+          "operation": "media",
+          "media": "play_pause"
+        }
+      },
+      {
+        "said": "Undo that.",
+        "expect": {
+          "operation": "undo"
+        }
+      }
+    ]
+  },
+  {
+    "id": "two-step",
+    "desktop": {
+      "open": [
+        "Terminal"
+      ],
+      "foreground": "Terminal"
+    },
+    "turns": [
+      {
+        "said": "Open Spotify and play Panther.",
+        "expect": {
+          "operation": "spotify.play",
+          "query": "panther"
+        }
+      },
+      {
+        "said": "Open Chrome and search for the weather.",
+        "expect": {
+          "operation": "browser.search",
+          "query": "the weather",
+          "app": "Google Chrome"
+        }
+      },
+      {
+        "said": "Close Spotify and open Brave.",
+        "expect": {
+          "decision": "ask"
+        },
+        "note": "a destructive step never runs as part of a pair"
+      },
+      {
+        "said": "Open a new tab in Chrome.",
+        "expect": {
+          "operation": "browser.tab_new",
+          "app": "Google Chrome"
+        }
+      }
+    ]
+  },
+  {
+    "id": "safety",
+    "desktop": {
+      "open": [
+        "Terminal",
+        "Spotify"
+      ],
+      "foreground": "Spotify"
+    },
+    "turns": [
+      {
+        "said": "That song is really nice.",
+        "expect": {
+          "decision": "ignore"
+        }
+      },
+      {
+        "said": "Close the tab.",
+        "expect": {
+          "decision": "ask"
+        },
+        "note": "Spotify has no tabs"
+      },
+      {
+        "said": "Type hello world.",
+        "expect": {
+          "operation": "type_text",
+          "span": "hello world"
+        }
+      },
+      {
+        "said": "Search for cats in Paris.",
+        "expect": {
+          "operation": "spotify.search",
+          "query": "cats in paris"
+        },
+        "note": "Spotify is in front, so search means Spotify"
+      }
+    ]
+  },
+  {
+    "id": "windows",
+    "note": "Held out (written 2026-10-04 after the day-2 fixes, before running them).",
+    "desktop": {
+      "open": [
+        "Google Chrome",
+        "Spotify",
+        "Terminal"
+      ],
+      "foreground": "Google Chrome"
+    },
+    "turns": [
+      {
+        "said": "Maximize Chrome.",
+        "expect": {
+          "operation": "window.maximize",
+          "app": "Google Chrome"
+        }
+      },
+      {
+        "said": "Minimize it.",
+        "expect": {
+          "operation": "window.minimize"
+        }
+      },
+      {
+        "said": "Make the terminal full screen.",
+        "expect": {
+          "operation": "window.maximize",
+          "app": "Terminal"
+        }
+      },
+      {
+        "said": "Snap Spotify to the left.",
+        "expect": {
+          "operation": "window.snap",
+          "app": "Spotify"
+        }
+      },
+      {
+        "said": "Restore Spotify.",
+        "expect": {
+          "operation": "window.restore",
+          "app": "Spotify"
+        }
+      },
+      {
+        "said": "Hide everything.",
+        "expect": {
+          "operation": "window.show_desktop"
+        }
+      },
+      {
+        "said": "Undo that.",
+        "expect": {
+          "decision": "ask"
+        },
+        "note": "showing the desktop isn't reversible yet"
+      },
+      {
+        "said": "Minimize the sidebar.",
+        "expect": {
+          "decision": "ask"
+        },
+        "note": "not an app: must not minimize something else"
+      }
+    ]
+  },
+  {
+    "id": "spotify-deep",
+    "note": "Held out (written 2026-10-04 after the day-2 fixes, before running them).",
+    "desktop": {
+      "open": [
+        "Spotify",
+        "Brave"
+      ],
+      "foreground": "Brave"
+    },
+    "turns": [
+      {
+        "said": "Play some songs by Arijit Singh.",
+        "expect": {
+          "operation": "spotify.play",
+          "query": "arijit singh"
+        },
+        "note": "Spotify is open behind Brave"
+      },
+      {
+        "said": "Switch to Spotify.",
+        "expect": {
+          "operation": "focus_app",
+          "app": "Spotify"
+        }
+      },
+      {
+        "said": "Search for Seedhe Maut.",
+        "expect": {
+          "operation": "spotify.search",
+          "query": "seedhe maut"
+        }
+      },
+      {
+        "said": "Play the second song.",
+        "expect": {
+          "operation": "spotify.play_result",
+          "query": "seedhe maut"
+        }
+      },
+      {
+        "said": "Go to their artist page.",
+        "expect": {
+          "operation": "spotify.open_artist",
+          "query": "seedhe maut"
+        }
+      },
+      {
+        "said": "Open Divine's profile.",
+        "expect": {
+          "operation": "spotify.open_artist",
+          "query": "divine"
+        }
+      },
+      {
+        "said": "Play his music.",
+        "expect": {
+          "operation": "spotify.play",
+          "query": "divine"
+        }
+      },
+      {
+        "said": "Play the album Moosetape.",
+        "expect": {
+          "operation": "spotify.play",
+          "query": "moosetape"
+        }
+      },
+      {
+        "said": "Like this song.",
+        "expect": {
+          "operation": "spotify.like"
+        }
+      },
+      {
+        "said": "Search for lo-fi beats on Brave.",
+        "expect": {
+          "operation": "browser.search",
+          "query": "lo-fi beats",
+          "app": "Brave"
+        }
+      }
+    ]
+  },
+  {
+    "id": "host",
+    "note": "Held out (written 2026-10-04 after the day-2 fixes, before running them). coreloop runs in Windows Terminal, which takes the focus back after every turn.",
+    "desktop": {
+      "open": [
+        "Terminal",
+        "Spotify",
+        "Brave"
+      ],
+      "foreground": "Spotify",
+      "host": "Terminal"
+    },
+    "turns": [
+      {
+        "said": "Search for Karan Aujla.",
+        "expect": {
+          "operation": "spotify.search",
+          "query": "karan aujla"
+        },
+        "note": "Spotify is the app in use under the terminal"
+      },
+      {
+        "said": "Switch to Brave.",
+        "expect": {
+          "operation": "focus_app",
+          "app": "Brave"
+        }
+      },
+      {
+        "said": "New tab.",
+        "expect": {
+          "operation": "browser.tab_new",
+          "app": "Brave"
+        }
+      },
+      {
+        "said": "Search for the weather.",
+        "expect": {
+          "operation": "browser.search",
+          "query": "the weather",
+          "app": "Brave"
+        }
+      },
+      {
+        "said": "Maximize it.",
+        "expect": {
+          "operation": "window.maximize"
+        }
+      },
+      {
+        "said": "Open a new tab in the terminal.",
+        "expect": {
+          "operation": "terminal.tab_new"
+        },
+        "note": "named, so the host itself is fine"
+      }
+    ]
+  },
+  {
+    "id": "typing",
+    "note": "Held out (written 2026-10-04 after the day-2 fixes, before running them).",
+    "desktop": {
+      "open": [
+        "Claude",
+        "Terminal",
+        "Cursor"
+      ],
+      "foreground": "Claude"
+    },
+    "turns": [
+      {
+        "said": "Type let's refactor the parser.",
+        "expect": {
+          "operation": "type_text",
+          "span": "let's refactor the parser"
+        }
+      },
+      {
+        "said": "Type git status in the terminal.",
+        "expect": {
+          "operation": "type_text",
+          "span": "git status",
+          "app": "Terminal"
+        }
+      },
+      {
+        "said": "Type npm test and run it.",
+        "expect": {
+          "operation": "type_text",
+          "span": "npm test",
+          "decision": "confirm"
+        },
+        "note": "pressing Enter needs a confirm"
+      },
+      {
+        "said": "Cancel.",
+        "expect": {
+          "decision": "ignore"
+        }
+      },
+      {
+        "said": "Paste hello world into Cursor.",
+        "expect": {
+          "operation": "paste_text",
+          "span": "hello world",
+          "app": "Cursor"
+        }
+      },
+      {
+        "said": "Delete that.",
+        "expect": {
+          "decision": "ask"
+        },
+        "note": "can't delete yet: must not guess"
+      },
+      {
+        "said": "Send it.",
+        "expect": {
+          "decision": "ask"
+        },
+        "note": "no send action yet"
+      }
+    ]
+  }
+]

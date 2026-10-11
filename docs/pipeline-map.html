@@ -1,0 +1,913 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+</head>
+<body>
+<title>coreloop Pipeline Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a signal-path document. One long column; the flowchart is the spine, every later section zooms into one part of it. */
+:root {
+  --bg: #f4f6f8; --surface: #ffffff; --ink: #11151a; --ink-2: #48505a; --ink-3: #6f7782; --line: #d6dbe1;
+  --code: #2a78d6; --model: #eb6834; --desk: #1baf7a; --hl: #11151a;
+  --code-soft: color-mix(in oklab, var(--code) 11%, var(--surface));
+  --model-soft: color-mix(in oklab, var(--model) 12%, var(--surface));
+  --desk-soft: color-mix(in oklab, var(--desk) 13%, var(--surface));
+  --ok: #1a7f37; --bad: #c4302b;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1215; --surface: #171b20; --ink: #edf0f3; --ink-2: #b6bcc4; --ink-3: #8a919b; --line: #2b3139;
+    --code: #3987e5; --model: #d95926; --desk: #199e70; --hl: #edf0f3; --ok: #4ac26b; --bad: #f2716b;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1215; --surface: #171b20; --ink: #edf0f3; --ink-2: #b6bcc4; --ink-3: #8a919b; --line: #2b3139;
+  --code: #3987e5; --model: #d95926; --desk: #199e70; --hl: #edf0f3; --ok: #4ac26b; --bad: #f2716b;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.6 var(--body); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 72px; display: grid; gap: 56px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; text-wrap: balance; margin: 0; line-height: 1.15; }
+h1 { font-size: clamp(30px, 5vw, 46px); letter-spacing: -0.01em; }
+h2 { font-size: clamp(22px, 3vw, 28px); }
+h3 { font-size: 17px; }
+p { margin: 0; max-width: 68ch; }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.lede { color: var(--ink-2); font-size: 17px; }
+code, .mono { font-family: var(--mono); font-size: 0.88em; }
+section { display: grid; gap: 18px; min-width: 0; }
+.head { display: grid; gap: 10px; }
+
+/* hero */
+.hero { display: grid; gap: 18px; }
+.signal { font: 500 14px/1.4 var(--mono); color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+.signal b { color: var(--ink); font-weight: 500; padding: 3px 8px; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); }
+.signal b.m { border-color: var(--model); }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: grid; gap: 2px; }
+.stat .n { font: 700 28px/1.1 var(--display); font-variant-numeric: tabular-nums; }
+.stat .l { color: var(--ink-2); font-size: 13px; }
+
+/* legend chips */
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.sw { width: 14px; height: 14px; border-radius: 3px; border: 2px solid; display: inline-block; flex: none; }
+.sw.code { border-color: var(--code); background: var(--code-soft); }
+.sw.model { border-color: var(--model); background: var(--model-soft); }
+.sw.desk { border-color: var(--desk); background: var(--desk-soft); }
+.sw.ctx { border-color: var(--ink-3); border-style: dashed; background: var(--surface); }
+.sw.plain { border-color: var(--ink-3); background: var(--surface); }
+
+/* trace picker */
+.picker { display: flex; flex-wrap: wrap; gap: 8px; }
+.picker button { font: 500 13px/1.2 var(--mono); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; cursor: pointer; }
+.picker button:hover { border-color: var(--ink-3); }
+.picker button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.picker button:focus-visible, .filters button:focus-visible { outline: 2px solid var(--code); outline-offset: 2px; }
+.picker .tag { font-size: 11px; opacity: 0.75; margin-left: 6px; }
+
+/* flowchart */
+.flow { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 860px) { .flow { grid-template-columns: minmax(0, 1fr); } }
+.figure { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px; display: grid; gap: 8px; min-width: 0; }
+.scroll { overflow-x: auto; }
+.scroll svg { display: block; width: 100%; min-width: 600px; height: auto; color: var(--ink); }
+figcaption { font-size: 13px; color: var(--ink-2); padding: 0 6px 4px; }
+svg text { font-family: var(--body); fill: currentColor; }
+svg .t { font-size: 14px; font-weight: 600; }
+svg .s { font-family: var(--mono); font-size: 11px; fill: var(--ink-2); }
+svg .el { font-size: 11px; fill: var(--ink-2); }
+svg .node rect { stroke-width: 2; }
+svg .node.code rect { fill: var(--code-soft); stroke: var(--code); }
+svg .node.model rect { fill: var(--model-soft); stroke: var(--model); }
+svg .node.desk rect { fill: var(--desk-soft); stroke: var(--desk); }
+svg .node.plain rect { fill: var(--surface); stroke: var(--ink-3); }
+svg .node.ctx rect { fill: var(--surface); stroke: var(--ink-3); stroke-dasharray: 5 4; }
+svg .edge { fill: none; stroke: var(--ink-3); stroke-width: 1.6; }
+svg .edge.ctx { stroke-dasharray: 4 4; }
+svg .arrowhead { fill: var(--ink-3); }
+svg g, svg path { transition: opacity .25s ease; }
+.tracing svg .node, .tracing svg .edge, .tracing svg .elg { opacity: 0.22; }
+.tracing svg .on { opacity: 1; }
+.tracing svg .edge.on { stroke: var(--hl); stroke-width: 2.6; }
+.tracing svg .node.on rect { stroke-width: 3; }
+@media (prefers-reduced-motion: reduce) { svg g, svg path { transition: none; } }
+
+/* trace panel */
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 12px; min-width: 0; }
+.panel .said { font: 600 18px/1.35 var(--display); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.steps li { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 10px; align-items: baseline; padding-top: 10px; border-top: 1px solid var(--line); }
+.steps li:first-child { border-top: 0; padding-top: 0; }
+.steps .k { font: 500 11px/1.3 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
+.steps .v { min-width: 0; overflow-wrap: anywhere; }
+.steps .skip { color: var(--ink-3); font-style: italic; }
+.dec { display: inline-block; font: 600 12px/1 var(--mono); padding: 4px 7px; border-radius: 4px; border: 1px solid var(--ink-3); letter-spacing: 0.04em; }
+.dec.act { border-color: var(--desk); }
+.dec.confirm { border-color: var(--model); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.chip { font: 12px/1.3 var(--mono); background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 2px 6px; }
+.probs { display: grid; gap: 4px; margin-top: 4px; }
+.prob { display: grid; grid-template-columns: 112px minmax(0, 1fr) 44px; gap: 8px; align-items: center; font: 12px/1.2 var(--mono); }
+.prob .bar { height: 8px; background: var(--bg); border-radius: 4px; overflow: hidden; }
+.prob .bar i { display: block; height: 100%; background: var(--model); border-radius: 0 4px 4px 0; }
+.prob .pc { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-2); }
+.hint { font-size: 13px; color: var(--ink-2); }
+
+/* layers */
+.layers { display: grid; gap: 10px; }
+.layer { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 16px; background: var(--surface); border: 1px solid var(--line); border-left-width: 4px; border-radius: 8px; padding: 14px 16px; }
+@media (max-width: 640px) { .layer { grid-template-columns: minmax(0, 1fr); gap: 8px; } }
+.layer.code { border-left-color: var(--code); }
+.layer.model { border-left-color: var(--model); }
+.layer.desk { border-left-color: var(--desk); }
+.layer.ctx { border-left-color: var(--ink-3); border-left-style: dashed; }
+.layer.plain { border-left-color: var(--ink-3); }
+.layer .who { display: grid; gap: 4px; align-content: start; }
+.layer .who p { font-size: 13px; color: var(--ink-2); }
+.layer .files { display: flex; flex-wrap: wrap; gap: 6px; align-content: start; }
+.layer .files .chip { background: var(--bg); }
+.layer .files .chip small { color: var(--ink-3); margin-left: 4px; }
+.inject { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.inject .card { background: var(--surface); border: 1px dashed var(--ink-3); border-radius: 8px; padding: 14px 16px; display: grid; gap: 8px; }
+.inject dl { margin: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 12px; font-size: 13px; }
+.inject dt { color: var(--ink-3); font-family: var(--mono); font-size: 12px; }
+.inject dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+
+/* file table */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.filters button { font: 500 13px/1 var(--body); background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 8px 11px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; }
+.filters button[aria-pressed="true"] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; min-width: 680px; font-size: 14px; }
+th, td { text-align: left; padding: 9px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font: 500 11px/1.2 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); background: var(--surface); position: sticky; top: 0; }
+tr:last-child td { border-bottom: 0; }
+td.f { font-family: var(--mono); font-size: 13px; white-space: nowrap; }
+td.n { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-2); }
+td .lay { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; color: var(--ink-2); font-size: 13px; }
+
+.search { font: 14px var(--body); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 9px 11px; width: min(100%, 380px); }
+.search:focus-visible { outline: 2px solid var(--code); outline-offset: 2px; }
+.linkish { font: inherit; color: var(--code); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; }
+svg .node { cursor: pointer; }
+
+/* charts */
+.charts { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.chart svg { width: 100%; min-width: 560px; height: auto; display: block; }
+.chart .ax { stroke: var(--line); stroke-width: 1; }
+.chart .grid { stroke: var(--line); stroke-width: 1; stroke-dasharray: 2 4; }
+.chart .lbl { font-size: 12px; fill: var(--ink-2); }
+.chart .val { font: 600 13px var(--body); fill: var(--ink); font-variant-numeric: tabular-nums; }
+.chart .bar { fill: var(--code); }
+.chart .bar.base { fill: var(--ink-3); }
+.chart .bar.lat { fill: var(--model); }
+.chart .bar.lat.dim { fill: var(--ink-3); }
+.chart .target { stroke: var(--ok); stroke-width: 1.5; stroke-dasharray: 6 4; }
+.chart .tlabel { font: 600 12px var(--body); fill: var(--ok); }
+.chart .dot { fill: var(--surface); stroke: var(--ink-2); stroke-width: 2; }
+.chart .dot.pick { fill: var(--model); stroke: var(--model); }
+.chart .hit { fill: transparent; cursor: default; }
+.tip { position: fixed; z-index: 10; pointer-events: none; background: var(--ink); color: var(--bg); font-size: 13px; line-height: 1.4; padding: 8px 10px; border-radius: 6px; max-width: 280px; box-shadow: 0 6px 20px rgba(0,0,0,.18); }
+.steplist { margin: 0; padding-left: 20px; display: grid; gap: 6px; color: var(--ink-2); font-size: 14px; }
+.steplist b { color: var(--ink); font-weight: 600; }
+
+/* rails */
+.rails { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.rail { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: grid; gap: 6px; align-content: start; }
+.rail p { font-size: 14px; color: var(--ink-2); }
+.rail code { color: var(--ink); }
+.next { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.next div { border-top: 2px solid var(--ink); padding-top: 10px; display: grid; gap: 4px; }
+.next p { font-size: 14px; color: var(--ink-2); }
+footer { color: var(--ink-3); font-size: 13px; }
+</style>
+
+<div class="wrap">
+
+<header class="hero">
+  <span class="eyebrow">coreloop · the core · coreloop-engine 0.1.0</span>
+  <h1>coreloop Pipeline Map</h1>
+  <p class="lede">You hold a key and speak, or type a command. The core cleans it up, works out which app it's for, and decides everything it can on its own. A small local model, decider-0.8b, only <em>picks</em> from a list code wrote. A <em>surface</em> (the Windows desktop, a browser, your own app, or the simulated desktop this page runs on) plans the exact steps and carries them out. Nothing the model says is ever typed, clicked or sent.</p>
+  <div class="signal" aria-label="The pipeline in one line">
+    <b>words</b>→<b>normalise</b>→<b>which app</b>→<b>code decides?</b>→<b class="m">model picks</b>→<b>policy</b>→<b>which surface</b>→<b>surface plans</b>→<b>surface runs</b>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="n">0 / 263</span><span class="l">wrong actions in conversation turns: days 1 and 2, held-out, and everyday flows across desktop and browser</span></div>
+    <div class="stat"><span class="n">70 / 70</span><span class="l">desktop test commands handled correctly</span></div>
+    <div class="stat"><span class="n">33 / 34</span><span class="l">browser prototype cases right, picking among up to 120 links</span></div>
+    <div class="stat"><span class="n">20 / 20</span><span class="l">commands in your own recorded voice right (5.1% word errors)</span></div>
+    <div class="stat"><span class="n">0</span><span class="l">destructive or sending actions without a spoken “confirm”</span></div>
+    <div class="stat"><span class="n">~110 ms</span><span class="l">decision time when the model is called (~180 ms when it also picks an item)</span></div>
+    <div class="stat"><span class="n">49 / 70</span><span class="l">desktop commands decided by code alone (~0.1 ms); most conversation turns too</span></div>
+    <div class="stat"><span class="n">+0.6–0.9 ms</span><span class="l">a turn for a surface in another process: every set scores the same over the WebSocket</span></div>
+    <div class="stat"><span class="n">~400 ms</span><span class="l">from releasing the key to the action, in real use</span></div>
+  </div>
+</header>
+
+<section id="flow" aria-labelledby="flow-h">
+  <div class="head">
+    <span class="eyebrow">1 · the path of one command</span>
+    <h2 id="flow-h">Follow a real command through the pipeline</h2>
+    <p>Pick a command. The path it really took lights up, and the panel shows what each stage produced. These are recorded runs of the actual code on the simulated desktop and browser, with decider-0.8b answering live. Click a box to list its files.</p>
+  </div>
+  <div class="legend" aria-label="Colour key">
+    <span><i class="sw code"></i>code, deterministic</span>
+    <span><i class="sw model"></i>the decision model</span>
+    <span><i class="sw desk"></i>surface actions</span>
+    <span><i class="sw ctx"></i>context injected from outside</span>
+    <span><i class="sw plain"></i>input, outcome, output</span>
+  </div>
+  <div class="picker" id="picker" role="group" aria-label="Example commands"></div>
+  <div class="flow">
+    <figure class="figure" id="fig">
+      <div class="scroll">
+      <svg viewBox="0 0 760 1280" role="img" aria-label="Flowchart of the core: a command is normalised (with your profile), repairs edit the last command, the target app is found, then code decides alone or the model is asked which operation and which item; the policy turns that into one outcome. Act and confirm go to the router, which picks the surface that can carry it out, in-process or over the loopback WebSocket; the surface plans and runs the exact steps. Ask, wait and ignore stop without acting. Every press goes to the journal, which npm run review turns into proposals for your profile.">
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="arrowhead"/></marker>
+        </defs>
+
+        <!-- spine edges -->
+        <path id="e-in" class="edge" d="M380 72 V104" marker-end="url(#ah)"/>
+        <path id="e-norm" class="edge" d="M380 160 V192" marker-end="url(#ah)"/>
+        <path id="e-rep" class="edge" d="M380 248 V280" marker-end="url(#ah)"/>
+        <path id="e-scope" class="edge" d="M380 336 V368" marker-end="url(#ah)"/>
+        <path id="e-req" class="edge" d="M380 424 V472" marker-end="url(#ah)"/>
+        <path id="e-mod" class="edge" d="M380 528 V560" marker-end="url(#ah)"/>
+        <path id="e-pol" class="edge" d="M380 616 V648" marker-end="url(#ah)"/>
+        <path id="e-out" class="edge" d="M380 704 V752" marker-end="url(#ah)"/>
+        <path id="e-route" class="edge" d="M380 808 V856" marker-end="url(#ah)"/>
+        <path id="e-wire" class="edge" d="M380 912 V944" marker-end="url(#ah)"/>
+        <path id="e-plan" class="edge" d="M380 1000 V1032" marker-end="url(#ah)"/>
+        <path id="e-run" class="edge" d="M380 1088 V1120" marker-end="url(#ah)"/>
+        <path id="e-desk" class="edge" d="M380 1176 V1208" marker-end="url(#ah)"/>
+        <!-- code-first bypass and outcome branches -->
+        <path id="e-bypass" class="edge" d="M250 396 H226 V728 H320 V752" marker-end="url(#ah)"/>
+        <path id="e-noact" class="edge" d="M250 780 H200" marker-end="url(#ah)"/>
+        <path id="e-sess" class="edge" d="M510 780 H564" marker-end="url(#ah)"/>
+        <path id="e-confirm" class="edge" d="M657 808 V884 H510" marker-end="url(#ah)"/>
+        <!-- context and the learning loop -->
+        <path id="e-cases" class="edge ctx" d="M200 44 H250" marker-end="url(#ah)"/>
+        <path id="e-prof" class="edge ctx" d="M200 132 H250" marker-end="url(#ah)"/>
+        <path id="e-prof2" class="edge ctx" d="M107 160 V308 H250" marker-end="url(#ah)"/>
+        <path id="e-view" class="edge ctx" d="M564 308 H510" marker-end="url(#ah)"/>
+        <path id="e-view2" class="edge ctx" d="M600 336 V350 H530 V384 H510" marker-end="url(#ah)"/>
+        <path id="e-skills" class="edge ctx" d="M564 396 H510" marker-end="url(#ah)"/>
+        <path id="e-skills2" class="edge ctx" d="M657 424 V500 H510" marker-end="url(#ah)"/>
+        <path id="e-cfg" class="edge ctx" d="M564 588 H510" marker-end="url(#ah)"/>
+        <path id="e-jour" class="edge ctx" d="M250 1148 H200" marker-end="url(#ah)"/>
+        <path id="e-learn" class="edge ctx" d="M107 1176 V1208" marker-end="url(#ah)"/>
+        <path id="e-loop" class="edge ctx" d="M14 1236 H6 V132 H14" marker-end="url(#ah)"/>
+
+        <!-- edge labels -->
+        <g class="elg" id="l-in"><text class="el" x="392" y="92">transcript or typed words</text></g>
+        <g class="elg" id="l-norm"><text class="el" x="392" y="180">clean text + fixes</text></g>
+        <g class="elg" id="l-rep"><text class="el" x="392" y="268">or the last command, edited</text></g>
+        <g class="elg" id="l-scope"><text class="el" x="392" y="356">the command, for one app</text></g>
+        <g class="elg" id="l-req"><text class="el" x="392" y="444">no: needs the model</text><text class="el" x="392" y="458">(21 of 70 tests)</text></g>
+        <g class="elg" id="l-mod"><text class="el" x="392" y="548">POST /v1/systemone · 500–790 tokens</text></g>
+        <g class="elg" id="l-pol"><text class="el" x="392" y="636">probabilities, validated</text></g>
+        <g class="elg" id="l-out"><text class="el" x="392" y="728">one decision</text></g>
+        <g class="elg" id="l-route"><text class="el" x="392" y="832">act / confirm</text></g>
+        <g class="elg" id="l-wire"><text class="el" x="392" y="932">the surface that can do it</text></g>
+        <g class="elg" id="l-plan"><text class="el" x="392" y="1020">in-process, or ws://127.0.0.1:7777</text></g>
+        <g class="elg" id="l-run"><text class="el" x="392" y="1108">exact steps, shown first</text></g>
+        <g class="elg" id="l-desk"><text class="el" x="392" y="1196">receipt back</text></g>
+        <g class="elg" id="l-bypass"><text class="el" x="218" y="518" text-anchor="end">yes: decided</text><text class="el" x="218" y="532" text-anchor="end">by code, model</text><text class="el" x="218" y="546" text-anchor="end">skipped</text><text class="el" x="218" y="560" text-anchor="end">(49 of 70 tests)</text></g>
+        <g class="elg" id="l-confirm"><text class="el" x="665" y="844">you say</text><text class="el" x="665" y="858">“confirm”</text></g>
+
+        <!-- spine nodes -->
+        <g class="node plain" id="n-input"><rect x="250" y="16" width="260" height="56" rx="8"/><text class="t" x="380" y="40" text-anchor="middle">Hold Right Ctrl and speak, or type</text><text class="s" x="380" y="58" text-anchor="middle">mic → VAD → Parakeet (~150 ms)</text></g>
+        <g class="node code" id="n-norm"><rect x="250" y="104" width="260" height="56" rx="8"/><text class="t" x="380" y="128" text-anchor="middle">Normalise</text><text class="s" x="380" y="146" text-anchor="middle">fillers · mishearings · my phrases</text></g>
+        <g class="node code" id="n-repair"><rect x="250" y="192" width="260" height="56" rx="8"/><text class="t" x="380" y="216" text-anchor="middle">Repairs &amp; memory</text><text class="s" x="380" y="234" text-anchor="middle">“no, I meant…” · “the other one”</text></g>
+        <g class="node code" id="n-scope"><rect x="250" y="280" width="260" height="56" rx="8"/><text class="t" x="380" y="304" text-anchor="middle">Which app</text><text class="s" x="380" y="322" text-anchor="middle">named › in use › just opened</text></g>
+        <g class="node code" id="n-check"><rect x="250" y="368" width="260" height="56" rx="8"/><text class="t" x="380" y="392" text-anchor="middle">Can code decide alone?</text><text class="s" x="380" y="410" text-anchor="middle">app verbs · templates · items · grammar</text></g>
+        <g class="node code" id="n-request"><rect x="250" y="472" width="260" height="56" rx="8"/><text class="t" x="380" y="496" text-anchor="middle">Build the question</text><text class="s" x="380" y="514" text-anchor="middle">operation · finished? · item (≤16)</text></g>
+        <g class="node model" id="n-model"><rect x="250" y="560" width="260" height="56" rx="8"/><text class="t" x="380" y="584" text-anchor="middle">decider-0.8b picks</text><text class="s" x="380" y="602" text-anchor="middle">backends/systemone.ts → :8001</text></g>
+        <g class="node code" id="n-policy"><rect x="250" y="648" width="260" height="56" rx="8"/><text class="t" x="380" y="672" text-anchor="middle">Policy decides</text><text class="s" x="380" y="690" text-anchor="middle">policy · slots · items · parse · spans</text></g>
+        <g class="node plain" id="n-outcome"><rect x="250" y="752" width="260" height="56" rx="8"/><text class="t" x="380" y="776" text-anchor="middle">Outcome</text><text class="s" x="380" y="794" text-anchor="middle">act · confirm · ask · wait · ignore</text></g>
+        <g class="node desk" id="n-router"><rect x="250" y="856" width="260" height="56" rx="8"/><text class="t" x="380" y="880" text-anchor="middle">Which surface</text><text class="s" x="380" y="898" text-anchor="middle">router.ts · along the path</text></g>
+        <g class="node desk" id="n-wire"><rect x="250" y="944" width="260" height="56" rx="8"/><text class="t" x="380" y="968" text-anchor="middle">The connection</text><text class="s" x="380" y="986" text-anchor="middle">WebSocket :7777 · token · Origin</text></g>
+        <g class="node desk" id="n-plan"><rect x="250" y="1032" width="260" height="56" rx="8"/><text class="t" x="380" y="1056" text-anchor="middle">Surface plans the steps</text><text class="s" x="380" y="1074" text-anchor="middle">surface.plan() · nothing runs yet</text></g>
+        <g class="node desk" id="n-run"><rect x="250" y="1120" width="260" height="56" rx="8"/><text class="t" x="380" y="1144" text-anchor="middle">Surface runs them</text><text class="s" x="380" y="1162" text-anchor="middle">live/actor.ts → surface.run()</text></g>
+        <g class="node plain" id="n-desktop"><rect x="250" y="1208" width="260" height="56" rx="8"/><text class="t" x="380" y="1232" text-anchor="middle">Surfaces</text><text class="s" x="380" y="1250" text-anchor="middle">desktop · browser in Brave · your app</text></g>
+
+        <!-- side nodes -->
+        <g class="node ctx" id="n-cases"><rect x="14" y="16" width="186" height="56" rx="8"/><text class="t" x="107" y="40" text-anchor="middle">Tests &amp; evals</text><text class="s" x="107" y="58" text-anchor="middle">eval/ · test/ · map</text></g>
+        <g class="node ctx" id="n-profile"><rect x="14" y="104" width="186" height="56" rx="8"/><text class="t" x="107" y="128" text-anchor="middle">Your profile</text><text class="s" x="107" y="146" text-anchor="middle">phrases · nicknames · off</text></g>
+        <g class="node plain" id="n-noaction"><rect x="14" y="752" width="186" height="56" rx="8"/><text class="t" x="107" y="776" text-anchor="middle">ask · wait · ignore</text><text class="s" x="107" y="794" text-anchor="middle">shown; nothing runs</text></g>
+        <g class="node ctx" id="n-journal"><rect x="14" y="1120" width="186" height="56" rx="8"/><text class="t" x="107" y="1144" text-anchor="middle">Journal</text><text class="s" x="107" y="1162" text-anchor="middle">every press + signals</text></g>
+        <g class="node ctx" id="n-review"><rect x="14" y="1208" width="186" height="56" rx="8"/><text class="t" x="107" y="1232" text-anchor="middle">npm run review</text><text class="s" x="107" y="1250" text-anchor="middle">proposals → you → eval gate</text></g>
+        <g class="node ctx" id="n-view"><rect x="564" y="280" width="186" height="56" rx="8"/><text class="t" x="657" y="304" text-anchor="middle">Surface view</text><text class="s" x="657" y="322" text-anchor="middle">names · in use · items</text></g>
+        <g class="node ctx" id="n-skills"><rect x="564" y="368" width="186" height="56" rx="8"/><text class="t" x="657" y="392" text-anchor="middle">Surface skills</text><text class="s" x="657" y="410" text-anchor="middle">data · SkillSet</text></g>
+        <g class="node ctx" id="n-cfg"><rect x="564" y="560" width="186" height="56" rx="8"/><text class="t" x="657" y="584" text-anchor="middle">Model server</text><text class="s" x="657" y="602" text-anchor="middle">config.ts · .models</text></g>
+        <g class="node code" id="n-session"><rect x="564" y="752" width="186" height="56" rx="8"/><text class="t" x="657" y="776" text-anchor="middle">Session</text><text class="s" x="657" y="794" text-anchor="middle">confirms · answers</text></g>
+      </svg>
+      </div>
+      <figcaption>Every command takes the left bypass (code decided) or the spine through the model. Only <b>act</b> and <b>confirm</b> go on to a surface, chosen by the router and reached in-process or over the loopback WebSocket; a confirm waits in the Session, with the exact plan, until you say “confirm”. Dashed boxes are what is handed in (your profile, the surface's view and skills, the model server) and what is kept (the journal, which the review turns into proposals for your profile). <b>Click any box</b> to see the files behind it.</figcaption>
+    </figure>
+
+    <div class="panel" id="panel" aria-live="polite"></div>
+  </div>
+</section>
+
+<section aria-labelledby="layers-h">
+  <div class="head">
+    <span class="eyebrow">2 · the layers</span>
+    <h2 id="layers-h"><span id="layercount">Nine</span> layers, each with one job</h2>
+    <p>Each layer only talks to the one below it. The model sits behind a single file (<code>systemone.ts</code>) and every surface behind one contract (<code>surface/contract.ts</code>: view, skills, plan, run), so either can be swapped without touching the core. This branch runs on the simulated desktop; real surfaces live on their own branches.</p>
+  </div>
+  <div class="layers" id="layers"></div>
+
+  <h3>Where outside context gets injected</h3>
+  <p class="hint">The pipeline never reaches out for data by itself. Everything outside the words is handed in, from the live machine or from fixtures. That's why the tests give the same result on any computer.</p>
+  <div class="inject">
+    <div class="card">
+      <h3>The surface's view</h3>
+      <dl>
+        <dt>shape</dt><dd><code>SurfaceView</code>: <code>{ apps, inUse, open, items? }</code></dd>
+        <dt>live</dt><dd><code>surface.view()</code> once per command; <code>prefetch()</code> starts it at key release, alongside speech-to-text</dd>
+        <dt>tests</dt><dd>the simulated desktop: <code>eval/apps.json</code> (33 apps from a real Start menu, plus OBS) and <code>eval/windows.json</code> (7 windows, VS Code in front); the simulated browser: <code>eval/browser/pages.json</code> (16 pages, up to 122 items)</dd>
+        <dt>used by</dt><dd><code>apps.ts</code> to match names; <code>scope.ts</code> for the app in use; <code>policy.ts</code> for words only an open app can mean; <code>items.ts</code> for links, fields and contacts</dd>
+      </dl>
+    </div>
+    <div class="card">
+      <h3>The surface's skills</h3>
+      <dl>
+        <dt>shape</dt><dd><code>Skill[]</code>: actions with templates, slots, risk, as data</dd>
+        <dt>live</dt><dd>declared by the connected surface, compiled once into a <code>SkillSet</code></dd>
+        <dt>tests</dt><dd><code>sim/skills.ts</code>: example skills (Spotify, browsers, Terminal, Claude, Cursor, Telegram, WhatsApp, windows)</dd>
+        <dt>used by</dt><dd><code>policy.ts</code> (templates first), <code>questions.ts</code> (the model's extra options)</dd>
+      </dl>
+    </div>
+    <div class="card">
+      <h3>The model server</h3>
+      <dl>
+        <dt>shape</dt><dd><code>config.decider</code>: <code>{ url, timeoutMs }</code></dd>
+        <dt>built by</dt><dd><code>setup-models.ps1</code>: <code>.venv-models</code> + <code>.models</code> with pinned versions</dd>
+        <dt>started by</dt><dd><code>serve-decider.ps1</code>: decider-0.8b on <code>127.0.0.1:8001</code>, merge overhead 64</dd>
+        <dt>used by</dt><dd><code>systemone.ts</code>, the only file that talks to the model</dd>
+      </dl>
+    </div>
+    <div class="card">
+      <h3>Test cases</h3>
+      <dl>
+        <dt>shape</dt><dd>sentences <code>{ id, said, expect }</code>; conversations <code>{ desktop | surface + page, turns }</code></dd>
+        <dt>files</dt><dd><code>desktop.jsonl</code> (70), <code>desktop-holdout.jsonl</code> (26), <code>personal.jsonl</code> (yours), <code>daily.json</code> (61 turns), <code>daily-holdout.json</code> (86), <code>browser.json</code> (34), <code>workflow.json</code> (71), <code>workflow-holdout.json</code> (45)</dd>
+        <dt>scored</dt><dd>decision, operation, every slot; each conversation turn right / asked / wrong</dd>
+        <dt>used by</dt><dd><code>cli/eval.ts</code> → <code>eval/score.ts</code>, <code>eval/conversation.ts</code>; <code>--over-ws</code> runs them over the connection; the review's gate runs them all</dd>
+      </dl>
+    </div>
+    <div class="card">
+      <h3>Your profile</h3>
+      <dl>
+        <dt>files</dt><dd><code>profile/</code>: <code>aliases.json</code> (mishearings), <code>phrases.json</code>, <code>apps.json</code> (nicknames), <code>dictation.json</code>, <code>sites.json</code>, <code>actions.json</code> (turned off), <code>wishlist.json</code>, <code>review.json</code></dd>
+        <dt>changed by</dt><dd>you, or <code>npm run review</code> with your “accept”, kept only if every eval set holds</dd>
+        <dt>used by</dt><dd><code>normalise.ts</code> (mishearings, phrases), <code>apps.ts</code> (nicknames), <code>skillset.ts</code> (actions turned off)</dd>
+        <dt>never</dt><dd>safety: confirm and cancel can't be turned off; a phrase still passes every rule</dd>
+      </dl>
+    </div>
+    <div class="card">
+      <h3>The connection</h3>
+      <dl>
+        <dt>where</dt><dd><code>ws://127.0.0.1:7777</code> (<code>npm run core</code>), loopback only</dd>
+        <dt>who</dt><dd>a surface with the per-launch token from <code>~/.coreloop/session.json</code>; a browser only from an allowed Origin</dd>
+        <dt>files</dt><dd><code>surface/protocol.ts</code>, <code>server.ts</code>, <code>client.ts</code>, <code>session.ts</code>, <code>conformance.ts</code></dd>
+        <dt>tests</dt><dd><code>npm run sim-surface</code>; <code>test/connection.test.ts</code></dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="files-h">
+  <div class="head">
+    <span class="eyebrow">3 · every file</span>
+    <h2 id="files-h">What each file contributes</h2>
+    <p>129 files: 22,098 lines of code, data and tests. Filter by layer, search, or click a box in the flowchart.</p>
+  </div>
+  <input type="search" class="search" id="q" placeholder="Search files: websocket, items, profile…" aria-label="Search files">
+  <div class="filters" id="filters" role="group" aria-label="Filter files by layer"></div>
+  <p class="hint" id="scope" aria-live="polite"></p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>File</th><th>Layer</th><th>Stage</th><th>What it does in the pipeline</th><th style="text-align:right">Lines</th></tr></thead>
+      <tbody id="files"></tbody>
+    </table>
+  </div>
+</section>
+
+<section aria-labelledby="results-h">
+  <div class="head">
+    <span class="eyebrow">4 · how it got this good</span>
+    <h2 id="results-h">Every layer was added because a test failed</h2>
+    <p>Same 65 desktop commands at every step. Each bar is one change; hover a bar for what changed and why. The green line is Phase 1's target: 90%.</p>
+  </div>
+  <div class="charts">
+    <figure class="figure chart">
+      <div class="scroll"><svg id="acc" viewBox="0 0 900 380" role="img" aria-label="Desktop test pass rate after each change: 64.6% model only, 67.7% with the code layer, 87.7% after dropping the is-command question, 92.3% with grammar and fallbacks, 98.5% with installed-app evidence, 100% with verb plus app decided by code."></svg></div>
+      <figcaption>The first bar scores the model's raw answers. Every later bar scores the whole pipeline's final decision, operation and every filled-in detail. Separately, the held-out set scored 22/26 (84.6%) blind, then 26/26 after three general fixes.</figcaption>
+    </figure>
+    <figure class="figure chart">
+      <div class="scroll"><svg id="lat" viewBox="0 0 900 300" role="img" aria-label="Decision latency: code-only 0.1 ms; two questions after the batching fix 109 ms; packed 95 ms but rejected; three questions 145 ms; two questions with default batching 170 ms."></svg></div>
+      <figcaption>Latency for one decision on the RTX 3050 (p50). Packing all questions behind one copy of the text was faster, but it marked 14 finished commands as unfinished, so it was rejected. The real speed-up came from fixing decider's batching (merge overhead 512 → 64).</figcaption>
+    </figure>
+    <figure class="figure chart">
+      <div class="scroll"><svg id="bake" viewBox="0 0 900 340" role="img" aria-label="Model bake-off on 34 browser commands: Laya 28 correct at 189 ms; decider-0.8b 31 at 416 ms (chosen); Jev-Style-2B 30 at 548 ms; decider-2b 31 at 778 ms; Jebadiah-4B 32 at 1841 ms; JevK5-4B 31 at 3544 ms."></svg></div>
+      <figcaption>Why decider-0.8b: the model bake-off on the old prototype's 34 browser commands. Up and to the left is better. decider-0.8b matched the 4B models' accuracy within one case, at a fraction of the time and 2.6 GB of VRAM.</figcaption>
+    </figure>
+    <figure class="figure">
+      <h3>How the core was built: what each step added, and what it measured</h3>
+      <ol class="steplist" id="phasec"></ol>
+      <figcaption>Every step kept all the earlier sets at least as good; the new set for each step was written before its first run.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section aria-labelledby="rails-h">
+  <div class="head">
+    <span class="eyebrow">5 · safety</span>
+    <h2 id="rails-h">Rules the code enforces, whatever the model says</h2>
+  </div>
+  <div class="rails">
+    <div class="rail"><h3>The model only picks</h3><p>It answers multiple-choice questions over options code wrote. Text to paste or type is cut from your own words (<code>spans.ts</code>); URLs, keys and numbers come from <code>parse.ts</code>.</p></div>
+    <div class="rail"><h3>Bad answers are refused</h3><p><code>systemone.ts</code> rejects an answer that picks an option it wasn't offered, or whose probabilities don't add up. A malformed answer can't trigger anything.</p></div>
+    <div class="rail"><h3>Destructive or sending means confirm</h3><p>A sentence starting with close/quit/kill/exit, whatever action it becomes (an answer to a question included), any action marked <code>confirm</code>, and “… and send” become a confirm (<code>policy.ts</code>). The Session holds the surface's exact plan until you say “confirm”, which must be the very next thing said, within 30 s; anything else drops it. Measured: 0 unsafe in every run.</p></div>
+    <div class="rail"><h3>Nothing is sent for you</h3><p>Typed or pasted words are never followed by Enter unless you said “… and send” and then “confirm”. A surface's own typing can't send, so “… and send” there is asked about, never dropped. Claude Code prompts are put in, not sent.</p></div>
+    <div class="rail"><h3>No guessing</h3><p>A verb with no matching action (minimize something that isn't a window, delete, click, copy…) gets “I can't … yet” instead of the model's nearest guess. A named app with no matching action never acts somewhere else, and an operation the surface never declared is never decided.</p></div>
+    <div class="rail"><h3>Passwords are off-limits</h3><p>A field with role <code>password</code> is dropped before anything looks at the items: never offered to the model, never matched, never typed into (<code>items.ts</code>).</p></div>
+    <div class="rail"><h3>Never half a command</h3><p>“Open Spotify and search for Panther” runs both only when each part is clear and neither is destructive; the second is planned in the app the first opens. Otherwise it asks. Dictated text (“type salt and pepper”) is left alone.</p></div>
+    <div class="rail"><h3>Buttons that buy or delete wait too</h3><p>Clicking an item labelled like “Place order”, “Delete account” or “Send” needs a spoken “confirm”, whatever the action's own risk (<code>items.ts</code>, <code>policy.ts</code>).</p></div>
+    <div class="rail"><h3>Only you can connect</h3><p>The core listens on loopback only. A surface needs the per-launch token, the Host must be loopback, and a browser page's Origin must be on an allowlist, empty by default (<code>surface/server.ts</code>). Everything a surface sends is checked before use.</p></div>
+    <div class="rail"><h3>Your profile can't touch safety</h3><p>A phrase is a rewrite to another command, which still passes every rule; actions can only be turned off, never confirm or cancel; a learned change is kept only if every eval set holds (<code>profile.ts</code>, <code>review/gate.ts</code>).</p></div>
+    <div class="rail"><h3>Surface text stays out</h3><p>The model only ever sees your words, never window titles, page text or app text from a surface. Page labels reach it only as short options to pick from (at most 16). Small models echo whatever they read back.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="next-h">
+  <div class="head">
+    <span class="eyebrow">6 · what comes next</span>
+    <h2 id="next-h">The engine is out; the surfaces come next</h2>
+  </div>
+  <div class="next">
+    <div><h3>The engine · coreloop-engine 0.1.0</h3><p>The core, the surface contract v2 and the wire protocol, on npm with no dependencies. It runs in Node and in a browser, takes its profile and its model from the host, and is measured on every eval set with the model and without it.</p></div>
+    <div><h3>Learning from use</h3><p><code>npm run review</code> turns the journal of real use into proposed changes to your profile. You accept, edit or reject each, and a change is kept only if every eval set holds.</p></div>
+    <div><h3>The surfaces</h3><p>Your own web app through the npm package, then a Windows desktop surface, a browser extension and Linux: each on the same contract, each passing the same conformance suite.</p></div>
+  </div>
+  <footer>Numbers measured on an RTX 3050 Laptop (6 GB), Windows 11, October 2026.</footer>
+</section>
+
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+const TRACES = [{"raw":"Um, can you close Chrome?","text":"close chrome","fixes":[],"codeOnly":true,"target":null,"skill":false,"model":null,"outcome":{"decision":"confirm","operation":"close_app","slots":{"app":"Google Chrome","app_id":"Chrome"},"reason":"code: \"close\" + installed app \"Google Chrome\""},"plan":{"summary":"close \"Inbox - Google Chrome\"","steps":["close \"Inbox - Google Chrome\""],"shows":null}},{"raw":"Put explain this error into clawed code.","text":"put explain this error into claude code","fixes":["clawed code → claude code"],"codeOnly":true,"target":null,"skill":true,"model":null,"outcome":{"decision":"act","operation":"claude.prompt","slots":{"span":"explain this error","claude_target":"app","app":"Claude"},"reason":"code: \"(paste|put|send|type|write|give) [in] {span} (into|to|in|on) claude [code] [app|desktop] [in the app|on the app]\""},"plan":{"summary":"bring Claude to the front and paste \"explain this error\" (not sent)","steps":["focus \"Claude\"","wait 400 ms","paste \"explain this error\" (no Enter)"],"shows":"Claude"}},{"raw":"Mute.","text":"mute","fixes":[],"codeOnly":true,"target":null,"skill":false,"model":null,"outcome":{"decision":"act","operation":"media","slots":{"media":"mute"},"reason":"code: media phrase"},"plan":{"summary":"media: mute","steps":["keys volume_mute"],"shows":null}},{"raw":"go to","text":"go to","fixes":[],"codeOnly":true,"target":null,"skill":false,"model":null,"outcome":{"decision":"wait","reason":"ends on \"to\""},"plan":null},{"raw":"so anyway I think we should get lunch","text":"anyway i think we should get lunch","fixes":[],"codeOnly":false,"target":null,"skill":false,"model":{"questions":["operation","complete"],"tokens":385,"ms":122,"answers":{"operation":[["none",52],["press_key",16.4],["confirm",10.1]],"complete":[["finished",73.7],["unfinished",26.3]]}},"outcome":{"decision":"ignore","reason":"model: not a command"},"plan":null},{"raw":"open gmail","text":"open gmail","fixes":[],"codeOnly":false,"target":null,"skill":false,"model":{"questions":["operation","complete"],"tokens":379,"ms":120,"answers":{"operation":[["open_url",46.2],["open_app",40.9],["search_web",4.3]],"complete":[["finished",81.1],["unfinished",18.9]]}},"outcome":{"decision":"act","operation":"open_url","slots":{"url":"mail.google.com"},"reason":"code: \"mail.google.com\" is a site → open_url (model: open_app 41%, open_url 46%)"},"plan":{"summary":"open https://mail.google.com","steps":["open https://mail.google.com"],"shows":null}},{"raw":"fire up obs","text":"fire up obs","fixes":[],"codeOnly":true,"target":null,"skill":false,"model":null,"outcome":{"decision":"act","operation":"open_app","slots":{"app":"OBS Studio","app_id":"fixture.obs-studio"},"reason":"code: \"fire up\" + installed app \"OBS Studio\""},"plan":{"summary":"launch OBS Studio","steps":["launch OBS Studio"],"shows":"OBS Studio"}},{"raw":"type meeting moved to friday","text":"type meeting moved to friday","fixes":[],"codeOnly":false,"target":null,"skill":false,"model":{"questions":["operation","complete"],"tokens":382,"ms":121,"answers":{"operation":[["type_text",39.4],["none",19],["confirm",14.1]],"complete":[["finished",88.7],["unfinished",11.3]]}},"outcome":{"decision":"act","operation":"type_text","slots":{"span":"meeting moved to friday"},"reason":"model: type_text 39%"},"plan":{"summary":"type \"meeting moved to friday\"","steps":["type \"meeting moved to friday\" (no Enter)"],"shows":null}},{"raw":"send add dark mode to claude code in the terminal","text":"send add dark mode to claude code in the terminal","fixes":[],"codeOnly":true,"target":null,"skill":true,"model":null,"outcome":{"decision":"act","operation":"claude.prompt","slots":{"span":"add dark mode","claude_target":"terminal","app":"Claude"},"reason":"code: \"(paste|put|send|type|write|give) [in] {span} (into|to|in|on) claude [code] [app|desktop] (in|on) the terminal\""},"plan":{"summary":"open Claude Code in a terminal and paste \"add dark mode\" (not sent)","steps":["launch Terminal","wait 3500 ms","paste \"add dark mode\" (no Enter)"],"shows":"Terminal"}},{"raw":"google how to center a div","text":"google how to center a div","fixes":[],"codeOnly":true,"target":null,"skill":false,"model":null,"outcome":{"decision":"act","operation":"search_web","slots":{"span":"how to center a div"},"reason":"code: search verb"},"plan":{"summary":"search for \"how to center a div\"","steps":["open https://www.google.com/search?q=how%20to%20center%20a%20div"],"shows":null}},{"raw":"Open Spotify and search for Panther.","text":"open spotify and search for panther","fixes":[],"codeOnly":true,"target":null,"skill":true,"model":null,"outcome":{"decision":"act","operation":"spotify.search","slots":{"query":"panther","app":"Spotify"},"reason":"2 commands in a row, each decided by code"},"plan":{"summary":"bring Spotify to the front, then search Spotify for \"panther\"","steps":["focus \"Spotify Premium\"","wait for it to open","spotify.search in Spotify"],"shows":"Spotify"}},{"raw":"Search for Panther on Spotify.","text":"search for panther on spotify","fixes":[],"codeOnly":true,"target":{"app":"Spotify","via":"named","named":"on spotify","command":"search for panther"},"skill":true,"model":null,"outcome":{"decision":"act","operation":"spotify.search","slots":{"query":"panther","app":"Spotify"},"reason":"code: spotify \"search [spotify] [for] {query}\" (Spotify, named)"},"plan":{"summary":"search Spotify for \"panther\"","steps":["focus \"Spotify Premium\"","wait 300 ms","spotify.search in Spotify"],"shows":"Spotify"}},{"raw":"Search for Panther.","text":"search for panther","fixes":[],"codeOnly":true,"target":{"app":"Brave","via":"front","command":"search for panther"},"skill":true,"model":null,"outcome":{"decision":"act","operation":"browser.search","slots":{"query":"panther","app":"Brave"},"reason":"code: browser \"search [the web|online|google|the internet] [for] {query}\" (Brave, front)"},"plan":{"summary":"search Brave for \"panther\"","steps":["browser.search in Brave"],"shows":"Brave"}},{"raw":"Open a new tab.","text":"open a new tab","fixes":[],"codeOnly":true,"target":{"app":"Terminal","via":"front","command":"open a new tab"},"skill":true,"model":null,"outcome":{"decision":"act","operation":"terminal.tab_new","slots":{"app":"Terminal"},"reason":"code: terminal \"[open|create|make|give me] [a] new tab\" (Terminal, front)"},"plan":{"summary":"open a new Terminal tab","steps":["terminal.tab_new in Terminal"],"shows":"Terminal"}},{"raw":"Open cloud.","text":"open cloud","fixes":[],"codeOnly":true,"target":null,"skill":false,"model":null,"outcome":{"decision":"act","operation":"open_app","slots":{"app":"Claude","app_id":"com.squirrel.AnthropicClaude.claude"},"reason":"code: \"open\" + installed app \"Claude\""},"plan":{"summary":"bring Claude to the front","steps":["focus \"Claude\""],"shows":"Claude"}},{"raw":"Minimize the Spotify.","text":"minimize the spotify","fixes":[],"codeOnly":true,"target":null,"skill":true,"model":null,"outcome":{"decision":"act","operation":"window.minimize","slots":{"app":"Spotify","app_id":"SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify"},"reason":"code: \"(minimize|minimise|hide) [the|my] {app}\""},"plan":{"summary":"minimize \"Spotify Premium\"","steps":["minimize \"Spotify Premium\""],"shows":null}},{"raw":"Type hello and send.","text":"type hello and send","fixes":[],"codeOnly":false,"target":null,"skill":false,"model":{"questions":["operation","complete"],"tokens":381,"ms":121,"answers":{"operation":[["type_text",69.4],["paste_text",26.3],["press_key",2.3]],"complete":[["finished",70.1],["unfinished",30]]}},"outcome":{"decision":"confirm","operation":"type_text","slots":{"span":"hello","submit":true},"reason":"model: type_text 69%"},"plan":{"summary":"type \"hello\" and press Enter","steps":["type \"hello\" (no Enter)","wait 150 ms","keys enter"],"shows":null}},{"raw":"Click the first result.","surface":"browser","page":"search-results","text":"click the first result","fixes":[],"codeOnly":true,"target":null,"skill":true,"model":null,"outcome":{"decision":"act","operation":"page.click","slots":{"item":"e20","item_label":"TypeSafe — Jev, the System One model","app":"Browser"},"reason":"code: page \"(click|press|tap|hit|select|choose|pick) [on] [the] {item}\" (Browser, front)"},"plan":{"summary":"click \"TypeSafe — Jev, the System One model\"","steps":["click e20 \"TypeSafe — Jev, the System One model\""],"shows":"Browser"}},{"raw":"Click the GitHub link.","surface":"browser","page":"search-results","text":"click the github link","fixes":[],"codeOnly":false,"target":null,"skill":true,"model":{"questions":["operation","complete","item"],"tokens":789,"ms":195,"answers":{"operation":[["open_url",92.8],["page.click",6.4],["page.tab_new",0.2]],"complete":[["finished",83.7],["unfinished",16.3]],"item":[["e25",66.8],["e24",32.2],["e05",0.2]]}},"outcome":{"decision":"act","operation":"page.click","slots":{"item":"e25","item_label":"github.com","app":"Browser"},"reason":"code: page \"(click|press|tap|hit|select|choose|pick) [on] [the] {item}\" (Browser, front)"},"plan":{"summary":"click \"github.com\"","steps":["click e25 \"github.com\""],"shows":"Browser"}},{"raw":"Click place order.","surface":"browser","page":"checkout","text":"click place order","fixes":[],"codeOnly":true,"target":null,"skill":true,"model":null,"outcome":{"decision":"confirm","operation":"page.click","slots":{"item":"e05","item_label":"Place order","app":"Browser"},"reason":"code: page \"(click|press|tap|hit|select|choose|pick) [on] [the] {item}\" (Browser, front); \"Place order\" looks destructive"},"plan":{"summary":"click \"Place order\"","steps":["click e05 \"Place order\""],"shows":"Browser"}},{"raw":"Type bob at example dot com in the email field.","surface":"browser","page":"checkout","text":"type bob at example dot com in the email field","fixes":[],"codeOnly":true,"target":null,"skill":true,"model":null,"outcome":{"decision":"act","operation":"page.type_into","slots":{"span":"bob at example dot com","item":"e02","item_label":"Email address","app":"Browser"},"reason":"code: page \"(type|enter|write|put|fill in) {span} (into|in|on) [the] {item}\" (Browser, front)"},"plan":{"summary":"type \"bob at example dot com\" into \"Email address\"","steps":["type \"bob at example dot com\" into e02 (no Enter)"],"shows":null}},{"raw":"Turn it up.","surface":"desktop + browser","page":"youtube-lofi","front":"Brave","ranOn":"simulated desktop","text":"turn it up","fixes":[],"codeOnly":true,"target":null,"skill":false,"model":null,"outcome":{"decision":"act","operation":"media","slots":{"media":"volume_up"},"reason":"code: media phrase"},"plan":{"summary":"media: volume_up","steps":["keys volume_up"],"shows":null}},{"raw":"Search for lumen caching on Brave.","surface":"desktop + browser","page":"ddg-lumen","front":"Spotify","ranOn":"simulated browser","text":"search for lumen caching on brave","fixes":[],"codeOnly":true,"target":{"app":"Brave","via":"named","named":"on brave","command":"search for lumen caching"},"skill":false,"model":null,"outcome":{"decision":"act","operation":"search_web","slots":{"span":"lumen caching","app":"Brave"},"reason":"code: search verb"},"plan":{"summary":"search this site for \"lumen caching\"","steps":["type \"lumen caching\" into e02 and submit the search"],"shows":"Brave"}},{"raw":"Open settings.","surface":"desktop + browser","page":"localhost-dashboard","front":"Brave","text":"open settings","fixes":[],"codeOnly":true,"target":null,"skill":false,"model":null,"outcome":{"decision":"ask","options":[],"reason":"\"Settings\" is an app and \"Settings\" is on the screen","choices":[{"operation":"page.click","slots":{"item":"e05","item_label":"Settings","app":"Brave"},"label":"click it: Settings"},{"operation":"open_app","slots":{"app":"Settings","app_id":"windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel"},"label":"open the Settings app"}]},"plan":null},{"raw":"Save changes.","surface":"desktop + browser","page":"localhost-project","front":"Brave","ranOn":"simulated browser","text":"save changes","fixes":[],"codeOnly":true,"target":null,"skill":true,"model":null,"outcome":{"decision":"act","operation":"page.click","slots":{"item":"e15","item_label":"Save changes","app":"Brave"},"reason":"code: \"Save changes\" is on the screen"},"plan":{"summary":"click \"Save changes\"","steps":["click e15 \"Save changes\""],"shows":"Brave"}}];
+const LINES = {"src/cli/live.ts":195,"src/cli/core.ts":74,"src/core/trace.ts":64,"test/trace.test.ts":54,"test/export.test.ts":107,"src/cli/sim-surface.ts":41,"src/cli/repl.ts":84,"src/cli/say.ts":93,"src/cli/eval.ts":256,"src/cli/inspect.ts":79,"src/cli/last-run.ts":36,"src/cli/review.ts":129,"src/cli/journal.ts":63,"src/cli/listen.ts":107,"src/cli/record-voice.ts":61,"src/cli/eval-audio.ts":141,"src/cli/map.ts":188,"src/cli/export-demo.ts":59,"src/demo/export.ts":333,"src/demo/schema.ts":294,"src/audio/hotkey.ts":60,"src/audio/mic.ts":119,"src/audio/listener.ts":75,"src/audio/stt.ts":134,"src/audio/wav.ts":25,"src/audio/wer.ts":28,"src/core/pipeline.ts":110,"src/core/normalise.ts":119,"profile/aliases.json":15,"profile/phrases.json":4,"profile/apps.json":4,"profile/dictation.json":4,"profile/sites.json":21,"profile/actions.json":4,"profile/wishlist.json":4,"profile/review.json":4,"src/index.ts":72,"src/cli/check-package.ts":75,"eval/profile/aliases.json":15,"eval/profile/sites.json":21,"eval/profile/dictation.json":4,"eval/profile/phrases.json":4,"eval/profile/apps.json":4,"eval/profile/actions.json":4,"eval/profile/wishlist.json":4,"eval/profile/review.json":4,"src/profile/profile.ts":120,"src/host/decider.ts":22,"src/host/profile-files.ts":102,"src/core/scope.ts":86,"src/core/repair.ts":66,"src/core/compound.ts":31,"src/core/grammar.ts":35,"src/core/apps.ts":168,"src/core/phonetic.ts":83,"src/core/spans.ts":50,"src/core/parse.ts":150,"src/core/slots.ts":162,"src/core/policy.ts":738,"src/core/questions.ts":76,"src/core/items.ts":280,"src/core/operations.ts":51,"src/skills/types.ts":83,"src/skills/slotkinds.ts":79,"src/skills/validate.ts":97,"src/skills/template.ts":62,"src/skills/skillset.ts":274,"src/skills/query.ts":65,"src/backends/codeonly.ts":68,"src/backends/systemone.ts":198,"src/config.ts":7,"scripts/setup-models.ps1":88,"scripts/serve-decider.ps1":59,"scripts/stop-models.ps1":7,"src/live/actor.ts":439,"src/review/proposals.ts":219,"src/review/replay.ts":31,"src/review/gate.ts":76,"src/journal/journal.ts":164,"src/surface/contract.ts":114,"src/surface/protocol.ts":143,"src/host/server.ts":273,"src/surface/client.ts":97,"src/host/session.ts":34,"src/surface/conformance.ts":153,"src/surface/router.ts":194,"src/sim/desktop.ts":342,"src/sim/skills.ts":330,"src/sim/webapp.ts":216,"src/sim/browser.ts":335,"src/sim/fixture.ts":31,"src/sim/world.ts":86,"src/sim/url.ts":8,"eval/apps.json":35,"eval/windows.json":13,"eval/desktop.jsonl":70,"eval/desktop-holdout.jsonl":26,"eval/personal.jsonl":4,"eval/daily.json":479,"eval/daily-holdout.json":747,"eval/browser.json":552,"eval/browser/pages.json":5373,"eval/workflow.json":744,"eval/nested.json":93,"eval/demo.json":722,"eval/nested-holdout.json":61,"eval/workflow-holdout.json":505,"eval/audio/prompts.jsonl":20,"src/eval/score.ts":135,"src/eval/conversation.ts":171,"src/recorder/recorder.ts":49,"test/core.test.ts":362,"test/skills.test.ts":352,"test/control.test.ts":136,"test/live.test.ts":130,"test/data.test.ts":106,"test/items.test.ts":212,"test/review.test.ts":116,"test/profile.test.ts":93,"test/connection.test.ts":176,"test/boundary.test.ts":95,"test/setup.ts":4,"test/codeonly.test.ts":66,"test/nesting.test.ts":89,"test/neutral.test.ts":99,"test/router.test.ts":129,"test/systemone.test.ts":68,"test/score.test.ts":55,"test/recorder.test.ts":24};
+const LABELS = {
+  "Um, can you close Chrome?": "close",
+  "Put explain this error into clawed code.": "Claude",
+  "Mute.": "grammar",
+  "go to": "unfinished",
+  "so anyway I think we should get lunch": "chit-chat",
+  "open gmail": "tie-break",
+  "fire up obs": "app",
+  "type meeting moved to friday": "span",
+  "send add dark mode to claude code in the terminal": "terminal",
+  "google how to center a div": "grammar",
+  "Open Spotify and search for Panther.": "two in a row",
+  "Search for Panther on Spotify.": "named app",
+  "Search for Panther.": "Brave in front",
+  "Open a new tab.": "Terminal in front",
+  "Open cloud.": "by sound",
+  "Minimize the Spotify.": "window",
+  "Type hello and send.": "send = confirm",
+  "Click the first result.": "page · position",
+  "Click the GitHub link.": "page · model picks",
+  "Click place order.": "page · confirm",
+  "Type bob at example dot com in the email field.": "page · field",
+  "Turn it up.": "two surfaces · desktop",
+  "Search for next.js caching on Brave.": "two surfaces · named",
+  "Open settings.": "app or link?",
+  "Save changes.": "label said alone"
+};
+
+/* ---------- flowchart tracing ---------- */
+const fig = document.getElementById("fig");
+const panel = document.getElementById("panel");
+const picker = document.getElementById("picker");
+const pct = (n) => `${Number(n).toFixed(n >= 10 ? 0 : 1)}%`;
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+function pathFor(t) {
+  const d = t.outcome.decision;
+  const acts = d === "act" || d === "confirm";
+  const on = ["n-input", "e-in", "l-in", "n-norm", "e-norm", "l-norm", "n-repair", "e-rep", "l-rep", "n-scope", "e-scope", "l-scope", "n-check", "n-outcome", "n-journal", "e-jour"];
+  if (t.codeOnly) on.push("e-bypass", "l-bypass");
+  else on.push("e-req", "l-req", "n-request", "e-mod", "l-mod", "n-model", "e-pol", "l-pol", "n-policy", "e-out", "l-out", "e-cfg", "n-cfg");
+  if (t.fixes && t.fixes.length) on.push("n-profile", "e-prof");
+  const usedApps = (t.outcome.slots && t.outcome.slots.app) || /installed/.test(t.outcome.reason);
+  if (usedApps || t.target || t.page) on.push("n-view", "e-view");
+  if (t.page) on.push("e-view2");
+  if (t.skill) on.push("n-skills", t.codeOnly ? "e-skills" : "e-skills2");
+  if (acts) on.push("e-route", "l-route", "n-router", "e-wire", "l-wire", "n-wire", "e-plan", "l-plan", "n-plan", "n-desktop");
+  if (d === "act") on.push("e-run", "l-run", "n-run", "e-desk", "l-desk");
+  if (d === "confirm") on.push("e-sess", "n-session", "e-confirm", "l-confirm");
+  if (!acts) on.push("e-noact", "n-noaction");
+  return new Set(on);
+}
+
+function describeStep(s) {
+  if (typeof s === "string") return s;
+  switch (s.do) {
+    case "launch": return `launch ${s.name}`;
+    case "focus": return `focus “${s.title}”`;
+    case "close": return `close “${s.title}”`;
+    case "window": return `${s.show} “${s.title}”`;
+    case "paste": return `paste “${s.text}” (clipboard, no Enter)`;
+    case "type": return `type “${s.text}” (no Enter)`;
+    case "keys": return `key ${s.keys.join("+")}`;
+    case "open": return `open ${s.url}`;
+    case "start": return `start ${s.file} ${s.args.join(" ")}`;
+    case "exec": return `run ${s.program} ${s.args.join(" ")}`;
+    case "call": return `${s.fn}(${Object.values(s.args).join(", ")})`;
+    case "wait": return `wait ${s.ms} ms`;
+  }
+  return JSON.stringify(s);
+}
+
+function probs(list) {
+  return `<div class="probs">${list.map(([o, p]) => `<div class="prob"><span>${esc(o)}</span><span class="bar"><i style="width:${Math.max(1, p)}%"></i></span><span class="pc">${pct(p)}</span></div>`).join("")}</div>`;
+}
+
+function render(t) {
+  const o = t.outcome;
+  const rows = [];
+  rows.push(["heard", `<span class="mono">${esc(t.raw)}</span>`]);
+  rows.push(["normalise", `<span class="mono">${esc(t.text)}</span>${t.fixes.length ? `<div class="chips">${t.fixes.map((f) => `<span class="chip">${esc(f)}</span>`).join("")}</div>` : ""}`]);
+  if (t.page) rows.push(["surface", t.front
+    ? `two surfaces: the simulated desktop with <b>${esc(t.front)}</b> in front, and the simulated browser inside Brave on the <b>${esc(t.page)}</b> page${t.ranOn ? `<div class="chips"><span class="chip">carried out by the ${esc(t.ranOn)}</span></div>` : ""}`
+    : `the simulated browser, on the <b>${esc(t.page)}</b> page: its links, buttons and fields are the items`]);
+  if (t.target) rows.push(["target app", `<b>${esc(t.target.app)}</b> · ${esc({ named: "you named it", here: "this window", front: "it's in front", recent: "just opened" }[t.target.via])}${t.target.named ? `<div class="chips"><span class="chip">“${esc(t.target.named)}” → decided as “${esc(t.target.command)}”</span></div>` : ""}`]);
+  rows.push(["code first", t.codeOnly ? `Decided here, so the model is skipped.<div class="chips"><span class="chip">${esc(o.reason.replace(/^code: /, ""))}</span></div>` : `<span class="skip">No rule applies, so the model is asked.</span>`]);
+  if (t.model) {
+    rows.push(["model", `<span class="mono">${t.model.questions.join(" + ")}</span> · ${t.model.tokens} tokens · <b>${t.model.ms} ms</b>
+      <div class="hint" style="margin-top:6px">operation, top 3</div>${probs(t.model.answers.operation)}
+      <div class="hint" style="margin-top:6px">complete</div>${probs(t.model.answers.complete)}${t.model.answers.item ? `
+      <div class="hint" style="margin-top:6px">item, top 3 (labels are options, never the state)</div>${probs(t.model.answers.item)}` : ""}`]);
+    rows.push(["policy", esc(o.reason)]);
+  } else {
+    rows.push(["model", `<span class="skip">skipped (~0.1 ms total)</span>`]);
+  }
+  const slots = o.slots ? Object.entries(o.slots).filter(([k, v]) => v !== undefined && k !== "app_id") : [];
+  rows.push(["outcome", `<span class="dec ${o.decision}">${o.decision.toUpperCase()}</span>${o.operation ? ` <span class="mono">${esc(o.operation)}</span>` : ""}${slots.length ? `<div class="chips">${slots.map(([k, v]) => `<span class="chip">${esc(k)} = ${esc(v)}</span>`).join("")}</div>` : ""}`]);
+  if (t.plan && !t.plan.error) {
+    rows.push(["plan", `${esc(t.plan.summary)}<div class="chips">${t.plan.steps.map((s) => `<span class="chip">${esc(describeStep(s))}</span>`).join("")}</div>${o.decision === "confirm" ? `<div class="hint" style="margin-top:6px">Held by the Session. Nothing runs until you say “confirm”.</div>` : ""}`]);
+  } else if (o.decision === "ask" && o.parts) {
+    rows.push(["plan", `<span class="skip">none: that's ${o.parts.length} commands and one of them isn't clear, so it asks you to say them one at a time instead of doing only the first</span><div class="chips">${o.parts.map((p, i) => `<span class="chip">${i + 1}) ${esc(p)}</span>`).join("")}</div>`]);
+  } else if (o.decision === "ask" && o.choices) {
+    rows.push(["plan", `<span class="skip">none yet: it asks, and “yes” or a number runs the choice</span><div class="chips">${o.choices.map((c, i) => `<span class="chip">${i + 1}) ${esc(c.label)}</span>`).join("")}</div>`]);
+  } else if (o.decision === "ask") {
+    rows.push(["plan", `<span class="skip">none: it says what it heard and what to say instead</span>${o.hint ? `<div class="hint" style="margin-top:6px">${esc(o.hint)}</div>` : ""}`]);
+  } else if (o.decision === "wait") {
+    rows.push(["plan", `<span class="skip">none: the sentence isn't finished, so it waits for more words</span>`]);
+  } else if (o.decision === "ignore") {
+    rows.push(["plan", `<span class="skip">none: not meant for the computer</span>`]);
+  }
+  panel.innerHTML = `<span class="eyebrow">recorded trace</span><div class="said">“${esc(t.raw)}”</div><ol class="steps">${rows.map(([k, v]) => `<li><span class="k">${k}</span><span class="v">${v}</span></li>`).join("")}</ol>`;
+}
+
+function select(i) {
+  const t = TRACES[i];
+  [...picker.children].forEach((b, j) => b.setAttribute("aria-pressed", String(j === i)));
+  const on = pathFor(t);
+  fig.classList.add("tracing");
+  fig.querySelectorAll("svg [id]").forEach((el) => { if (el.id !== "ah") el.classList.toggle("on", on.has(el.id)); });
+  render(t);
+}
+
+TRACES.forEach((t, i) => {
+  const b = document.createElement("button");
+  b.type = "button";
+  b.innerHTML = `${esc(t.raw)}<span class="tag">${LABELS[t.raw] || ""}</span>`;
+  b.addEventListener("click", () => select(i));
+  picker.appendChild(b);
+});
+select(1);
+
+/* ---------- layers ---------- */
+/** Which box in the flowchart each stage name means: npm run map checks every file's stages against it. */
+const STAGES = {"input":"n-input","normalise":"n-norm","profile":"n-profile","repairs":"n-repair","which app":"n-scope","view":"n-view","code first":"n-check","skills":"n-skills","build question":"n-request","model":"n-model","setup":"n-cfg","policy":"n-policy","slots":"n-policy","outcome":"n-outcome","replies":"n-noaction","session":"n-session","route":"n-router","connection":"n-wire","plan":"n-plan","run":"n-run","surface":"n-desktop","journal":"n-journal","recorder":"n-journal","learning loop":"n-review","tests":"n-cases","test cases":"n-cases","scoring":"n-cases","docs":"n-cases","all":"*"};
+
+const FILES = [
+  ["src/cli/live.ts", "entry", "all", "The live loop: hold Right Ctrl, speak, release. Your real voice through the real core, on the simulated desktop (nothing on the machine changes). Keeps the GPU warm while you speak and journals every press. --inject replays recordings."],
+  ["src/cli/core.ts", "entry", "input · connection", "The core as a server: surfaces connect over the WebSocket, you type commands, every view, plan and run goes over the connection."],
+  ["src/core/trace.ts", "core", "all", "The engine's trace: each step records its stage, what it was given and decided, and a marker string that is also at the call in the source, so a viewer finds the exact line. Off unless asked for; it never changes a decision."],
+  ["test/trace.test.ts", "measure", "tests", "The trace records nothing unless asked, never changes a decision, and every marker is a string in the source."],
+  ["test/export.test.ts", "measure", "tests", "The export validates and reproduces; its checks catch a missing file and a step with no marker; markers, the map's data and the world builder read right."],
+  ["src/cli/sim-surface.ts", "entry", "surface · connection", "The simulated desktop (and browser) as a surface in its own process, printing every step the core makes it run."],
+  ["src/cli/repl.ts", "entry", "input · run", "Type commands and watch them run on the simulated desktop; set it up with --open, --front, --host. A confirm waits with the exact plan."],
+  ["src/cli/say.ts", "entry", "input", "Full decision for typed text, with the model or code only (--no-model). Nothing runs."],
+  ["src/cli/eval.ts", "entry", "input · scoring", "Runs test sets through the real pipeline: single sentences (decision, operation, every slot, a plan that builds) and conversations turn by turn (right / asked / wrong)."],
+  ["src/cli/inspect.ts", "entry", "model", "Shows the model's raw probabilities for one sentence."],
+  ["src/cli/last-run.ts", "entry", "recorder", "Replays a recorded run as a timeline."],
+  ["src/cli/review.ts", "entry", "learning loop", "npm run review: go through the proposals (accept, edit, reject); accepted ones become profile data and eval cases, gated by every set."],
+  ["src/cli/journal.ts", "entry", "journal", "Summary of real use: key-up → action timing, outcomes, signals, likely mistakes, what you say most."],
+  ["src/cli/listen.ts", "entry", "input", "Hold the key, speak: shows what was heard and the timing; --pipeline also shows the decision and the plan on the simulated desktop."],
+  ["src/cli/record-voice.ts", "entry", "input", "Guided recording of the 20 voice prompts into eval/audio/recordings (kept out of git)."],
+  ["src/cli/eval-audio.ts", "entry", "input · scoring", "Scores recordings: word error rate, speech-to-text time, and the full pipeline on what was heard. --tts makes a synthetic set."],
+  ["src/cli/map.ts", "entry", "docs", "Rebuilds this page from the real code: every file on the map, real line counts, traces recorded through the real actor in the simulated worlds named in docs/pipeline-map/inputs.json."],
+  ["src/cli/export-demo.ts", "entry", "docs", "Records the demo's data for the site (npm run export:demo): every scenario with the model and without it, checked to reproduce and validated."],
+  ["src/demo/export.ts", "measure", "docs", "Plays every scenario (the book, the presets, the 75 eval conversations, the desktop cases, the map's traces) through the real actor under a trace, twice, and writes the steps, outcomes, plans, model answers and verdicts, the code at every marker, the map's data and every set's results."],
+  ["src/demo/schema.ts", "measure", "docs", "The export's format, versioned, as types; the validator the export and its test run; the comparison that ignores timings."],
+  ["src/audio/hotkey.ts", "audio", "input", "Global push-to-talk key (Right Ctrl by default) that works with any app in front."],
+  ["src/audio/mic.ts", "audio", "input", "Microphone through ffmpeg at 16 kHz, with 300 ms of pre-roll so the first word isn't clipped."],
+  ["src/audio/listener.ts", "audio", "input", "Joins key and mic: key down starts an utterance, key up ends it."],
+  ["src/audio/stt.ts", "audio", "input", "Silero voice detection drops empty presses and trims silence; Parakeet turns speech into text."],
+  ["src/audio/wav.ts", "audio", "input", "Saves recordings as 16 kHz WAV files."],
+  ["src/audio/wer.ts", "audio", "scoring", "Word error rate between what you meant and what was heard."],
+  ["src/core/pipeline.ts", "core", "all", "Runs the stages in order: normalise, which app, code first, the model only when needed, policy."],
+  ["src/core/normalise.ts", "core", "normalise", "Lowercases, strips filler anywhere (“um can you please … for me”), applies your mishearings, joins spelled-out letters (“P A N T H E R”), and turns a sentence of your own into the command it means (profile/phrases.json)."],
+  ["profile/aliases.json", "core", "profile · normalise", "Your own mishearings (“plot code” → claude code, “nose” → close): data the learning loop adds to, with your approval. Yours: gitignored, never published."],
+  ["profile/phrases.json", "core", "profile · normalise", "Your own sentences: “X” means the command “Y”, which then passes every rule, confirms included. Yours: gitignored, never published."],
+  ["profile/apps.json", "core", "profile · which app", "Your nicknames for apps; only ever matched as an app's name, never rewriting dictated words. They beat a name a surface declared. Yours: gitignored, never published."],
+  ["profile/dictation.json", "core", "profile · slots", "Words you add after dictated text that aren't part of it (“type npm run dev command” types “npm run dev”); dropped only from the end. Yours: gitignored, never published."],
+  ["profile/sites.json", "core", "profile · slots", "Websites you name without a domain (“gmail” → mail.google.com). Code opens exactly that address; the core itself knows no site by name. Yours: gitignored, never published."],
+  ["profile/actions.json", "core", "profile · build question", "Actions you turned off: never decided, never offered. Confirm and cancel can't be turned off. Yours: gitignored, never published."],
+  ["profile/wishlist.json", "core", "learning loop", "What you asked for that nothing can do yet, for the surfaces to add. Changes no behaviour. Yours: gitignored, never published."],
+  ["profile/review.json", "core", "learning loop", "What the review already decided, so a rejected proposal isn't offered again. Yours: gitignored, never published."],
+  ["src/index.ts", "core", "all", "coreloop-engine's public API: everything a host or a surface uses (the actor, deciders, the contract, the router, the wire, skills, the profile, conformance, the trace), and nothing else."],
+  ["src/cli/check-package.ts", "entry", "tests", "npm run check:package: builds coreloop-engine and checks it's ready to publish (exports, no Node or package imports, no dependencies, the tarball's files, the example surface)."],
+  ["eval/profile/aliases.json", "ctx", "profile · normalise", "The evals' fixture profile: the mishearings of product names the eval sets contain. Committed, so every machine gets the same results."],
+  ["eval/profile/sites.json", "ctx", "profile · slots", "The evals' fixture profile: the sites the eval sets name without a domain."],
+  ["eval/profile/dictation.json", "ctx", "profile · slots", "The evals' fixture profile: words said after dictated text that aren't part of it."],
+  ["eval/profile/phrases.json", "ctx", "profile", "The evals' fixture profile: one sentence of my own (\"focus time\" means \"mute\"), for the demo."],
+  ["eval/profile/apps.json", "ctx", "profile", "The evals' fixture profile: no nicknames."],
+  ["eval/profile/actions.json", "ctx", "profile", "The evals' fixture profile: nothing turned off."],
+  ["eval/profile/wishlist.json", "ctx", "profile", "The evals' fixture profile: empty."],
+  ["eval/profile/review.json", "ctx", "profile", "The evals' fixture profile: empty."],
+  ["src/profile/profile.ts", "core", "profile · normalise · which app", "The person's profile as the engine sees it: mishearings, phrases, nicknames, dictation ends, sites, actions turned off, checked. Handed in with useProfile(); the engine never reads a file, and runs with an empty profile until one is handed in."],
+  ["src/host/decider.ts", "host", "model", "The decision model a host runs with: decider-0.8b while it answers, code only while it doesn't (or with --no-model), so the core starts and keeps working without the model server."],
+  ["src/host/profile-files.ts", "host", "profile", "The profile as files on a desktop: loads profile/*.json into the engine at startup (every command calls useProfileFiles), and writes it back after a review."],
+  ["src/core/scope.ts", "core", "which app", "Which app a command is for: the one you named (“on Spotify”, “in this window”), else the one in use, else the one just opened. Strips those words."],
+  ["src/core/repair.ts", "core", "repairs", "“No, I meant Claude Code”, “no, search on Brave”, “not Panther, Pantera”, “undo that”, “no, not that one”, “no, the other one”: edits to the last command."],
+  ["src/core/compound.ts", "core", "code first", "Spots two commands in one sentence; they run in a row only when each is clear, else it asks. Leaves dictated text alone."],
+  ["src/core/grammar.ts", "core", "code first", "Closed phrases decided without the model: mute, next song, press enter, confirm, cancel, “one / two”, search for …"],
+  ["src/core/apps.ts", "core", "which app · code first · policy", "Matches a name you said against the names the surface knows: its spoken names and noise words (“vs code”; “windows” names nothing alone), your nicknames, plurals, and by sound (“cloud” → Claude). An app is named as a whole, never by one shared word. It knows no app by name itself."],
+  ["src/core/phonetic.ts", "core", "code first", "A sound-alike key for names (simplified Metaphone), used only against the surface's name lists."],
+  ["src/core/spans.ts", "core", "code first · slots", "Cuts the exact words to paste, type, search or send to Claude; spots unfinished endings (“go to”)."],
+  ["src/core/parse.ts", "core", "slots", "Numbers, ordinals, counts, URLs (“github dot com”, “localhost 3000”, or a site in your profile), keys, media actions, money, durations."],
+  ["src/core/slots.ts", "core", "slots", "Fills what the chosen operation needs from your words; “… and send” is held for a confirm; a word you add after dictation (your profile's) is dropped; typing goes into the app you named."],
+  ["src/core/policy.ts", "core", "code first · policy · outcome · session", "Turns answers and code checks into act / confirm / ask / wait / ignore. Templates first; a close verb raises whatever is chosen to a confirm; “I can't … yet” for verbs nothing reachable starts with (the app's own skill, like “click” on a page, or an action any app can use); an item the model wasn't sure about asked by number, a named app never acts elsewhere, questions list only choices that can run. The Session holds confirms and answers."],
+  ["src/core/questions.ts", "core", "build question", "The request: the options the surface allows (in a measured order), “finished?”, and “which item?” when the surface shows items. State is your words only."],
+  ["src/core/items.ts", "core", "code first · slots · build question", "Choosing among many items (a page's links, contacts): by position (“the second result”), shared words, or sound (“rahool” → Rahul); rare words weigh more (“the closed issues”) and words said apart count joined (“flat map” → flatMap()); a label or a place said on its own (“save changes”, “the third result”) is clicked. Else at most 16 for the model, whose pick must be confident and pointed at by your words. Labels like “Place order” or “Delete account” always need a confirm."],
+  ["src/core/operations.ts", "core", "build question", "The 9 common operations a surface can declare (open / switch / close an app, paste, type, a key, media, a URL, search) plus confirm / cancel / none: how each is worded for the model, and its risk."],
+  ["src/skills/types.ts", "skills", "skills", "What a skill is, as plain JSON: actions with templates, slot kinds, risk, where they apply (in context, anywhere, while open, after the model), an example reply, what doing it looks like."],
+  ["src/skills/slotkinds.ts", "skills", "slots", "Slot kinds, once in the core: words, search, name (an action's own nouns: “its songs” = the last search), app, site, position, item. They only cut, match or parse your words."],
+  ["src/skills/validate.ts", "skills", "skills", "Checks skills that arrive as data: unknown fields, kinds, risks and broken templates are refused, with where the problem is."],
+  ["src/skills/template.ts", "skills", "code first", "Example sentences with slots (“play [the] (song|track) {query}”) compiled to whole-sentence patterns."],
+  ["src/skills/skillset.ts", "skills", "code first", "A surface's skills and declared common operations, compiled once: matching in context, anywhere and while open; risks; the model's options in a measured order; “what I can do here”."],
+  ["src/skills/query.ts", "skills", "slots", "Cleans what to look for: drops “who is a music artist”, “some”; refuses a name made only of the action's own nouns (“some music” for Spotify); “its songs” = the last search."],
+  ["src/backends/codeonly.ts", "model", "model", "No-model mode: a decider that answers nothing, so code does what it can and the rest is asked; and the fallback that uses the model while it answers and code only while it doesn't."],
+  ["src/backends/systemone.ts", "model", "model", "The only file that talks to the model. Timeouts, cancellation, and it rejects any answer that wasn't offered."],
+  ["src/config.ts", "model", "model", "Model URL and timeout."],
+  ["scripts/setup-models.ps1", "model", "setup", "Builds .venv-models and .models inside the repo, with every version pinned in one place; -Reuse copies earlier downloads."],
+  ["scripts/serve-decider.ps1", "model", "setup", "Starts decider-0.8b on 127.0.0.1:8001 with the tuned batching, fully detached."],
+  ["scripts/stop-models.ps1", "model", "setup", "Stops the server and frees VRAM."],
+  ["src/live/actor.ts", "live", "repairs · route · plan · run · replies", "One utterance in, the right thing done on the connected surface: view, decide, plan, hold destructive and sending actions for confirm, run. Remembers the last command for repairs, undo and “its music”; runs two clear commands in a row."],
+  ["src/review/proposals.ts", "live", "learning loop", "From the journal to proposals: a repair → a nickname or mishearing, a miss then a rephrase → a mishearing or phrase, “can't yet” → a wish, an undone action → an eval case. With rules against noise learned from the real journal."],
+  ["src/review/replay.ts", "live", "learning loop", "Runs each proposal's sentence through today's core first: what it already handles isn't proposed again."],
+  ["src/review/gate.ts", "live", "learning loop · scoring", "Every eval set before and after an accepted change; it's kept only if no set got worse."],
+  ["src/journal/journal.ts", "live", "journal", "Appends every press to journal/<date>.jsonl with automatic signals (undone, repeated, answered ask, repaired, “that was wrong”). Audio kept 30 days."],
+  ["src/surface/contract.ts", "surface", "view · plan · run", "Contract v2: every surface reports places (with a kind), where you are as a path, what's open and its items; says the place it lives in; declares skills for places; plans (nothing runs) and runs (a receipt back)."],
+  ["src/surface/protocol.ts", "surface", "connection", "Contract v2 as messages (protocol version 2): hello, welcome, call, result, the per-launch token on each. Checks everything a surface sends: skills through the validator, views, plans and receipts by shape and size."],
+  ["src/host/server.ts", "host", "connection", "The core's end of the connection: ws://127.0.0.1:7777, loopback only, Host and Origin checks, the token, a 1 MB cap, a hello within 3 s. Each connected surface becomes a RemoteSurface the actor talks to as if it were in-process."],
+  ["src/surface/client.ts", "surface", "connection", "A surface's end: serves any surface object to the core, using only the standard WebSocket API, so it runs in Node, a browser extension or a web app."],
+  ["src/host/session.ts", "host", "connection", "~/.coreloop/session.json: the port and the per-launch token, only while the core runs."],
+  ["src/surface/conformance.ts", "surface", "connection · tests", "What every surface must pass: valid skills, the view's shape, planning changes nothing, plans as JSON, unknown actions refused, a held plan runs as shown, receipts come back."],
+  ["src/surface/router.ts", "surface", "route", "Several surfaces as one: paths chain by containment (desktop › Brave › localhost:3000 › my app's page); the innermost entry for a place wins, and an inner surface's places count only while you're in it; items from the innermost surface that shows any. A skill action goes to the surface that declared it; a common operation to the surface that knows the named place, else along the path, innermost first (“mute” on my app goes to the desktop)."],
+  ["src/sim/desktop.ts", "surface", "surface · view · plan · run", "The simulated desktop: windows in Z-order, minimized windows, coreloop's host; plans and runs every action without touching the machine."],
+  ["src/sim/skills.ts", "surface", "skills", "Example skills as plain data for the simulated desktop: Spotify, browsers, Terminal, Claude (prompts, new chat), Cursor, Telegram, WhatsApp, windows."],
+  ["src/sim/webapp.ts", "surface", "surface · skills · view · plan · run", "My own web app on localhost:3000, as the npm package would see it: its pages and projects as places, where I am in it as a path, its own skill (new project, rename, archive, dark mode, click, type), living in the browser's tab."],
+  ["src/sim/browser.ts", "surface", "surface · skills · view · plan · run", "The simulated browser: pages with links, buttons and fields, history, scroll and tabs; a page skill as plain data (click, type into, scroll, back, tabs, search a site). Searches in the page's own box when it has one; a search lands on that search's results; a result's URL line and snippet fold into it. Next to the desktop it lives inside Brave."],
+  ["src/sim/fixture.ts", "surface", "surface · view", "The fixture desktop from eval/apps.json and eval/windows.json, and the browser's page snapshots, so every run gives the same result on any machine. Loading files is the fixture's job; the simulated surfaces just take their data."],
+  ["src/sim/world.ts", "surface", "surface", "A simulated world from a spec (the desktop, the browser in one of its apps, my web app in its tab, or the browser alone): the conversation evals, the map's traces and the demo's export all build their surfaces here."],
+  ["src/sim/url.ts", "surface", "surface · plan", "How the simulated desktop and browser turn a parsed URL into one they open."],
+  ["eval/apps.json", "ctx", "view", "Fixture app names: 33 well-known apps from a real Start menu, plus OBS Studio, with the spoken names (“vs code”, “the browser”) and noise words (“windows”, “microsoft”) this desktop declares."],
+  ["eval/windows.json", "ctx", "view", "Fixture windows: 7 open, VS Code in front."],
+  ["eval/desktop.jsonl", "ctx", "test cases", "70 commands with expected decision, operation and details."],
+  ["eval/desktop-holdout.jsonl", "ctx", "test cases", "26 differently-worded commands, first run blind."],
+  ["eval/personal.jsonl", "ctx", "test cases", "Your own phrasings, with what you meant."],
+  ["eval/daily.json", "ctx", "test cases", "Days 1 and 2 of real use as conversations (25 + 36 turns), labelled with what you meant; on day 2 Cursor hosts coreloop."],
+  ["eval/daily-holdout.json", "ctx", "test cases", "86 turns in 11 conversations (music, browser, dev, messages, repairs, two-step, safety, windows, deeper Spotify, host, typing), each first run blind."],
+  ["eval/browser.json", "ctx", "test cases", "The browser prototype's 34 cases as conversations on the simulated browser: navigate, search, scroll, clicks, typing into fields, what not to act on, destructive buttons, and follow-ups (“no, the other one”)."],
+  ["eval/browser/pages.json", "ctx", "view", "16 synthetic page snapshots with real page structure and invented content: a news front page, an encyclopedia's main page and an article, search results, a checkout and a product page (from the prototype); a code host's repo and issues, web search results, a reference page, a package page and video results (the fictional “Lumen” framework); and a localhost dev app (dashboard, projects, one project)."],
+  ["eval/workflow.json", "ctx", "test cases", "71 turns in 10 everyday developer flows across the desktop and the browser: GitHub, searching and reading results, docs, npm, music while browsing, a localhost app with the terminal, tabs and windows, chatter, naming the browser from another app."],
+  ["eval/nested.json", "ctx", "test cases", "37 turns across three surfaces (desktop › browser in Brave › my web app on localhost:3000), written before their first run (2 wrong / 27 / 8; now 0 wrong)."],
+  ["eval/demo.json", "ctx", "test cases", "The demo's catalogue, written blind: the book's examples by chapter and the playground's presets by stage, as conversations judged like any eval (1 wrong with the model, 0 without)."],
+  ["eval/nested-holdout.json", "ctx", "test cases", "23 more three-surface turns, written after nested's fixes and before their run (1 wrong / 21 / 1; now 0 wrong)."],
+  ["eval/workflow-holdout.json", "ctx", "test cases", "45 more everyday turns in 8 flows, written after the fixes and run once, blind."],
+  ["eval/audio/prompts.jsonl", "ctx", "test cases", "20 sentences to record in your own voice, with what each should do."],
+  ["src/eval/score.ts", "measure", "scoring", "Scores each case, every slot it expects included; counts any destructive action taken without a confirm."],
+  ["src/eval/conversation.ts", "measure", "scoring", "Conversation tests: each turn is right, asked or wrong, and the wrong-action rate comes first. A conversation names its world, and can run without my profile or without the model."],
+  ["src/recorder/recorder.ts", "measure", "recorder", "Writes runs/<time>/events.jsonl for every utterance, decision, plan and result."],
+  ["test/core.test.ts", "measure", "tests", "Normalise, parse, spans, apps, grammar, policy, Session; and every test case's expected details from code alone."],
+  ["test/skills.test.ts", "measure", "tests", "Templates, names by sound, which app, skills in context, plans on the surface, answerable questions, repairs, two-step and undo."],
+  ["test/control.test.ts", "measure", "tests", "The app in use under coreloop's host, “can't … yet”, names from memory, typing into an app, send only on confirm."],
+  ["test/live.test.ts", "measure", "tests", "Actor on the surface (confirm runs the exact plan shown, cancel, dry run, plan errors) and every journal signal rule."],
+  ["test/data.test.ts", "measure", "tests", "Skills survive JSON and decide the same; the validator refuses broken skills; slot kinds; a surface's declared operations bound what is decided and offered."],
+  ["test/items.test.ts", "measure", "tests", "Items by position, words and sound (a contact list with misheard names), the 16 options, the model's gates, numbered choices, destructive labels, “the other one”, and the simulated browser."],
+  ["test/review.test.ts", "measure", "tests", "Proposals from a made-up journal (nickname, mishearing, phrase, wish, case), what is never proposed, accepting and rejecting, the gate's scoring."],
+  ["test/profile.test.ts", "measure", "tests", "A profile of your own in its own folder: phrases rewrite, nicknames name apps only, actions turned off are never offered, confirm can't be turned off."],
+  ["test/connection.test.ts", "measure", "tests", "Conformance in-process and over the WebSocket (desktop, browser, both); the actor over the connection; hardening: loopback bind, Origin, Host, token, hello, size, a malformed view."],
+  ["test/boundary.test.ts", "measure", "tests", "The engine boundary: the engine imports no Node modules, packages, host, surface or eval code, uses no Node globals, and type-checks as browser code (tsconfig.engine.json)."],
+  ["test/setup.ts", "measure", "tests", "Hands the repo's profile to the engine before the tests, as every command does."],
+  ["test/codeonly.test.ts", "measure", "tests", "No-model mode: code's decisions stand, the rest is a question, a close still waits for confirm; the fallback switches to code only and back."],
+  ["test/nesting.test.ts", "measure", "tests", "Contract v2: the path across three surfaces, my app's places only while I'm in it, skills along the path, routing by containment, passwords never typed."],
+  ["test/neutral.test.ts", "measure", "tests", "The surface leads: a close verb raises any action to a confirm, “not yet” and the verb lists come from the skills, replies name the surface's apps, password fields are never voice-accessible."],
+  ["test/router.test.ts", "measure", "tests", "Two surfaces: merged views, “the browser”, which surface carries out each action, naming the browser from Spotify, an app and a link with the same name; rare words, joined words, labels said alone, results folded."],
+  ["test/systemone.test.ts", "measure", "tests", "Model client validation and error messages."],
+  ["test/score.test.ts", "measure", "tests", "Test-case loading and scoring."],
+  ["test/recorder.test.ts", "measure", "tests", "Run recording."],
+];
+const LAYERS = [
+  ["entry", "Entry points", "plain", "The commands you run: npm run live, repl, core, sim-surface, listen, say, eval, eval:audio, review, journal, record-voice, inspect, last-run, map."],
+  ["audio", "Voice input", "plain", "Push-to-talk key, microphone, voice detection and speech-to-text, all on the CPU."],
+  ["core", "Pipeline core", "code", "Deterministic code. Everything that can be decided without a model is decided here. With skills, the contract, the actor and the model interface it is the engine: it runs in Node or a browser, reads no files, and takes its profile and its model (a Decider) from the host."],
+  ["skills", "Skills engine", "code", "How a surface's skills (data) are matched: templates, slot cleaning, the options added for the model."],
+  ["model", "Model backend", "model", "decider-0.8b behind one HTTP client, plus the scripts that build and run it."],
+  ["host", "Host (desktop)", "plain", "What runs around the engine on a desktop: the WebSocket server, the session file, the profile files. The engine never imports any of it (test/boundary.test.ts)."],
+  ["live", "Actor & journal", "desk", "Runs each command through the connected surface and keeps a private journal of every press; the review turns it into proposals you decide, gated by every eval set."],
+  ["surface", "Surface", "desk", "The contract every surface implements (v1, frozen), the router that runs several at once, the protocol and client that carry it to other processes, the conformance suite, and the simulated desktop and browser this branch runs on. Real surfaces live on their own branches."],
+  ["ctx", "Context & test data", "ctx", "Fixtures that stand in for a live machine, and the test sets."],
+  ["measure", "Measurement", "plain", "Scoring, run recording and 316 unit tests."],
+];
+const layerOf = Object.fromEntries(LAYERS.map((l) => [l[0], l]));
+document.getElementById("layercount").textContent = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve"][LAYERS.length] || String(LAYERS.length);
+const short = (p) => p.replace(/^src\//, "").replace(/^scripts\//, "scripts/");
+document.getElementById("layers").innerHTML = LAYERS.map(([id, name, cls, desc]) => {
+  const fs = FILES.filter((f) => f[1] === id);
+  return `<div class="layer ${cls}"><div class="who"><h3>${name}</h3><p>${desc}</p></div><div class="files">${fs.map((f) => `<span class="chip">${esc(short(f[0]))}<small>${LINES[f[0]] ?? "?"}</small></span>`).join("")}</div></div>`;
+}).join("");
+
+/* ---------- file table ---------- */
+const tbody = document.getElementById("files");
+const filters = document.getElementById("filters");
+const scopeEl = document.getElementById("scope");
+let view = { layer: "", node: "", q: "" };
+const stagesOf = (f) => f[2].split(" · ");
+const nodeName = (id) => (fig.querySelector("#" + id + " .t") || {}).textContent || id;
+function table(next) {
+  view = { ...view, ...next };
+  const q = view.q.trim().toLowerCase();
+  const rows = FILES.filter((f) => (!view.layer || f[1] === view.layer) && (!view.node || stagesOf(f).some((s) => STAGES[s] === view.node)) && (!q || (f[0] + " " + f[2] + " " + f[3]).toLowerCase().includes(q)));
+  tbody.innerHTML = rows.map((f) => {
+    const L = layerOf[f[1]];
+    return `<tr><td class="f">${esc(f[0])}</td><td><span class="lay"><i class="sw ${L[2]}"></i>${L[1]}</span></td><td>${esc(f[2])}</td><td>${esc(f[3])}</td><td class="n">${LINES[f[0]] ?? "?"}</td></tr>`;
+  }).join("") || `<tr><td colspan="5" class="hint">No file matches.</td></tr>`;
+  [...filters.children].forEach((b) => b.setAttribute("aria-pressed", String((b.dataset.layer || "") === view.layer)));
+  scopeEl.innerHTML = view.node ? `Files behind <b>${esc(nodeName(view.node))}</b> (${rows.length}) · <button type="button" class="linkish" id="allfiles">show all files</button>` : "";
+}
+filters.innerHTML = `<button type="button" data-layer="">All files</button>` + LAYERS.map(([id, name, cls]) => `<button type="button" data-layer="${id}"><i class="sw ${cls}"></i>${name}</button>`).join("");
+filters.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) table({ layer: b.dataset.layer || "" }); });
+document.getElementById("q").addEventListener("input", (e) => table({ q: e.target.value }));
+scopeEl.addEventListener("click", (e) => { if (e.target.id === "allfiles") table({ node: "" }); });
+// a box in the flowchart lists the files behind it
+fig.addEventListener("click", (e) => {
+  const n = e.target.closest(".node");
+  if (!n) return;
+  table({ node: n.id, layer: "", q: "" });
+  document.getElementById("q").value = "";
+  document.getElementById("files-h").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+table({});
+
+/* ---------- charts ---------- */
+const tip = document.getElementById("tip");
+function hover(el, html) {
+  const show = (e) => { tip.innerHTML = html; tip.hidden = false; move(e); };
+  const move = (e) => {
+    const x = Math.min(e.clientX + 14, window.innerWidth - tip.offsetWidth - 8);
+    const y = Math.min(e.clientY + 14, window.innerHeight - tip.offsetHeight - 8);
+    tip.style.left = x + "px"; tip.style.top = y + "px";
+  };
+  el.addEventListener("pointerenter", show);
+  el.addEventListener("pointermove", move);
+  el.addEventListener("pointerleave", () => (tip.hidden = true));
+}
+const NS = "http://www.w3.org/2000/svg";
+const mk = (tag, attrs, text) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text !== undefined) e.textContent = text; return e; };
+
+// 1) accuracy progression
+(function () {
+  const svg = document.getElementById("acc");
+  const steps = [
+    ["M2", "model only", 42, "Baseline. The model's raw answers to 3 questions, no code layer. Biggest loss: the separate “is this a command?” question.", true],
+    ["M3a", "+ code layer", 44, "Normalise, parse, spans, slots, policy, close-verb override, wait on unfinished endings. Still asking “is this a command?”, which sent 14 real commands to ignore."],
+    ["M3b", "drop is-command", 57, "Removed the “is this a command?” question; the operation's “none” option is the chit-chat gate. +13 cases."],
+    ["M3c", "+ grammar & fallbacks", 60, "Closed phrases decided by code (mute, press enter, cancel, search for …); open_app vs open_url tie-break; fall back when the model's pick can't be carried out."],
+    ["M4a", "+ installed apps", 64, "The app list as evidence the model can't see: it settles URL-vs-app ties and unsure opens. open and focus become one action."],
+    ["M4b", "+ verb + app by code", 65, "“open / switch to / close <installed app>” decided by code alone. 40 of 65 commands now skip the model."],
+  ];
+  const W = 900, H = 380, L = 56, R = 16, T = 24, B = 76, n = steps.length;
+  const y = (v) => T + (H - T - B) * (1 - v / 100);
+  [0, 25, 50, 75, 100].forEach((v) => {
+    svg.appendChild(mk("line", { x1: L, x2: W - R, y1: y(v), y2: y(v), class: v === 0 ? "ax" : "grid" }));
+    svg.appendChild(mk("text", { x: L - 10, y: y(v) + 4, "text-anchor": "end", class: "lbl" }, v + "%"));
+  });
+  svg.appendChild(mk("line", { x1: L, x2: W - R, y1: y(90), y2: y(90), class: "target" }));
+  svg.appendChild(mk("text", { x: W - R, y: y(90) - 6, "text-anchor": "end", class: "tlabel" }, "target 90%"));
+  const slot = (W - L - R) / n, bw = Math.min(64, slot * 0.5);
+  steps.forEach(([id, label, k, why, base], i) => {
+    const v = (100 * k) / 65, cx = L + slot * i + slot / 2, x = cx - bw / 2, top = y(v), h = y(0) - top;
+    const r = Math.min(4, h);
+    const p = `M${x},${y(0)} V${top + r} Q${x},${top} ${x + r},${top} H${x + bw - r} Q${x + bw},${top} ${x + bw},${top + r} V${y(0)} Z`;
+    svg.appendChild(mk("path", { d: p, class: "bar" + (base ? " base" : "") }));
+    svg.appendChild(mk("text", { x: cx, y: top - 8, "text-anchor": "middle", class: "val" }, `${v.toFixed(1)}%`));
+    svg.appendChild(mk("text", { x: cx, y: y(0) + 20, "text-anchor": "middle", class: "lbl", style: "font-family:var(--mono)" }, id));
+    svg.appendChild(mk("text", { x: cx, y: y(0) + 38, "text-anchor": "middle", class: "lbl" }, label));
+    const hit = mk("rect", { x: cx - slot / 2 + 4, y: T, width: slot - 8, height: H - T - B + 44, class: "hit" });
+    hover(hit, `<b>${id} · ${label}</b><br>${k}/65 correct (${v.toFixed(1)}%)<br>${why}`);
+    svg.appendChild(hit);
+  });
+})();
+
+// 1b) how the core was built, step by step
+document.getElementById("phasec").innerHTML = [
+  ["The core apart from Windows", "every set identical after the split: desktop 70/70, 0 wrong in 147 conversation turns"],
+  ["Skills and operations as data", "every set equal; the order of the model's options measured (type 60% vs 45% for “write thanks a lot”)"],
+  ["Choosing among many items", "the prototype's 34 browser cases: 33/34; the item question costs +76 ms"],
+  ["Several surfaces at once", "everyday flows: 4 wrong on the blind first run, 0 after general fixes (71 turns); held-out 1 → 0 (45 turns)"],
+  ["The connection", "every set identical over the loopback WebSocket, +0.6–0.9 ms a turn; the conformance suite passes in-process and over it"],
+  ["The learning loop", "2 days of journal → 3 proposals (12 before the noise rules); a harmful edit is put back by the eval gate"],
+].map(([what, result]) => `<li><b>${what}:</b> ${result}</li>`).join("");
+
+// 2) latency
+(function () {
+  const svg = document.getElementById("lat");
+  const rows = [
+    ["Code-only commands", 0.1, "Grammar phrases, unfinished endings, “<verb> <installed app>”. No model call."],
+    ["2 questions, batching fixed", 109, "Current path. decider merge overhead set to 64: short rows are no longer padded to 512 tokens."],
+    ["Packed questions (rejected)", 95, "One copy of the text for all questions. Faster, but “complete” fell from 96.6% to 76.3%.", true],
+    ["3 questions (M1)", 145, "operation + is_command + complete, default batching."],
+    ["2 questions, default batching", 170, "Slower than 3 questions: decider padded the short row into the 512-token bucket."],
+  ];
+  const W = 900, H = 300, L = 230, R = 70, T = 12, rowH = 50, max = 200;
+  const x = (v) => L + (W - L - R) * (v / max);
+  [0, 50, 100, 150, 200].forEach((v) => {
+    svg.appendChild(mk("line", { x1: x(v), x2: x(v), y1: T, y2: T + rowH * rows.length, class: v === 0 ? "ax" : "grid" }));
+    svg.appendChild(mk("text", { x: x(v), y: T + rowH * rows.length + 18, "text-anchor": "middle", class: "lbl" }, v + " ms"));
+  });
+  rows.forEach(([label, v, why, dim], i) => {
+    const yy = T + rowH * i + 14, bh = 20, w = Math.max(3, x(v) - x(0));
+    svg.appendChild(mk("text", { x: L - 12, y: yy + 15, "text-anchor": "end", class: "lbl" }, label));
+    svg.appendChild(mk("path", { d: `M${x(0)},${yy} H${x(0) + w - 4} Q${x(0) + w},${yy} ${x(0) + w},${yy + 4} V${yy + bh - 4} Q${x(0) + w},${yy + bh} ${x(0) + w - 4},${yy + bh} H${x(0)} Z`, class: "bar lat" + (dim ? " dim" : "") }));
+    svg.appendChild(mk("text", { x: x(0) + w + 8, y: yy + 15, class: "val" }, v < 1 ? "~0.1 ms" : v + " ms"));
+    const hit = mk("rect", { x: 0, y: yy - 12, width: W, height: rowH - 4, class: "hit" });
+    hover(hit, `<b>${label}</b><br>p50 ${v < 1 ? "~0.1" : v} ms<br>${why}`);
+    svg.appendChild(hit);
+  });
+})();
+
+// 3) bake-off scatter
+(function () {
+  const svg = document.getElementById("bake");
+  const pts = [
+    ["Laya", 189, 28, "1.85 GB", "Old baseline. Fastest, least accurate."],
+    ["decider-0.8b", 416, 31, "2.6 GB", "Chosen. Best accuracy per millisecond, leaves ~2 GB of VRAM free.", true],
+    ["Jev-Style-2B", 548, 30, "4.3 GB", "Lost to decider-0.8b on accuracy, speed and memory."],
+    ["decider-2b", 778, 31, "4.6 GB", "No accuracy gain over 0.8b, twice as slow, nearly fills the GPU."],
+    ["Jebadiah-4B", 1841, 32, "2.9 GB", "Most accurate, but one question at a time: too slow for many questions."],
+    ["JevK5-4B", 3544, 31, "4.2 GB", "Dropped: slow (16-option limit needs extra passes)."],
+  ];
+  const W = 900, H = 340, L = 56, R = 30, T = 24, B = 52;
+  const x = (v) => L + (W - L - R) * (v / 3800), y = (v) => T + (H - T - B) * (1 - (v - 27) / 6);
+  [27, 28, 29, 30, 31, 32, 33].forEach((v) => {
+    svg.appendChild(mk("line", { x1: L, x2: W - R, y1: y(v), y2: y(v), class: v === 27 ? "ax" : "grid" }));
+    svg.appendChild(mk("text", { x: L - 10, y: y(v) + 4, "text-anchor": "end", class: "lbl" }, v));
+  });
+  [0, 1000, 2000, 3000].forEach((v) => svg.appendChild(mk("text", { x: x(v), y: H - B + 22, "text-anchor": "middle", class: "lbl" }, v === 0 ? "0" : (v / 1000) + " s")));
+  svg.appendChild(mk("text", { x: (L + W - R) / 2, y: H - 8, "text-anchor": "middle", class: "lbl" }, "p50 decision time on the 34 browser commands →"));
+  svg.appendChild(mk("text", { x: 14, y: T + 4, class: "lbl" }, "correct / 34"));
+  pts.forEach(([name, ms, ok, vram, why, pick]) => {
+    const cx = x(ms), cy = y(ok);
+    svg.appendChild(mk("circle", { cx, cy, r: pick ? 8 : 6, class: "dot" + (pick ? " pick" : "") }));
+    const below = name === "Jev-Style-2B";
+    svg.appendChild(mk("text", { x: cx + 12, y: cy + (below ? 18 : -10), class: pick ? "val" : "lbl" }, name));
+    const hit = mk("circle", { cx, cy, r: 22, class: "hit" });
+    hover(hit, `<b>${name}</b><br>${ok}/34 correct · p50 ${ms} ms · ${vram} VRAM<br>${why}`);
+    svg.appendChild(hit);
+  });
+})();
+</script>
+
+</body>
+</html>

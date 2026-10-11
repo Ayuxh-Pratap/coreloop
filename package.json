@@ -1,0 +1,51 @@
+{
+  "name": "coreloop",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "description": "A local, surface-neutral voice engine: speech → a local decision model picks → a surface acts. One core for websites, the browser and the desktop.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "inspect": "node src/cli/inspect.ts",
+    "say": "node src/cli/say.ts",
+    "repl": "node src/cli/repl.ts",
+    "live": "node src/cli/live.ts",
+    "listen": "node src/cli/listen.ts",
+    "record-voice": "node src/cli/record-voice.ts",
+    "eval": "node src/cli/eval.ts",
+    "eval:audio": "node src/cli/eval-audio.ts",
+    "last-run": "node src/cli/last-run.ts",
+    "journal": "node src/cli/journal.ts",
+    "review": "node src/cli/review.ts",
+    "map": "node src/cli/map.ts",
+    "export:demo": "node src/cli/export-demo.ts",
+    "core": "node src/cli/core.ts",
+    "sim-surface": "node src/cli/sim-surface.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "typecheck:engine": "tsc --noEmit -p tsconfig.engine.json",
+    "build:engine": "npm run build -w coreloop-engine",
+    "check:package": "node src/cli/check-package.ts",
+    "example": "node examples/hello-surface.ts",
+    "models:setup": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup-models.ps1",
+    "models:start": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/serve-decider.ps1",
+    "models:stop": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/stop-models.ps1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "@types/ws": "8.18.2",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3"
+  },
+  "dependencies": {
+    "sherpa-onnx-node": "1.13.8",
+    "uiohook-napi": "1.5.5",
+    "ws": "8.22.0"
+  }
+}

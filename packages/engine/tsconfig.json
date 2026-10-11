@@ -1,0 +1,16 @@
+{
+  "//": "Builds coreloop-engine from the engine's own files in src/ (the set test/boundary.test.ts guards). npm run build:engine",
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "sourceMap": true,
+    "rewriteRelativeImportExtensions": true,
+    "rootDir": "../../src",
+    "outDir": "dist",
+    "types": [],
+    "lib": ["ES2024", "DOM"]
+  },
+  "include": [],
+  "files": ["../../src/index.ts"]
+}

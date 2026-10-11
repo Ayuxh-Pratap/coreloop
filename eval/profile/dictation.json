@@ -1,0 +1,4 @@
+{
+  "note": "Fixture: words said after dictated text that aren't part of it.",
+  "ends": ["command"]
+}
